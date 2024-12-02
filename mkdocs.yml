@@ -1,0 +1,89 @@
+site_name: Software Engineering - Stage 6 - NSW
+theme:
+  name: material
+  features: 
+    - navigation.tabs
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: blue grey
+      accent: teal
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: blue grey
+      accent: teal
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.mark
+  - attr_list
+  - tables
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - md_in_html
+
+plugins:
+  - glossary:
+
+# Page Tree
+nav:
+  - Home: index.md
+  - Syllabus:
+    - Overview: Syllabus\index.md
+    - Programming Fundamentals:  Syllabus\programming-fundamentals.md   
+    - Object Oriented Paradigm:  Syllabus\object-oriented-paradigm.md
+    - Programming Mechatronics: Syllabus\programming-mechatronics.md
+    - Secure Software Architecture: Syllabus\secure-software.md
+    - Programming For The Web: Syllabus\web-development.md
+    - Software Automation: Syllabus\software-automation.md
+    - Software Engineering Project: Syllabus\se-project.md
+  - Principles of SE: 
+    - Overview: principles\index.md
+    - SDLC: principles\sdlc.md
+  - OOAD: 
+    - Overview: object_oriented_software\index.md
+  - Mechatronics:
+    - Overview: mechatronics\index.md
+  - Secure Software Architecture:
+    - Overview: secure_software_architecture\index.md
+  - Web Development:
+    - Overview: web_development\index.md
+  - Machine Learning:
+    - Overview: machine_learning\index.md
+  - Glossary: glossary.md
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/mr-bev" target="_blank" rel="noopener">Aaron Beverley</a>
