@@ -10,7 +10,7 @@ There are several reasons for creating this material:
 6. Teachers do a great job with what they know but from my experience there is a very wide spectrum of teacher knowledge.
 7. Students shouldn't be disadvantaged based on their access to good, reliable information that can also be easily converted into their primary language.
 
-Who Am I?
+## Who Am I?
 My name is Aaron Beverley and have had a long and varied career in Software Engineering working for:
 
 - MASC a research division of [Motorola](https://www.motorola.com.au/){target="_blank"} working on a parasitics database, Verilog-AMS compiler and a breaking control systems for the BMW 5 Series 

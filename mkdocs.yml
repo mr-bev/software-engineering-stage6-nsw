@@ -56,33 +56,34 @@ markdown_extensions:
   - md_in_html
 
 plugins:
+  - search:
   - glossary:
 
 # Page Tree
 nav:
   - Home: index.md
   - Syllabus:
-    - Overview: Syllabus\index.md
-    - Programming Fundamentals:  Syllabus\programming-fundamentals.md   
-    - Object Oriented Paradigm:  Syllabus\object-oriented-paradigm.md
-    - Programming Mechatronics: Syllabus\programming-mechatronics.md
-    - Secure Software Architecture: Syllabus\secure-software.md
-    - Programming For The Web: Syllabus\web-development.md
-    - Software Automation: Syllabus\software-automation.md
-    - Software Engineering Project: Syllabus\se-project.md
+    - Overview: Syllabus/index.md
+    - Programming Fundamentals:  Syllabus/programming-fundamentals.md   
+    - Object Oriented Paradigm:  Syllabus/object-oriented-paradigm.md
+    - Programming Mechatronics: Syllabus/programming-mechatronics.md
+    - Secure Software Architecture: Syllabus/secure-software.md
+    - Programming For The Web: Syllabus/web-development.md
+    - Software Automation: Syllabus/software-automation.md
+    - Software Engineering Project: Syllabus/se-project.md
   - Principles of SE: 
-    - Overview: principles\index.md
-    - SDLC: principles\sdlc.md
+    - Overview: principles/index.md
+    - SDLC: principles/sdlc.md
   - OOAD: 
-    - Overview: object_oriented_software\index.md
+    - Overview: object_oriented_software/index.md
   - Mechatronics:
-    - Overview: mechatronics\index.md
+    - Overview: mechatronics/index.md
   - Secure Software Architecture:
-    - Overview: secure_software_architecture\index.md
+    - Overview: secure_software_architecture/index.md
   - Web Development:
-    - Overview: web_development\index.md
+    - Overview: web_development/index.md
   - Machine Learning:
-    - Overview: machine_learning\index.md
+    - Overview: machine_learning/index.md
   - Glossary: glossary.md
 
 copyright: |

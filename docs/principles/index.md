@@ -1,5 +1,8 @@
 # Principals of Software Engineering
 
+Software engineer, software developer, computer scientist or maybe just tech support, a career in software can be very rewarding, challenging, confronting and boring. Hopefully more of the prior, and the later is up to you to make a change and not accept the status quo. 
+
+
 ## Project Management
 - PMBOK
 - Prince2
