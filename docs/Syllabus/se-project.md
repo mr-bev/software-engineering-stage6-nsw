@@ -32,7 +32,7 @@
 | :----: | ---- | :----: | ---- |
 | [](){#SE-RP-01} SE-RP-01 | Research and use the Waterfall software development approach | | | 
 | [](){#SE-RP-01.01} SE-RP-01.01 | :material-circle-medium: logical progression of steps used throughout the life cycle | | | 
-| [](){#SE-RP-01.02} SE-RP-01.02 | :material-circle-medium: stages of ‘falling water’ | | | 
+| [](){#SE-RP-01.02} SE-RP-01.02 | :material-circle-medium: stages of ‘waterfall’ | | | 
 | [](){#SE-RP-01.03} SE-RP-01.03 | :material-circle-medium: advantages and disadvantages | | | 
 | [](){#SE-RP-01.04} SE-RP-01.04 | :material-circle-medium: scale and types of developments | | | 
 | [](){#SE-RP-02} SE-RP-02 | Research and use the Agile software development approach | | | 

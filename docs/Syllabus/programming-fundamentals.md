@@ -57,7 +57,7 @@
 | PF-DSC-01.03 | :material-circle-medium: using data structures |  |
 | PF-DSC-01.04 | :material-circle-medium: using standard modules |  |
 | PF-DSC-01.05 | :material-circle-medium: creating relevant subprograms that incorporate parameter passing |  |
-| PF-DSC-02 |  |  |
+| PF-DSC-02 | Implement data structures that support data storage |  |
 | PF-DSC-02.01 | :material-circle-medium: single and multidimensional arrays |  |
 | PF-DSC-02.02 | :material-circle-medium: lists |  |
 | PF-DSC-02.03 | :material-circle-medium: trees |  |

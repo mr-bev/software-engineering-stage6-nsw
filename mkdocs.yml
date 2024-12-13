@@ -74,8 +74,14 @@ nav:
   - Principles of SE: 
     - Overview: principles/index.md
     - SDLC: principles/sdlc.md
+    - Agile: principles/agile.md
+    - Waterfall: principles/waterfall.md
+    - Other Development Lifecycles: principles\other_sdlc.md
+    - Revision Contol Systems: principles/revision_control_systems.md
   - OOAD: 
     - Overview: object_oriented_software/index.md
+    - Algorithm Complexity: object_oriented_software\big_o.md
+    - Design Patterns: object_oriented_software\software_design_patterns.md
   - Mechatronics:
     - Overview: mechatronics/index.md
   - Secure Software Architecture:
