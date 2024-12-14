@@ -4,6 +4,7 @@ theme:
   features: 
     - navigation.tabs
     - navigation.sections
+    - navigation.footer
     - search.suggest
     - search.highlight
     - content.tabs.link
@@ -76,15 +77,21 @@ nav:
     - SDLC: principles/sdlc.md
     - Agile: principles/agile.md
     - Waterfall: principles/waterfall.md
-    - Other Development Lifecycles: principles\other_sdlc.md
+    - Other Development Lifecycles: principles/other_sdlc.md
     - Revision Contol Systems: principles/revision_control_systems.md
-  - OOAD: 
+  - Software Fundamentals:
+    - Number Systems: fundamentals/number_systems.md
+    - Data Types: fundamentals/data_types.md
+    - Data Structures: fundamentals/data_structures.md
+    - Algorithms: fundamentals/algorithms.md
+    - Algorithm Complexity: fundamentals/big_o.md
+    - Software Quality: fundamentals/software_quality.md
+  - Object Oriented: 
     - Overview: object_oriented_software/index.md
-    - Algorithm Complexity: object_oriented_software\big_o.md
-    - Design Patterns: object_oriented_software\software_design_patterns.md
+    - Design Patterns: object_oriented_software/software_design_patterns.md
   - Mechatronics:
     - Overview: mechatronics/index.md
-  - Secure Software Architecture:
+  - Secure Software:
     - Overview: secure_software_architecture/index.md
   - Web Development:
     - Overview: web_development/index.md
@@ -94,3 +101,5 @@ nav:
 
 copyright: |
   &copy; 2024 <a href="https://github.com/mr-bev" target="_blank" rel="noopener">Aaron Beverley</a>
+repo_url: https://github.com/mr-bev/software-engineering-stage6-nsw
+repo_name: mr-bev/se-stage6-nsw

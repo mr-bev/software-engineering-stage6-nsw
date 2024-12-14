@@ -33,14 +33,14 @@
 
 ## Data for Software Engineering
 
-| Key | Description | Reference |
-| :----: | ---- | :----: |
+| Key | Description | Reference | Comment |
+| :----: | ---- | :----: | :----: |
 | PF-DSA-01 | Investigate the use of number systems for computing purposes, including binary, decimal and hexadecimal | Data Types |
 | PF-DSA-02 | Represent integers using two’s complement | Data Types |
 | PF-DSA-03 | Investigate standard data types | Data Types |
 | PF-DSA-03.01 | :material-circle-medium: char (character) and string | Data Types |
 | PF-DSA-03.02 | :material-circle-medium: Boolean | Data Types |
-| PF-DSA-03.03 | :material-circle-medium: real | Data Types |
+| PF-DSA-03.03 | :material-circle-medium: real | Data Types | There is no real data type. float, double is the closest you get in any language |
 | PF-DSA-03.04 | :material-circle-medium: single precision floating point | Data Types |
 | PF-DSA-03.05 | :material-circle-medium: integer | Data Types |
 | PF-DSA-03.06 | :material-circle-medium: date and time | Data Types |
