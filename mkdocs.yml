@@ -88,6 +88,8 @@ nav:
     - Software Quality: fundamentals/software_quality.md
   - Object Oriented: 
     - Overview: object_oriented_software/index.md
+    - Key Concepts: object_oriented_software/key_concepts.md
+    - Object Oriented Design: object_oriented_software/object_oriented_design.md
     - Design Patterns: object_oriented_software/software_design_patterns.md
   - Mechatronics:
     - Overview: mechatronics/index.md
