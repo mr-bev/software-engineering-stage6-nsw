@@ -75,6 +75,8 @@ nav:
   - Principles of SE: 
     - Overview: principles/index.md
     - SDLC: principles/sdlc.md
+    - Design: principles/design.md
+    - Test: principles/test.md
     - Agile: principles/agile.md
     - Waterfall: principles/waterfall.md
     - Other Development Lifecycles: principles/other_sdlc.md
@@ -86,6 +88,7 @@ nav:
     - Algorithms: fundamentals/algorithms.md
     - Algorithm Complexity: fundamentals/big_o.md
     - Software Quality: fundamentals/software_quality.md
+    - Async and Threading: fundamentals\asynch_and_threading.md
   - Object Oriented: 
     - Overview: object_oriented_software/index.md
     - Key Concepts: object_oriented_software/key_concepts.md

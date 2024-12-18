@@ -30,6 +30,12 @@ Not commonly used, it is called a single linked list as it links in a single dir
 
 Double linked as it has references in both directions to traverse a list. This does use more memory that a single linked list but does improve significantly it usage. With this stucture in place it can also be used as the basis for a stack, queue and deque (pronouced deck).
 
+#### Benefits
+
+#### Drawbacks
+
+#### When to Use
+
 ![Double Linked List](./images/double-linked-list.png)
 
 ??? code
@@ -73,7 +79,7 @@ Double linked as it has references in both directions to traverse a list. This d
                     return False
 
                 node = self.head
-                while data != node.item:
+                while node is not None and data != node.item:
                     node = node.next
 
                 if node == None:
@@ -129,8 +135,46 @@ Double linked as it has references in both directions to traverse a list. This d
 
 ## Deque
 
-## Hashmap
+## Dictionaries
+Dictionaries is the general term for mapping a keys to values. There are many ways to implement them each with their specific features. These can be separated into 2 categories, those that allow multiple values to be associated with a value and those than can only have a single value. In some languages, like Python, a dictionary can be a data structure.
 
-## Dictionary
+### Hash tables / Hashmap
+Hash tables and hashmap are generally the same data structure. This can be language dependent for example Java differentiates between the 2 as a HashTable doesn't allow null keys or values and it sychronises thread access where as a HashMap does not. 
+
+These work by storing buckets of values based on a hash of the key provided. The hashing function is designed to try and evenly distribute the information across the buckets. As an example you might want to store suburbs and their street names to quickly look up a street by the Suburb. If this was stored in a list you would need to search on average 1/2 the list to find the street. By using a hash map that lookup is almost an instant. you provide a key and a value. The key has a hashing function applied to it is used to lookup the value. 
+
+Sometimes when a key is hashed it can result in the same value from the hash and that is called a collision.
+
+
+| Action | Parameters | Description | [Performance](./big_o.md) |
+| :----: | :--------: | :---------: | :---------: |
+| Insert |  key, value  | Add the value to a bucket based on the key | O(1) |
+| Search |  key, value  | Find the value in the list | Typically O(1), this could be O(n) if the hashing function results in many collisions |
+| Delete |  key, value  | Remove the value from the list. | Typically O(1), this could be O(n) if the hashing function results in many collisions |
+
+![Hashmap](./images/hashmap.png)
+
+#### Benefits
+- Efficient in finding information in constant time
+- Multiple values can be associated with the same key
+
+#### Drawbacks
+- Consume more memory in their implementation than a list or array
+- Can be slower than a list when the data stored is small. Less than 8 values.
+- Not effective for storing ordered information
+- Not effective when you want to iterate over all of the items
+- If the hashing function is not good, many collisions can occur with many values in the same bucket
+
+#### When to Use
+- To see if a collection of information contains the key and value. 
+- Frequency of items, like counting words in a document or number of times letters appear in a word.
+- File systems use these to quickly find files
+- Caching data in a server for fast information access for a website
+
+### Dictionary
 
 ## Trees
+
+### Binary Tree
+
+### Red Black Tree
