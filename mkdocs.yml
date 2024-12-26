@@ -55,7 +55,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - attr_list
   - md_in_html
-
+extra_css:
+  - stylesheets/extra.css
+  
 plugins:
   - search:
   - glossary:
