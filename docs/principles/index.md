@@ -3,7 +3,7 @@
 Software engineer, software developer, computer scientist or maybe just tech support, a career in software can be very rewarding, challenging, confronting and boring. Hopefully more of the prior, and the later is up to you to make a change and not accept the status quo. 
 
 ## What is a Project?
-A project is a temporary endeavor with defined goals, scope, and deliverables, undertaken by a specific team or individual to achieve a specific objective or set of objectives. It typically involves a range of tasks, activities, and resources, managed within a planned timeframe, budget, and constraints. Projects differ from routine tasks or business-as-usual activities like maintaining software as they have a defined duration and scope of work.
+A project is a temporary endeavour with defined goals, scope, and deliverables, undertaken by a specific team or individual to achieve a specific objective or set of objectives. It typically involves a range of tasks, activities, and resources, managed within a planned timeframe, budget, and constraints. Projects differ from routine tasks or business-as-usual activities like maintaining software as they have a defined duration and scope of work.
 
 Key characteristics of a project include:
 
@@ -15,7 +15,7 @@ Key characteristics of a project include:
 - Has a clear set of deliverables and outcomes
 
 ## Project Management
-Many different project methodologies exist to provide a structure approach to managing projects. These methodologies are typically what a project or product manager follows when working with a team of software engineers to communicate what the business or client is expecting and what the engineerigg team will deliver. 
+Many different project methodologies exist to provide a structure approach to managing projects. These methodologies are typically what a project or product manager follows when working with a team of software engineers to communicate what the business or client is expecting and what the engineering team will deliver. 
 
 - [PMBOK](https://www.pmi.org/standards/pmbok){target="_blank"} - Project Management Body of Knowledge
 - [Prince2](https://www.prince2.com/aus){target="_blank"} - PRojects IN Controlled Environments
@@ -48,7 +48,7 @@ Many different project methodologies exist to provide a structure approach to ma
 - Collaborate
     - Confluence, Sharepoint, 
 - Source Code Management
-    - Git, SVN, Mecurial
+    - Git, SVN, Mercurial
 - Build and Deploy
     - Github, Gitlab, Bitbucket, Bamboo, Jenkins
 - Testing
@@ -56,6 +56,8 @@ Many different project methodologies exist to provide a structure approach to ma
 
 ## Ideologies??
 - DevOps ???
+1. <a href="https://commons.wikimedia.org/wiki/File:Devops-toolchain.svg">Kharnagy</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+
 - SecOps
 - 
 

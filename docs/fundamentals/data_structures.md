@@ -1,6 +1,6 @@
 # Data Structures
 
-In all cases you should not need to implement these data structures yourself. Use the built in version for the language or use a library. The code below is provided to illustrate how these data structures are implemented. The cose is valid and you could use it to debug or step through code to get a better understanding of them.
+In all cases you should not need to implement these data structures yourself. Use the built in version for the language or use a library. The code below is provided to illustrate how these data structures are implemented. The code is valid and you could use it to debug or step through to get a better understanding of how they work.
 
 ## Array
 
@@ -28,7 +28,7 @@ Not commonly used, it is called a single linked list as it links in a single dir
 
 ### Double Linked List
 
-Double linked as it has references in both directions to traverse a list. This does use more memory that a single linked list but does improve significantly it usage. With this stucture in place it can also be used as the basis for a stack, queue and deque (pronouced deck).
+Double linked as it has references in both directions to traverse a list. This does use more memory that a single linked list but does improve significantly it usage. With this structure in place it can also be used as the basis for a stack, queue and deque (pronounced deck).
 
 #### Benefits
 

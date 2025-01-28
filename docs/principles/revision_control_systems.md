@@ -1,24 +1,35 @@
 # Revision Control Systems
 
-Revision control, not to be confused with version control is system used to manage change to digital content over time. They allow multiple users to collaborate on a single document or set of files while maintaining a record of all changes.
+Revision control, not to be confused with version control, is a system used to manage changes to digital content over time. They allow multiple users to collaborate on a single document or set of files while maintaining a record of all changes.
 
 Most revision control systems provide:
-- Versioning: Each change made to the content creates a new version, which is stored in the system.
-- Check-in/Check-out: Users can check out specific versions of the content for editing and then check them back in when finished.
-- Conflict resolution: When multiple users make changes to the same content simultaneously, the system resolves conflicts by merging or reconciling the changes.
-- Branching and merging: Users can create separate branches of the content, allowing them to work on different versions independently.
+
+- **Versioning:** Each change made to the content creates a new version, which is stored in the system.
+- **Check-in/Check-out:** Users can check out specific versions of the content for editing and then check them back in when finished.
+- **Conflict resolution:** When multiple users make changes to the same content simultaneously, the system resolves conflicts by merging or reconciling the changes.
+- **Branching and merging:** Users can create separate branches of the content, allowing them to work on different versions independently.
+
+## Types of RCS
+
+There are many types of revision control systems available, each with its own strengths and weaknesses. Some popular ones include:
+
+- **Git**: A distributed version control system that is widely used in the open-source community.
+- **SVN (Subversion)**: A centralised version control system that was commonly used in enterprise environments.
+- **Mercurial**: Another distributed version control system that is similar to Git.
+
+## Workflow
 
 Every company will have their own workflow to manage a system using an RCS but the typical ones are:
 
-- Feature Branch
-- Gitflow
-- Github flow
-- Forking
+- **Feature Branch:** involves creating a new branch for each feature or user story being developed, allowing developers to work on separate branches without affecting the main codebase
+- **Gitflow:** A more complex workflow that involves multiple branches for different stages of development, such as master, develop, release and hotfix.
+- **Github flow:** A simple workflow that involves creating a new branch for each feature or bug fix, and merging it back into the main branch once it is complete.
+- **Forking:** A workflow where developers fork the repository and create their own branches for development, which are then merged back into the main branch once they are complete.
 
 ## Typical Workflow
 ### Solo Development
 
-A solo developer can normally work on the trunk (main) of the repository without the need to branch. It is still a good idea to tag code after each feature is complete if you are following an agile process. It allows you to identify a done state of the code and give an easy way to compare changes between features without the need to remember commit ids.
+A solo developer can normally work on the trunk (main) of the repository without the need to branch. It is still a good idea to tag code after each feature is complete if you are following an agile process. It allows you to identify a done state of the code and give an easy way to compare changes between features without the need to remember which commit was feature complete.
 
 ``` mermaid
 gitGraph

@@ -57,7 +57,11 @@ markdown_extensions:
   - md_in_html
 extra_css:
   - stylesheets/extra.css
-  
+  - https://unpkg.com/katex@0/dist/katex.min.css
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 plugins:
   - search:
   - glossary:
@@ -77,12 +81,12 @@ nav:
   - Principles of SE: 
     - Overview: principles/index.md
     - SDLC: principles/sdlc.md
+    - Waterfall: principles/waterfall.md
+    - Agile: principles/agile.md
     - Design: principles/design.md
     - Test: principles/test.md
-    - Agile: principles/agile.md
-    - Waterfall: principles/waterfall.md
     - Other Development Lifecycles: principles/other_sdlc.md
-    - Revision Contol Systems: principles/revision_control_systems.md
+    - Revision Control Systems: principles/revision_control_systems.md
   - Software Fundamentals:
     - Number Systems: fundamentals/number_systems.md
     - Data Types: fundamentals/data_types.md
