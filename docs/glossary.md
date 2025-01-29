@@ -8,6 +8,9 @@
 1. **HTTP, HTTPS** : Hypertext Transfer Protocol is a system of rules for sending information over the web. The S is for secure. [HTTP](https://www.techtarget.com/whatis/definition/HTTP-Hypertext-Transfer-Protocol){target="_blank"}
 
 ## K - R
+1. **MTBF** : Mean Time Between Failures is the average time a system operates before it fails. [Common Metrics](https://www.atlassian.com/incident-management/kpis/common-metrics){target="_blank"}
+1. **MTTR** : Mean Time To Repair is the average time it takes to repair a system after it has failed. [Common Metrics](https://www.atlassian.com/incident-management/kpis/common-metrics){target="_blank"}
+
 ## S - Z
 
 1. **SDLC** : Software Development Life Cycle
