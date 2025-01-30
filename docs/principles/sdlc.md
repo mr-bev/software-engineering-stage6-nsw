@@ -99,6 +99,15 @@ Non-functional requirements describe how the system should perform in terms of p
 - **Object-Oriented Analysis:** An approach that focuses on modelling the structure of the system using objects and classes. *UML* diagrams are commonly used in this approach.
 - **Use Case Driven Development:** A method that emphasises the importance of the user experience and their interaction with the system.
 
+![Structured Chart](./images/CPT-Structured_Chart_Example.svg) (1)
+{ .annotate }
+
+1. Pluke, Public domain, via Wikimedia Commons
+
+!!! Note
+    Structured Charts are rarely used in the industry today due to their complexity and lack of flexibility. They can however be beneficial when learning to develop software systems to understand how it would work and the logical sequence of event that should occur. Alternative methods such as Object-Oriented Analysis or Use Case Driven Development are often preferred but are used more at a high level of detail. It is likely needed at lower levels when working on mission critical systems like a traffic control system.
+
+
 ### Best Practices:
 
 - **Involve Stakeholders Early:** Engage stakeholders throughout the analysis process to ensure their needs are met.
