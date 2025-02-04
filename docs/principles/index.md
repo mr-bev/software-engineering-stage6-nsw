@@ -54,13 +54,6 @@ Many different project methodologies exist to provide a structure approach to ma
 - Testing
     - Selenium, Postman, New Relic, Tricentis
 
-## Ideologies??
-- DevOps ???
-1. <a href="https://commons.wikimedia.org/wiki/File:Devops-toolchain.svg">Kharnagy</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
-
-- SecOps
-- 
-
 
 ## References
 - [What is Agile, PMBOK, & PRINCE2](https://agilemanagementoffice.com/what-is-agile-pmbok-and-prince2/)
