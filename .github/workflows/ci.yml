@@ -26,4 +26,8 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material mkdocs-glossary
-      - run: mkdocs gh-deploy --force
+      - name: Build Docs
+        env:
+          GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
+        run: |
+          mkdocs gh-deploy --force
