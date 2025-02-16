@@ -1,0 +1,2574 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../waterfall/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.4">
+    
+    
+      
+        <title>SDLC - Software Engineering - Stage 6 - NSW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#software-development-life-cycle" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Software Engineering - Stage 6 - NSW" class="md-header__button md-logo" aria-label="Software Engineering - Stage 6 - NSW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Engineering - Stage 6 - NSW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SDLC
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mr-bev/software-engineering-stage6-nsw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mr-bev/se-stage6-nsw
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Syllabus/" class="md-tabs__link">
+          
+  
+  Syllabus
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Principles of SE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fundamentals/number_systems/" class="md-tabs__link">
+          
+  
+  Software Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../object_oriented_software/" class="md-tabs__link">
+          
+  
+  Object Oriented
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mechatronics/" class="md-tabs__link">
+          
+  
+  Mechatronics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../secure_software_architecture/" class="md-tabs__link">
+          
+  
+  Secure Software
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../web_development/" class="md-tabs__link">
+          
+  
+  Web Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../machine_learning/" class="md-tabs__link">
+          
+  
+  Machine Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Software Engineering - Stage 6 - NSW" class="md-nav__button md-logo" aria-label="Software Engineering - Stage 6 - NSW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Software Engineering - Stage 6 - NSW
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mr-bev/software-engineering-stage6-nsw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mr-bev/se-stage6-nsw
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Syllabus
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Syllabus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/programming-fundamentals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/object-oriented-paradigm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Oriented Paradigm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/programming-mechatronics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Mechatronics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/secure-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure Software Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/web-development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming For The Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/software-automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/se-project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Engineering Project
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Principles of SE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Principles of SE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    SDLC
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    SDLC
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-plans-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Plans Fail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goals-of-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goals of Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Activities:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysis Activities:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples of Functional Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Functional Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-outputs-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Outputs / Deliverables:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Methods:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-design-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose of Design Phase:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities-of-design-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities of Design Phase:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-outputs-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Outputs / Deliverables:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Methods:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-design-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for Design Phase:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activities_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintenance
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../waterfall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Waterfall
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other_sdlc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Other Development Lifecycles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../revision_control_systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Revision Control Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software Fundamentals
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/number_systems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Number Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/data_types/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/data_structures/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data Structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/algorithms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/big_o/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithm Complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/software_quality/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Quality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/asynch_and_threading.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Async and Threading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Object Oriented
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Object Oriented
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/key_concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Key Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/object_oriented_design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Object Oriented Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/software_design_patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mechatronics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Mechatronics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Secure Software
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Secure Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../secure_software_architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Web Development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Web Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web_development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Machine Learning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Planning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-plans-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Plans Fail
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goals-of-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goals of Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Activities:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysis Activities:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#function-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Function Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples-of-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples of Functional Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-functional-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Functional Requirements:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-outputs-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Outputs / Deliverables:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Methods:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Design">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose-of-design-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose of Design Phase:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activities-of-design-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities of Design Phase:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-outputs-deliverables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Outputs / Deliverables:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#design-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Design Methods:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-design-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for Design Phase:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Purpose
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deploy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activities_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maintenance
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="software-development-life-cycle">Software Development Life Cycle</h1>
+<p>The Software Development Life Cycle <em>SDLC</em><sup><a href="../../glossary/#term-12">12</a></sup> is the core of software engineering. It aims to produce software products that meet or exceed customer expectations, even for the most basic needs. This structured process integrates critical stages to deliver high-quality results through every stage of product development, from conception to operation. The primary goal is to manage each phase efficiently while supporting customers with maximum effectiveness and timeliness. By doing so, SDLC ensures a well-designed, functional, and user-friendly product that meets customer requirements. There are many different models that can be followed but they all have similar components.</p>
+<p><img alt="Image" src="../../materials/sdlc_phases.png" /></p>
+<h2 id="planning">Planning</h2>
+<p class="annotate"><em>The best laid plans of mice and men often go awry</em> (1)</p>
+<ol>
+<li>Burns, Robert. To a Mouse 1785</li>
+</ol>
+<p>Planning is critical to the success of most software development projects. Plans along with estimates of effort guide investment decisions. A company may be willing to invest in a 6 month project that may require 4 <em>FTEs</em><sup><a href="../../glossary/#term-6">6</a></sup> but they may resist or refuse to invest in a project that will take many years of investment or even more than 1 year. Planning is difficult and can also be wrong. This can result in some teams avoiding to plan at all, and not able to answer simple question like "when can this be ready?". They can also spend too much time in planning trying to account for everything but their plans are not guaranteed to be right or stay accurate after the first day of design or code. Barry Boehm described the range of uncertainty with planning and estimates when describing the waterfall model. </p>
+<p><img alt="Cone of Uncertainty" src="../../materials/cone_of_uncertainty.jpg" /></p>
+<p>This shows that at the planning phase the schedule can be out by a factor of +160% or -60% and as progress is made and more is understood about the system under development those plans and estimates become more certain. </p>
+<p>Planning is done to:</p>
+<ul>
+<li>Identify and reduce risk</li>
+<li>Reduce the uncertainty of delivering a solution</li>
+<li>Support better decision making around doing a project and where best to invests time, money and resources.</li>
+<li>Establish trust with the customer through planning frequent and reliable delivery of features and trust between management and developers that timelines can be achieved and not at the cost of bugs and poor code due to poor planning.</li>
+<li>It also allows a customer to pick and choose features. Maybe a low priority feature can be dropped if it would take too long to develop.</li>
+<li>Conveys expectations and sets a baseline of what can be delivered. It does not guarantee all features can be delivered on time and on budget.</li>
+</ul>
+<p>A common idiom in the software development life cycle is that you can have a project delivered on time, on budget or all features, pick two. The meaning behind this is that software development is complex and typically by the end of the project one of these 3 requirements is sacrificed to deliver a product.</p>
+<h3 id="why-plans-fail">Why Plans Fail</h3>
+<div class="annotate">
+<ul>
+<li>Nearly 2 out of 3 projects significantly overrun their cost estimates (1)</li>
+<li>64% of of features included in products are not used (2)</li>
+<li>The average project exceeds its schedule by 100% (3)</li>
+</ul>
+</div>
+<ol>
+<li>LEDERER, A. L., &amp; PRASAD, J. (1992). Nine management guidelines for better cost estimating. Communications of the ACM, 35(2), 50–59.</li>
+<li>Johnson 2002</li>
+<li>Standish 2001</li>
+</ol>
+<h2 id="analysis">Analysis</h2>
+<p>Analysis involves determining the requirements of the system to be developed. If following the waterfall model it can be a thorough examination of the problem, goals, and requirements of the project to determine how it can be successfully completed. When following an agile model it can be a more iterative approach where the requirements are continuously refined throughout the development process.</p>
+<h3 id="goals-of-analysis">Goals of Analysis</h3>
+<ul>
+<li><strong>Understand the Problem:</strong> Identify and document the business needs, goals, and objectives that the system is intended to meet.</li>
+<li><strong>Define Requirements:</strong> Gather and document the functional and non-functional requirements of the system, including user needs, technical specifications, and performance expectations.</li>
+<li><strong>Identify Feasibility:</strong> Assess whether the proposed solution is technically feasible, economically viable, and meets the business goals.</li>
+</ul>
+<h3 id="analysis-activities">Analysis Activities:</h3>
+<ul>
+<li><strong>Business Analysis:</strong> Conduct interviews with stakeholders to understand their needs, identify potential solutions, and document requirements.</li>
+<li><strong>Requirements Gathering:</strong> Collect and document functional and non-functional requirements through techniques such as use cases, user stories, or business process modelling.</li>
+<li><strong>Data Analysis:</strong> Examine existing data sources, determine the data required for the system, and develop a data management plan.</li>
+<li><strong>Technical Analysis:</strong> Evaluate the technical feasibility of proposed solutions, identify potential technical risks, and recommend architectural approaches.</li>
+</ul>
+<h4 id="function-requirements">Function Requirements:</h4>
+<p>Functional requirements describe what the system must do from a user's perspective. They outline the expected behaviour, interactions, and outcomes of the system in response to specific inputs or events. These requirements are expected to be specific, measurable, achievable, relevant, and time-bound (SMART). Different types of functional requirements include:</p>
+<ul>
+<li><strong>User Interface Requirements:</strong> Describe how users will interact with the system, including screen layouts, navigation, and user controls.</li>
+<li><strong>Business Logic Requirements:</strong> Define the rules and processes that govern the system's operations, such as data validation, business rules, and workflows.</li>
+</ul>
+<h4 id="examples-of-functional-requirements">Examples of Functional Requirements:</h4>
+<ul>
+<li>"The user can log in to the system using their username and password."</li>
+<li>"The system must display a list of all customers in descending order by sales amount."</li>
+<li>"The system sends an automated email notification to users when their account balance falls below $10."</li>
+<li>"The system calculates the average price of items purchased within the last 30 days."</li>
+</ul>
+<h4 id="non-functional-requirements">Non-Functional Requirements:</h4>
+<p>Non-functional requirements describe how the system should perform in terms of performance, reliability, security, usability, and other non-technical factors. These requirements are expected to be measurable and verifiable. Different types of non-functional requirements include:</p>
+<ul>
+<li><strong>Performance Requirements:</strong> Define how fast, reliable, and scalable the system should be. Examples include response time, throughput, and concurrency.</li>
+<li><strong>Usability Requirements:</strong> Define how easy it is for users to interact with the system. Examples include ease of navigation, clarity of instructions, and accessibility features.</li>
+<li><strong>Security Requirements:</strong> Define how secure the system should be against unauthorised access, data breaches, and other security threats. Examples include encryption, authentication, and authorisation.</li>
+<li><strong>Reliability Requirements:</strong> Define how often the system should be available and how quickly it should recover from failures. Examples include up-time, mean time between failures (<em>MTBF</em><sup><a href="../../glossary/#term-9">9</a></sup>), and mean time to repair (<em>MTTR</em><sup><a href="../../glossary/#term-10">10</a></sup>).</li>
+</ul>
+<h3 id="analysis-outputs-deliverables">Analysis Outputs / Deliverables:</h3>
+<ul>
+<li><strong>Software Requirements Specification (SRS):</strong> A document that outlines the technical requirements for the system.</li>
+<li><strong>Business Requirements Document (BRD):</strong> A document that outlines the business needs, goals, and objectives.</li>
+<li><strong>Functional Specification Document (FSD):</strong> A detailed description of the system's functionality, including user interfaces and system interactions.</li>
+<li><strong>Data Flow Diagrams:</strong> Visual representations of how data flows through the system.</li>
+<li><strong>Use Case Models:</strong> Documents that describe the interaction between actors (users) and the system.</li>
+<li><strong>User Stories:</strong> Short descriptions of features or functionality from the perspective of a user.</li>
+</ul>
+<p class="annotate"><img alt="Use Case Model Example" src="../images/UseCaseDiagramExample.png" /> (1)</p>
+<ol>
+<li>https://en.wikipedia.org/wiki/File:UseCaseDiagramExample.png#filelinks</li>
+</ol>
+<h3 id="analysis-methods">Analysis Methods:</h3>
+<ul>
+<li><strong>Structured Analysis:</strong> A method that uses diagrams to model business processes and identify requirements. This may include Structure Charts.</li>
+<li><strong>Object-Oriented Analysis:</strong> An approach that focuses on modelling the structure of the system using objects and classes. <em>UML</em> diagrams are commonly used in this approach.</li>
+<li><strong>Use Case Driven Development:</strong> A method that emphasises the importance of the user experience and their interaction with the system.</li>
+</ul>
+<p class="annotate"><img alt="Structured Chart" src="../images/CPT-Structured_Chart_Example.svg" /> (1)</p>
+<ol>
+<li>Pluke, Public domain, via Wikimedia Commons</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Structured Charts are rarely used in the industry today due to their complexity and lack of flexibility. They can however be beneficial when learning to develop software systems to understand how it would work and the logical sequence of event that should occur. Alternative methods such as Object-Oriented Analysis or Use Case Driven Development are often preferred but are used more at a high level of detail. It is likely needed at lower levels when working on mission critical systems like a traffic control system.</p>
+</div>
+<h3 id="best-practices">Best Practices:</h3>
+<ul>
+<li><strong>Involve Stakeholders Early:</strong> Engage stakeholders throughout the analysis process to ensure their needs are met.</li>
+<li><strong>Document Requirements Thoroughly:</strong> Use clear, concise language and avoid ambiguities in requirements documents.</li>
+<li><strong>Validate Assumptions:</strong> Regularly review and validate assumptions with stakeholders to ensure the solution is aligned with business goals.</li>
+<li><strong>Iterate Based on Feedback:</strong> Continuously gather feedback from users and stakeholders, and make iterative improvements to the system.</li>
+</ul>
+<h2 id="design">Design</h2>
+<p>The design phase is where the software architect and designers create a detailed plan for building the system. The primary goal of this phase is to produce a complete, accurate, and feasible design that meets the requirements gathered during analysis. This is expected when following the waterfall model of development. Depending on the size of the team, the project's complexity and the processes being followed the designer might also be the developer and the design may only focus on the current feature being developed.</p>
+<h3 id="purpose-of-design-phase">Purpose of Design Phase:</h3>
+<ul>
+<li><strong>Create a System Architecture:</strong> Develop a high-level architecture that defines the overall structure and organization of the system.</li>
+<li><strong>Define Technical Requirements:</strong> Identify technical specifications for software components, interfaces, data storage, and other system aspects.</li>
+<li><strong>Design User Interfaces:</strong> Create detailed designs for user interfaces, including layout, navigation, and interaction flows.</li>
+<li><strong>Identify Technical Risks:</strong> Assess potential technical risks and propose mitigation strategies.</li>
+</ul>
+<h3 id="activities-of-design-phase">Activities of Design Phase:</h3>
+<ul>
+<li><strong>System Architecture Design:</strong> Creating a high-level blueprint or architecture for a software system, which defines how the various components will interact with each other to achieve the - desired functionality.</li>
+<li><strong>Component-Level Design:</strong> Create detailed designs for individual software components, including APIs, databases, and services.</li>
+<li><strong>Data Model Design:</strong> Define data structures, relationships, and storage requirements.</li>
+<li><strong>User Interface Design:</strong> Create wireframes, prototypes, or high-fidelity designs for user interfaces.</li>
+<li><strong>Technical Documentation Generation:</strong> Produce technical documents that describe the system's architecture, components, and interfaces.</li>
+<li><strong>Design Review and Revisions:</strong> Conduct design reviews to ensure the design meets requirements and makes necessary revisions.</li>
+</ul>
+<h3 id="design-outputs-deliverables">Design Outputs / Deliverables:</h3>
+<ul>
+<li><strong>System Architecture Diagrams:</strong> Visual representations of the system's overall structure and organization.</li>
+<li><strong>Component Diagrams:</strong> Detailed diagrams illustrating individual software components and their interactions.</li>
+<li><strong>Data Flow Diagrams:</strong> Visualisations of data flows through the system.</li>
+<li><strong>User Interface Designs:</strong> Wireframes, prototypes, or high-fidelity designs for user interfaces.</li>
+<li><strong>Technical Documentation:</strong> Documented descriptions of the system's architecture, components, and interfaces.</li>
+</ul>
+<h3 id="design-methods">Design Methods:</h3>
+<ul>
+<li><strong>Object-Oriented Design (OOD):</strong> Emphasises modular, reusable components with well-defined interfaces.</li>
+<li><strong>Agile Design:</strong> Focuses on iterative design, prototyping, and user feedback to drive development.</li>
+<li><strong>Model-Driven Architecture (MDA):</strong> Uses models to define the system's architecture and generate code.</li>
+<li><strong>Domain Driven Design (DDD):</strong> Focuses on modelling the domain logic and business rules within the system.</li>
+</ul>
+<h3 id="best-practices-for-design-phase">Best Practices for Design Phase:</h3>
+<ul>
+<li><strong>Involve stakeholders early:</strong> Engage users, developers, and other stakeholders in the design process.</li>
+<li><strong>Document designs thoroughly:</strong> Use clear, concise language and avoid ambiguity.</li>
+<li><strong>Test designs with prototypes:</strong> Validate assumptions through user testing and feedback.</li>
+<li><strong>Maintain a single source of truth:</strong> Keep design documentation up-to-date and accessible to all team members.</li>
+</ul>
+<p>More details on the design processes, tools and techniques can be found <a href="../design/">here</a>.</p>
+<h2 id="implementation">Implementation</h2>
+<p>The Implementation Phase is where the designed system is transformed into a working solution. The primary purpose of this phase is to bring all components and features together, ensuring seamless interactions between them. During implementation, individual software components are developed, integrated, and tested, with a focus on delivering a fully functional system that meets user needs. This phase also involves data migration, user acceptance testing (UAT), and knowledge transfer activities to ensure that the new system is properly documented and maintained. The successful completion of the Implementation Phase results in a working system that is reliable, efficient, and meets stakeholder expectations.</p>
+<h3 id="activities">Activities</h3>
+<ol>
+<li><strong>Code Implementation</strong>: Writing the source code for the application using appropriate programming languages and frameworks.</li>
+<li><strong>Integration</strong>: Combining different modules or components to create a fully integrated system.</li>
+<li><strong>Unit Testing</strong>: Conducting individual unit tests on each component or module to ensure they function as expected in isolation.</li>
+<li><strong>System Testing</strong>: Performing comprehensive testing of the entire system to verify that it meets functional and non-functional requirements, such as performance, security, and usability.</li>
+<li><strong>Integration Testing</strong>: Ensuring that all integrated components work together seamlessly and produce the desired output.</li>
+<li><strong>Code Reviews</strong>: Conducting code reviews by other developers or stakeholders to identify potential issues and improve code quality.</li>
+<li><strong>Documentation</strong>: Creating comprehensive documentation for the developed system, including user manuals, API documentation, and technical specifications.</li>
+</ol>
+<h3 id="purpose">Purpose</h3>
+<ol>
+<li><strong>Translate Design into Code</strong>: Convert the design specifications into actual working software code.</li>
+<li><strong>Ensure Functionality</strong>: Verify that each component and the entire system functions as intended, meeting all functional requirements.</li>
+<li><strong>Improve Quality</strong>: Identify and fix defects or issues during testing to improve the overall quality of the system.</li>
+<li><strong>Facilitate Integration</strong>: Combine different components into a cohesive system, ensuring seamless integration and compatibility.</li>
+<li><strong>Document System</strong>: Create detailed documentation for the developed system, making it easier for users and stakeholders to understand and use the system.</li>
+</ol>
+<p>By focusing on these activities and purposes, the Implementation Phase ensures that the software system is developed efficiently, effectively, and with a high degree of quality, meeting stakeholder expectations and requirements.</p>
+<p>The unit on <a href="../../object_oriented_software/">Object Oriented Programming (OOP)</a> will provide more details on the implementation phase.</p>
+<h2 id="test">Test</h2>
+<p>The Test Phase is aimed at ensuring that the developed system meets the required quality standards, is reliable, and functions as expected. The primary purpose of this phase is to identify and report defects or issues in the system, allowing for timely corrections and improvements before release. Through various testing techniques, such as unit testing, integration testing, system testing, and acceptance testing, the test phase verifies that the system meets its functional, performance, security, and usability requirements. By identifying and addressing defects early on, the Test Phase helps to reduce project costs, minimise rework, and ensure that the final product is of high quality, reliable, and meets stakeholder expectations. The successful completion of the Test Phase guarantees that the developed system is defect-free, efficient, and effective in meeting its intended purpose.</p>
+<p>More details on testing techniques can be found <a href="../test/">here</a>.</p>
+<h2 id="deploy">Deploy</h2>
+<p>The Deployment Phase is where the tested system is deployed to production, making it available for use by end-users. The primary purpose of this phase is to transfer the developed software from a testing environment to a live production environment, ensuring seamless integration with existing systems and infrastructure. During deployment, various tasks are performed, including configuring servers, databases, and other dependencies; updating external interfaces and integrations; and executing final quality assurance checks. The successful completion of the Deployment Phase results in the system being available for use by end-users, enabling them to access its features and functionality as intended. </p>
+<h3 id="activities_1">Activities</h3>
+<ol>
+<li><strong>Preparation</strong>: Preparing the deployment environment by ensuring that all necessary hardware, software, and network resources are available.</li>
+<li><strong>Installation</strong>: Installing the software on the target environment, including configuring dependencies and setting up any required infrastructure.</li>
+<li><strong>Configuration</strong>: Configuring the system according to the organization's requirements, such as integrating with existing systems or databases.</li>
+<li><strong>Testing</strong>: Conducting final testing of the deployed system in the production environment to ensure it meets all functional and non-functional requirements.</li>
+<li><strong>User Training</strong>: Providing training sessions for end-users on how to use the new system effectively.</li>
+<li><strong>Documentation</strong>: Creating comprehensive documentation for the deployed system, including user manuals, API documentation, and technical specifications.</li>
+<li><strong>Go-Live Planning</strong>: Developing a go-live plan that includes the date, time, and procedures for transitioning users from the old system (if any) to the new system.</li>
+</ol>
+<p><strong>Purpose:</strong></p>
+<ol>
+<li><strong>Make System Available</strong>: Ensure that the developed software system is properly installed, configured, and integrated into the organization's environment, making it ready for actual usage.</li>
+<li><strong>Verify Functionality</strong>: Conduct final testing in the production environment to ensure that the system meets all functional and non-functional requirements.</li>
+<li><strong>Transfer Ownership</strong>: Transfer ownership of the deployed system from development teams to operational teams or end-users.</li>
+<li><strong>Provide Support</strong>: Provide ongoing support and maintenance services to address any issues that arise during the system's use.</li>
+<li><strong>Document Deployment</strong>: Create comprehensive documentation for the deployed system, making it easier for users and stakeholders to understand and use the system.</li>
+</ol>
+<p>By focusing on these activities and purposes, the Deployment Phase ensures that the software system is delivered successfully, meeting stakeholder expectations and requirements, and providing ongoing support and maintenance services as needed.</p>
+<p>The above activities are more traditional for a waterfall model. In an Agile model, these activities may be integrated into the Iteration Planning and Review phases. DevOps and SecOps practices may further streamline these processes by automating certain tasks and integrating DevOps tools into the SDLC. This is what is termed shifting left in development practices, where more of the later phases are addressed earlier in the development process.</p>
+<h2 id="maintenance">Maintenance</h2>
+<p>The Maintenance Phase is an ongoing component of the Software Development Life Cycle (SDLC), focused on ensuring that the deployed system continues to meet changing user needs, adapt to new technologies, and remain secure over time. The primary purpose of this phase is to monitor the system's performance, identify areas for improvement, and implement updates, fixes, and enhancements to maintain its quality, reliability, and functionality. Through regular review and analysis of user feedback, system logs, and other metrics, maintenance activities aim to address emerging issues, optimise performance, and align the system with evolving business requirements. By dedicating resources to ongoing maintenance, organisations can ensure that their software systems remain relevant, efficient, and effective in meeting stakeholder expectations.</p>
+<p>In companies that develop and operate their own systems, the Maintenance Phase is often a significant part of their overall strategy. It involves not only technical activities such as bug fixing and performance tuning but also business processes like user training, process improvement, and strategic planning. By prioritising maintenance, organisations can reduce the risk of downtime, improve customer satisfaction, and enhance their competitive advantage. The company may set up a dedicated team or department responsible for managing the Maintenance Phase, ensuring that all necessary resources are allocated to address any issues that arise.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/mr-bev/software-engineering-stage6-nsw/issues/new/?title=[Feedback]+SDLC+-+/principles/sdlc/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../waterfall/" class="md-footer__link md-footer__link--next" aria-label="Next: Waterfall">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Waterfall
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/mr-bev" target="_blank" rel="noopener">Aaron Beverley</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognise your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="github" checked>
+          <span class="task-list-indicator"></span>
+          GitHub
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
