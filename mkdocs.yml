@@ -3,7 +3,6 @@ theme:
   name: material
   features: 
     - navigation.tabs
-    - navigation.sections
     - navigation.footer
     - search.suggest
     - search.highlight
@@ -127,15 +126,48 @@ nav:
     - Design Patterns: object_oriented_software/software_design_patterns.md
   - Mechatronics:
     - Overview: mechatronics/index.md
-  - Secure Software:
-    - Overview: secure_software_architecture/index.md
-  - Web Development:
+    - Hardware and Software: mechatronics/hardware_software.md
+    - Sensors, Actuators and End Effectors: mechatronics/sensors_actuators_effectors.md
+    - Design and Engineering: mechatronics/design_engineering.md
+    - System Integration and Control: mechatronics/system_integration_control.md
+    - Control Algorithms: mechatronics/control_algorithms.md
+    - Programming and Building: mechatronics/programming_building.md
+  - Secure Web Development:
     - Overview: web_development/index.md
+    - Web Fundamentals + Security Awareness:
+      - How the Web Works: web_development/how_the_web_works.md
+      - Web Protocols & Security Foundations: web_development/web_protocols_security.md
+      - Web Development & Security Mindset: web_development/web_development_security_mindset.md
+    - Front-End Development & Input Security:
+      - JavaScript Fundamentals & Client-Side Security: web_development/javascript_fun_client_security.md
+      - CSS Frameworks, Version Control & Secure Development Lifecycle: web_development/css_frameworks_version_control_secure_dev.md
+      - Advanced Client-Side Security & User Experience: web_development/advanced_client_side_security_user_experience.md
+    - Back-End Development & Core Security:
+      - Server-Side Programming, Authentication & Template Engines: web_development/server_side_programming_authentication_template_engines.md
+      - Database Integration, SQL Injection Prevention & REST Principles: web_development/database_integration_sql_prevention_rest.md
+      - Advanced Authentication, Authorisation & Session Management: web_development/advanced_auth_session_management.md
+      - File Security, Safe APIs & Cryptography in Practice: web_development/file_security_safe_apis_cryptography.md
+    - Secure Architecture & Progressive Web Apps:
+      - Progressive Web Apps & Privacy by Design: web_development/pwa_privacy_by_design.md
+      - Testing Strategies & Security Hardening: web_development/testing_strategies_security_hardening.md
+      - Business Continuity, Disaster Recovery & Open Source: web_development/business_continuity_disaster_recovery_open_source.md
+      - Collaborative Development & Professional Practices: web_development/collaborative_development_professional_practices.md
+    - Enterprise Impact & Professional Standards:
+      - Enterprise Benefits & Industry Impact: web_development/enterprise_benefits_industry_imp.md
+      - Social, Ethical & Legal Ramifications: web_development/social_ethical_legal_ram.md
   - Machine Learning:
     - Overview: machine_learning/index.md
+    - Foundations of AI, ML & Automation: machine_learning/foundations_of_ai.md
+    - ML Training Models & Data Fundamentals: machine_learning/ml_training_models_data_fundamentals.md
+    - Classical ML Algorithms - Concepts & Simple Implementation: machine_learning/classical_ml_algorithms_concepts_simple_implementation.md
+    - Regression Models - Linear & Polynomial Implementation: machine_learning/regression_models_linear_polynomial_implementation.md
+    - Logistic Regression & Model Comparison: machine_learning/logistic_regression_model_comparison.md
+    - Neural Networks - Simplified Introduction & Advanced Classical ML: machine_learning/neural_networks_simplified_introduction_advanced_class.md
+    - Human Factors, Behaviour Patterns & Bias in ML/AI: machine_learning/human_factors_behavior_bias_ml_ai.md
+    - Impact Assessment & Synthesis: machine_learning/impact_assessment_synthesis.md
   - Glossary: glossary.md
 
 copyright: |
-  &copy; 2024 <a href="https://github.com/mr-bev" target="_blank" rel="noopener">Aaron Beverley</a>
+  &copy; 2024-25 <a href="https://github.com/mr-bev" target="_blank" rel="noopener">Aaron Beverley</a>
 repo_url: https://github.com/mr-bev/software-engineering-stage6-nsw
 repo_name: mr-bev/se-stage6-nsw

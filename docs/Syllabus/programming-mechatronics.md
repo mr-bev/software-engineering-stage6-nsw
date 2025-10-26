@@ -1,6 +1,13 @@
 # Programming Mechatronics
 [NESA](https://curriculum.nsw.edu.au/learning-areas/tas/software-engineering-11-12-2022/content/year-11/fa70b5c187){target="_blank"}
 
+This document maps codes to syllabus dot points for the Programming Mechatronics topic in NSW education.
+
+- **PM** = Programming Mechatronics
+    - **UM** = Understanding Mechatronic Hardware and Software
+    - **DC** = Designing Control Algorithms
+    - **PB** = Programming and Building
+
 ## Understanding Mechatronic Hardware and Software
 
 | Key | Description | Reference | Comment |
