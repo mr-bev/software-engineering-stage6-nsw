@@ -1,0 +1,4251 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../web_protocols_security/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>How the Web Works - Software Engineering - Stage 6 - NSW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config",""),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-the-web-works" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Software Engineering - Stage 6 - NSW" class="md-header__button md-logo" aria-label="Software Engineering - Stage 6 - NSW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Engineering - Stage 6 - NSW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How the Web Works
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mr-bev/software-engineering-stage6-nsw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mr-bev/se-stage6-nsw
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Syllabus/" class="md-tabs__link">
+          
+  
+  
+  Syllabus
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../principles/" class="md-tabs__link">
+          
+  
+  
+  Principles of SE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fundamentals/number_systems/" class="md-tabs__link">
+          
+  
+  
+  Software Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../object_oriented_software/" class="md-tabs__link">
+          
+  
+  
+  Object Oriented
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mechatronics/" class="md-tabs__link">
+          
+  
+  
+  Mechatronics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Secure Web Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../machine_learning/" class="md-tabs__link">
+          
+  
+  
+  Machine Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Software Engineering - Stage 6 - NSW" class="md-nav__button md-logo" aria-label="Software Engineering - Stage 6 - NSW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Software Engineering - Stage 6 - NSW
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mr-bev/software-engineering-stage6-nsw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mr-bev/se-stage6-nsw
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Syllabus
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Syllabus
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/programming-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/object-oriented-paradigm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Object Oriented Paradigm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/programming-mechatronics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming Mechatronics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/secure-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Secure Software Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/web-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming For The Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/software-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/se-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Engineering Project
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Principles of SE
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Principles of SE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/sdlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SDLC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/waterfall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Waterfall
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Test
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/other_sdlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Other Development Lifecycles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/revision_control_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Revision Control Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Software Fundamentals
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Software Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/number_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Number Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Types
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/data_structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Data Structures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/big_o/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Algorithm Complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/software_quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Quality
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/asynch_and_threading.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Async and Threading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Object Oriented
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Object Oriented
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/key_concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Key Concepts
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/object_oriented_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Object Oriented Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/software_design_patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Mechatronics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Mechatronics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/hardware_software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Hardware and Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/sensors_actuators_effectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sensors, Actuators and End Effectors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/design_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Design and Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/system_integration_control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System Integration and Control
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/control_algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Control Algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/programming_building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Programming and Building
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Secure Web Development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Secure Web Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Web Fundamentals + Security Awareness
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Web Fundamentals + Security Awareness
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    How the Web Works
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    How the Web Works
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-1-the-journey-of-a-web-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 1: The Journey of a Web Request
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson 1: The Journey of a Web Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-1-mystery-scenario-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Mystery Scenario (10 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-what-happens-when-you-visit-a-website-30-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: What Happens When You Visit a Website? (30 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: What Happens When You Visit a Website? (30 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-dns-lookup-finding-the-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: DNS Lookup (Finding the Address)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-making-the-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Making the Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-data-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Data Packets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-tcpip-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: TCP/IP Protocol
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-server-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Server Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-diagram-for-visiting-a-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequence Diagram for Visiting a Website
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-chrome-devtools-to-inspect-network-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Chrome DevTools to Inspect Network Activity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2b-why-security-matters-in-data-transmission-15-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2B: Why Security Matters in Data Transmission (15 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2B: Why Security Matters in Data Transmission (15 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-security-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Security Challenge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-developing-secure-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of Developing Secure Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benefits of Developing Secure Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Data Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-minimising-cyber-attacks-and-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Minimising Cyber Attacks and Vulnerabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-the-cia-triad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to the CIA Triad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to the CIA Triad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confidentiality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confidentiality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-across-the-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Across the Journey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion-activity-security-vs-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion Activity: Security vs. Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended Reading
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-visualising-the-journey-20-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Visualising the Journey (20 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Visualising the Journey (20 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-online-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Online Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-command-line-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Command Line Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-observe" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Observe
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-investigation-task-packet-detective-30-40-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Investigation Task: Packet Detective (30-40 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Investigation Task: Packet Detective (30-40 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choose-three-websites-from-different-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose Three Websites from Different Categories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-each-website-complete-the-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Each Website, Complete the Following
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-comparison-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Comparison Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-focused-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security-Focused Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creative-challenge-design-your-own-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creative Challenge: Design Your Own Protocol
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-reflection-extension-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5: Reflection &amp; Extension (10 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Reflection &amp; Extension (10 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-journal-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Journal Entry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Journal Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Reflection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extension-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extension Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-for-next-lesson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare for Next Lesson
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syllabus-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syllabus Alignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syllabus Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programming-for-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programming for the Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-software-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Software Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checklist
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_protocols_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Protocols & Security Foundations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_development_security_mindset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Web Development & Security Mindset
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Front-End Development & Input Security
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Front-End Development & Input Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript_fun_client_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    JavaScript Fundamentals & Client-Side Security
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css_frameworks_version_control_secure_dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CSS Frameworks, Version Control & Secure Development Lifecycle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_client_side_security_user_experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Client-Side Security & User Experience
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Back-End Development & Core Security
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Back-End Development & Core Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server_side_programming_authentication_template_engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Server-Side Programming, Authentication & Template Engines
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database_integration_sql_prevention_rest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database Integration, SQL Injection Prevention & REST Principles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_auth_session_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Advanced Authentication, Authorisation & Session Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_security_safe_apis_cryptography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    File Security, Safe APIs & Cryptography in Practice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Secure Architecture & Progressive Web Apps
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Secure Architecture & Progressive Web Apps
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pwa_privacy_by_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Progressive Web Apps & Privacy by Design
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing_strategies_security_hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Testing Strategies & Security Hardening
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business_continuity_disaster_recovery_open_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Business Continuity, Disaster Recovery & Open Source
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collaborative_development_professional_practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Collaborative Development & Professional Practices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Enterprise Impact & Professional Standards
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Enterprise Impact & Professional Standards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise_benefits_industry_imp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enterprise Benefits & Industry Impact
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../social_ethical_legal_ram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Social, Ethical & Legal Ramifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Machine Learning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/foundations_of_ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Foundations of AI, ML & Automation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/ml_training_models_data_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ML Training Models & Data Fundamentals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/classical_ml_algorithms_concepts_simple_implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classical ML Algorithms - Concepts & Simple Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/regression_models_linear_polynomial_implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Regression Models - Linear & Polynomial Implementation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/logistic_regression_model_comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Logistic Regression & Model Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/neural_networks_simplified_introduction_advanced_class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Neural Networks - Simplified Introduction & Advanced Classical ML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/human_factors_behavior_bias_ml_ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Human Factors, Behaviour Patterns & Bias in ML/AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/impact_assessment_synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Impact Assessment & Synthesis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-1-the-journey-of-a-web-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lesson 1: The Journey of a Web Request
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Lesson 1: The Journey of a Web Request">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-1-mystery-scenario-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: Mystery Scenario (10 minutes)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2-what-happens-when-you-visit-a-website-30-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: What Happens When You Visit a Website? (30 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: What Happens When You Visit a Website? (30 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-dns-lookup-finding-the-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: DNS Lookup (Finding the Address)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-making-the-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2: Making the Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-data-packets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Data Packets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-tcpip-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: TCP/IP Protocol
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-server-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Server Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6: Rendering
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence-diagram-for-visiting-a-website" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequence Diagram for Visiting a Website
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-chrome-devtools-to-inspect-network-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Chrome DevTools to Inspect Network Activity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-2b-why-security-matters-in-data-transmission-15-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2B: Why Security Matters in Data Transmission (15 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2B: Why Security Matters in Data Transmission (15 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-security-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Security Challenge
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benefits-of-developing-secure-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benefits of Developing Secure Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Benefits of Developing Secure Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Data Protection
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-minimising-cyber-attacks-and-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Minimising Cyber Attacks and Vulnerabilities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#introduction-to-the-cia-triad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction to the CIA Triad
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to the CIA Triad">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#confidentiality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confidentiality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integrity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-across-the-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Across the Journey
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion-activity-security-vs-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion Activity: Security vs. Speed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extended Reading
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-3-visualising-the-journey-20-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Visualising the Journey (20 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Visualising the Journey (20 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-online-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Online Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-command-line-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Command Line Tools
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-to-observe" class="md-nav__link">
+    <span class="md-ellipsis">
+      What to Observe
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-investigation-task-packet-detective-30-40-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: Investigation Task: Packet Detective (30-40 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Investigation Task: Packet Detective (30-40 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choose-three-websites-from-different-categories" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choose Three Websites from Different Categories
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-each-website-complete-the-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      For Each Website, Complete the Following
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-comparison-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create a Comparison Table
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysis Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-focused-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security-Focused Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creative-challenge-design-your-own-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creative Challenge: Design Your Own Protocol
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-reflection-extension-10-minutes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5: Reflection &amp; Extension (10 minutes)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Reflection &amp; Extension (10 minutes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#learning-journal-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Journal Entry
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning Journal Entry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Reflection
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extension-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extension Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepare-for-next-lesson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepare for Next Lesson
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syllabus-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syllabus Alignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syllabus Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programming-for-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programming for the Web
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-software-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Secure Software Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Checklist
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="how-the-web-works">How the Web Works</h1>
+<h2 id="lesson-1-the-journey-of-a-web-request">Lesson 1: The Journey of a Web Request</h2>
+<h3 id="overview">Overview</h3>
+<p><strong>Duration:</strong> 90-120 minutes<br />
+<strong>Focus:</strong> Data transmission, packets, and the request-response cycle<br />
+<strong>Mode:</strong> Self-paced, remote learning</p>
+<h3 id="learning-objectives">Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+<li>Trace the complete journey of a web request from URL to rendered page</li>
+<li>Explain how data packets work and why they're used</li>
+<li>Identify the role of IP addresses and DNS in web communication</li>
+</ul>
+<h3 id="part-1-mystery-scenario-10-minutes">Part 1: Mystery Scenario (10 minutes)</h3>
+<p>Imagine you're sending a 1000-piece jigsaw puzzle to a friend across the country, but you can only send one piece at a time in small envelopes. How would you make sure:</p>
+<ol>
+<li>All pieces arrive?</li>
+<li>Your friend knows which puzzle the pieces belong to?</li>
+<li>Your friend can put them together in the right order?</li>
+</ol>
+<div class="admonition activity">
+<p class="admonition-title">Activity</p>
+<p>Write down your strategy in your learning journal for the mystery scenario. Keep this analogy in mind as we explore how the internet sends data!</p>
+</div>
+<h3 id="part-2-what-happens-when-you-visit-a-website-30-minutes">Part 2: What Happens When You Visit a Website? (30 minutes)</h3>
+<p>When you type <code>www.example.com</code> into your browser and press Enter, an incredible chain of events occurs in milliseconds. Let's break it down:</p>
+<h4 id="step-1-dns-lookup-finding-the-address">Step 1: DNS Lookup (Finding the Address)</h4>
+<ul>
+<li>Your computer doesn't understand "www.example.com" - it needs a number!</li>
+<li>DNS (Domain Name System) acts like a phone book for the internet</li>
+<li>Your browser asks a DNS server: "What's the IP address for example.com?"</li>
+<li>DNS responds with something like: <code>93.184.216.34</code> (IPv4 address)</li>
+</ul>
+<h4 id="step-2-making-the-request">Step 2: Making the Request</h4>
+<ul>
+<li>Your browser creates an HTTP request asking for the website's content</li>
+<li>This request includes information like: what you want, what browser you're using, and what language you prefer</li>
+</ul>
+<h4 id="step-3-data-packets">Step 3: Data Packets</h4>
+<ul>
+<li>Your request is broken into small chunks called <strong>packets</strong></li>
+<li>Each packet contains:<ul>
+<li><strong>Header:</strong> Destination IP address, source IP address, packet number, protocol information</li>
+<li><strong>Payload:</strong> The actual data being sent</li>
+<li><strong>Trailer:</strong> Error checking information</li>
+</ul>
+</li>
+</ul>
+<p><strong>Why packets?</strong></p>
+<ul>
+<li>More efficient use of network resources</li>
+<li>Multiple communications can share the same connection</li>
+<li>If one packet fails, only that packet needs resending</li>
+<li>Packets can take different routes to reach the destination faster</li>
+</ul>
+<h4 id="step-4-tcpip-protocol">Step 4: TCP/IP Protocol</h4>
+<ul>
+<li><strong>TCP (Transmission Control Protocol):</strong> Ensures packets arrive correctly and in order</li>
+<li><strong>IP (Internet Protocol):</strong> Routes packets to the correct destination</li>
+<li>TCP adds sequence numbers so packets can be reassembled correctly</li>
+</ul>
+<h4 id="step-5-server-response">Step 5: Server Response</h4>
+<ul>
+<li>The web server receives your request</li>
+<li>It processes the request and prepares a response</li>
+<li>The response (HTML, CSS, images, etc.) is also broken into packets</li>
+<li>Packets travel back to your computer</li>
+</ul>
+<h4 id="step-6-rendering">Step 6: Rendering</h4>
+<ul>
+<li>Your browser receives all the packets</li>
+<li>TCP reassembles them in the correct order</li>
+<li>Your browser interprets the HTML, CSS, and JavaScript</li>
+<li>The webpage appears on your screen!</li>
+</ul>
+<h4 id="sequence-diagram-for-visiting-a-website">Sequence Diagram for Visiting a Website</h4>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User as User's Browser
+    participant DNS as DNS Server
+    participant Server as Web Server
+
+    %% Step 1: DNS Lookup
+    User-&gt;&gt;DNS: Request IP for www.example.com
+    DNS--&gt;&gt;User: Responds with IP address (93.184.216.34)
+
+    %% Step 2: TCP/TLS Handshake (optional for HTTPS)
+    User-&gt;&gt;Server: TCP connection request (SYN)
+    Server--&gt;&gt;User: SYN-ACK
+    User-&gt;&gt;Server: ACK (TCP connection established)
+    Note over User,Server: If HTTPS, perform TLS handshake here
+
+    %% Step 3: HTTP Request
+    User-&gt;&gt;Server: Sends HTTP GET request for webpage
+
+    %% Step 4: Server Response
+    Server--&gt;&gt;User: Sends HTTP response (HTML, CSS, JS, images)
+
+    %% Step 5: Packet Transmission
+    Note over User,Server: Data is broken into packets and reassembled via TCP/IP
+
+    %% Step 6: Rendering
+    User-&gt;&gt;User: Browser parses HTML, CSS, JS
+    User-&gt;&gt;User: Renders and displays webpage</code></pre>
+<h4 id="using-chrome-devtools-to-inspect-network-activity">Using Chrome DevTools to Inspect Network Activity</h4>
+<ul>
+<li>Watch <a href="https://www.youtube.com/watch?v=e1gAyQuIFQo"><span class="twemoji youtube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg></span> Inspect Network Activity - Chrome DevTools 101</a></li>
+</ul>
+<div class="admonition activity">
+<p class="admonition-title">Structure Chart for Visiting a Website</p>
+<p>Create a structure chart to represent the process of visiting a website. Use the <a href="https://curriculum.nsw.edu.au/file/b746704f-f613-4bce-9466-19835b2623fc/software-engineering-11-12-2022-higher-school-certificate-course-specifications.pdf">Higher School Certificate Course Specifications – Software Engineering</a> section on structure charts as a guide.</p>
+</div>
+<h3 id="part-2b-why-security-matters-in-data-transmission-15-minutes">Part 2B: Why Security Matters in Data Transmission (15 minutes)</h3>
+<p>Now that you understand HOW data travels across the internet, let's explore WHY security is critical at every step.</p>
+<h4 id="the-security-challenge">The Security Challenge</h4>
+<p>Remember our jigsaw puzzle analogy? Imagine if:</p>
+<ul>
+<li>Someone could intercept your puzzle pieces and see what picture you're sending</li>
+<li>Someone could swap out pieces with different ones</li>
+<li>Someone could block pieces from arriving at all</li>
+</ul>
+<p>This is exactly what can happen with data on the internet!</p>
+<h3 id="benefits-of-developing-secure-software">Benefits of Developing Secure Software</h3>
+<p>When developers build software with security in mind from the start, they achieve:</p>
+<h4 id="1-data-protection">1. Data Protection</h4>
+<p><strong>What it means:</strong> Keeping sensitive information safe from unauthorised access</p>
+<p><strong>Real-world examples:</strong></p>
+<ul>
+<li>Your bank app encrypts your account details during transmission</li>
+<li>Your medical records are protected as they move between systems</li>
+<li>Your private messages stay private</li>
+</ul>
+<p><strong>Without it:</strong></p>
+<ul>
+<li>Credit card numbers stolen during online shopping</li>
+<li>Personal information exposed in data breaches</li>
+<li>Identity theft and fraud</li>
+</ul>
+<h4 id="2-minimising-cyber-attacks-and-vulnerabilities">2. Minimising Cyber Attacks and Vulnerabilities</h4>
+<p><strong>What it means:</strong> Reducing the opportunities for attackers to exploit weaknesses</p>
+<p><strong>How data transmission creates vulnerabilities:</strong></p>
+<ul>
+<li><strong>Interception:</strong> Attackers can "listen" to unencrypted data packets</li>
+<li><strong>Manipulation:</strong> Attackers can alter packets in transit</li>
+<li><strong>Disruption:</strong> Attackers can block or flood networks</li>
+</ul>
+<p><strong>Real example from data transmission:</strong>
+When you connect to public Wi-Fi at a café, without proper security:</p>
+<ul>
+<li>Attackers on the same network can intercept your packets</li>
+<li>They can see websites you visit, login credentials, messages</li>
+<li>This is called a "man-in-the-middle" attack</li>
+</ul>
+<p><strong>With secure software:</strong></p>
+<ul>
+<li>Data is encrypted (scrambled) before transmission</li>
+<li>Even if intercepted, packets are unreadable</li>
+<li>Verification ensures data hasn't been tampered with</li>
+</ul>
+<hr />
+<h4 id="introduction-to-the-cia-triad">Introduction to the CIA Triad</h4>
+<p>Three fundamental security principles protect data as it travels across networks:</p>
+<h5 id="confidentiality">Confidentiality</h5>
+<p><strong>Definition:</strong> Ensuring that only authorized people can read the data</p>
+<p><strong>In data transmission:</strong></p>
+<ul>
+<li>Packets travelling over HTTP can be read by anyone who intercepts them</li>
+<li>Packets travelling over HTTPS are encrypted - they look like gibberish to interceptors</li>
+<li>DNS requests can reveal what websites you're visiting (privacy concern)</li>
+</ul>
+<p><strong>Analogy:</strong> </p>
+<ul>
+<li>HTTP is like sending a postcard - anyone handling it can read your message</li>
+<li>HTTPS is like sending a sealed, locked box - only the recipient has the key</li>
+</ul>
+<p><strong>Think about it:</strong>
+When you traced the route of packets with <code>traceroute</code>, you saw they passed through many different networks (hops). Each hop is a potential point where someone could intercept and read unencrypted data!</p>
+<hr />
+<h5 id="integrity">Integrity</h5>
+<p><strong>Definition:</strong> Ensuring data hasn't been altered during transmission</p>
+<p><strong>In data transmission:</strong></p>
+<ul>
+<li>TCP includes checksums to verify packets haven't been corrupted</li>
+<li>If a packet is damaged, TCP requests it be resent</li>
+<li>Without integrity checks, altered data could cause serious problems</li>
+</ul>
+<p><strong>Real-world scenario:</strong>
+Imagine you're transferring $100 to a friend. Without integrity protection:</p>
+<ul>
+<li>An attacker intercepts the packet</li>
+<li>Changes the recipient or amount</li>
+<li>Your $100 goes to the wrong person!</li>
+</ul>
+<p><strong>How it's protected:</strong></p>
+<ul>
+<li>Checksums: Mathematical "fingerprints" of data</li>
+<li>If data changes, the checksum won't match</li>
+<li>Receiver knows something went wrong</li>
+</ul>
+<hr />
+<h5 id="availability">Availability</h5>
+<p><strong>Definition:</strong> Ensuring data and services are accessible when needed</p>
+<p><strong>In data transmission:</strong></p>
+<ul>
+<li>Networks must be able to handle traffic loads</li>
+<li>Packets must successfully reach their destination</li>
+<li>Systems must recover quickly from failures</li>
+</ul>
+<p><strong>Threats to availability:</strong></p>
+<ul>
+<li><strong>DDoS (Distributed Denial of Service) attacks:</strong> Flooding servers with so many packets they can't respond to legitimate requests</li>
+<li><strong>Packet loss:</strong> Too many dropped packets make services unusable</li>
+<li><strong>Network congestion:</strong> Like traffic jams, but for data</li>
+</ul>
+<p><strong>Example:</strong>
+Remember when you used <code>ping</code> and saw response times? If response times are too high or packets are lost, the service becomes unavailable - it's technically online but unusable.</p>
+<hr />
+<h4 id="security-across-the-journey">Security Across the Journey</h4>
+<p>Let's revisit our 6-step web request journey with a security lens:</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Security Concern</th>
+<th>How It's Protected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. DNS Lookup</strong></td>
+<td>DNS requests are unencrypted - anyone can see what sites you're visiting</td>
+<td>DNS over HTTPS (DoH) encrypts DNS queries</td>
+</tr>
+<tr>
+<td><strong>2. Making Request</strong></td>
+<td>HTTP requests sent in plain text</td>
+<td>Use HTTPS instead of HTTP</td>
+</tr>
+<tr>
+<td><strong>3. Data Packets</strong></td>
+<td>Packets can be intercepted and read</td>
+<td>Encryption scrambles packet contents</td>
+</tr>
+<tr>
+<td><strong>4. TCP/IP</strong></td>
+<td>Packets could be altered</td>
+<td>Checksums verify data integrity</td>
+</tr>
+<tr>
+<td><strong>5. Server Response</strong></td>
+<td>Response data could be intercepted</td>
+<td>HTTPS encrypts the entire response</td>
+</tr>
+<tr>
+<td><strong>6. Rendering</strong></td>
+<td>Browser could execute malicious code</td>
+<td>Sandboxing isolates potentially dangerous code</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="discussion-activity-security-vs-speed">Discussion Activity: Security vs. Speed</h4>
+<p>Read this scenario and write your thoughts:</p>
+<p><strong>Scenario:</strong> A developer is building a weather app. They're debating whether to use HTTP or HTTPS.</p>
+<p><strong>Arguments for HTTP:</strong>
+- Faster (no encryption overhead)
+- Easier to implement
+- "It's just weather data, not sensitive information"</p>
+<p><strong>Arguments for HTTPS:</strong>
+- Protects user privacy (what weather they check reveals their location)
+- Prevents data manipulation (fake weather warnings could be injected)
+- Builds user trust
+- Modern browsers mark HTTP as "Not Secure"</p>
+<p><strong>Your task:</strong>
+1. Which approach would you recommend? Why?
+2. Can you think of scenarios where "non-sensitive" data could still be exploited?
+3. What would happen if an attacker could inject false information into the weather app?
+4. As a developer, what's your responsibility to users even for "simple" apps?</p>
+<div class="admonition question">
+<p class="admonition-title">Reflection</p>
+<p>Write 100-150 words defending your position. Consider: confidentiality, integrity, and availability.</p>
+</div>
+<h4 id="extended-reading">Extended Reading</h4>
+<ul>
+<li><a href="https://aws.amazon.com/compare/the-difference-between-https-and-http/">What’s the difference between HTTP and HTTPS?</a></li>
+</ul>
+<h3 id="part-3-visualising-the-journey-20-minutes">Part 3: Visualising the Journey (20 minutes)</h3>
+<h4 id="using-online-tools">Using Online Tools</h4>
+<ol>
+<li>Visit: <a href="https://www.cloudflare.com/learning/dns/what-is-dns/">Cloudflare DNS Learning</a></li>
+<li>Read the interactive explanation of DNS</li>
+<li>Create a simple flowchart showing the DNS lookup process</li>
+</ol>
+<h4 id="using-command-line-tools">Using Command Line Tools</h4>
+<p>(Works on Windows, Mac, or Linux)</p>
+<p><strong>On Windows (Command Prompt):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ping<span class="w"> </span>www.google.com
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>tracert<span class="w"> </span>www.google.com
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>nslookup<span class="w"> </span>www.google.com
+</code></pre></div>
+<p><strong>On Mac/Linux (Terminal):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ping<span class="w"> </span>www.google.com
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>traceroute<span class="w"> </span>www.google.com
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>nslookup<span class="w"> </span>www.google.com
+</code></pre></div>
+<h4 id="what-to-observe">What to Observe</h4>
+<ul>
+<li><code>ping</code>: Shows the IP address and response time</li>
+<li><code>tracert/traceroute</code>: Shows all the "hops" your data takes across the internet</li>
+<li><code>nslookup</code>: Shows the DNS server response with IP address</li>
+</ul>
+<div class="admonition activity">
+<p class="admonition-title">Record in Your Journal</p>
+<ul>
+<li>What IP address did you get for google.com?</li>
+<li>How many hops did the traceroute show?</li>
+<li>How long did each step take?</li>
+</ul>
+</div>
+<h2 id="part-4-investigation-task-packet-detective-30-40-minutes">Part 4: Investigation Task: Packet Detective (30-40 minutes)</h2>
+<p><strong>Your Mission:</strong> Investigate three different websites and document how data travels to reach them.</p>
+<h4 id="choose-three-websites-from-different-categories">Choose Three Websites from Different Categories</h4>
+<ul>
+<li>A social media site (e.g., facebook.com, instagram.com)</li>
+<li>An educational site (e.g., khanacademy.org, abc.net.au/education)</li>
+<li>A streaming service (e.g., youtube.com, spotify.com)</li>
+</ul>
+<h4 id="for-each-website-complete-the-following">For Each Website, Complete the Following</h4>
+<p><strong>1. DNS Investigation</strong></p>
+<ul>
+<li>Use <code>nslookup [website]</code> to find the IP address</li>
+<li>Record: Domain name, IP address, DNS server used</li>
+</ul>
+<p><strong>2. Route Tracing</strong></p>
+<ul>
+<li>Use <code>tracert/traceroute [website]</code></li>
+<li>Count: How many hops does it take?</li>
+<li>Record: The geographic locations (if identifiable) the data passes through</li>
+</ul>
+<p><strong>3. Response Time Analysis</strong></p>
+<ul>
+<li>Use <code>ping [website]</code></li>
+<li>Record: Minimum, maximum, and average response times</li>
+<li>Question: Why might some sites be faster than others?</li>
+</ul>
+<h4 id="create-a-comparison-table">Create a Comparison Table</h4>
+<table>
+<thead>
+<tr>
+<th>Website</th>
+<th>IP Address</th>
+<th>Number of Hops</th>
+<th>Average Ping Time</th>
+<th>Geographic Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="analysis-questions">Analysis Questions</h4>
+<ol>
+<li>Which website had the fastest response time? Why do you think this is?</li>
+<li>Did any websites have servers in multiple locations?</li>
+<li>How might packet loss affect your experience on each of these sites?</li>
+<li>If you were designing a global website, what would you consider based on what you've learned?</li>
+</ol>
+<h4 id="security-focused-questions">Security-Focused Questions</h4>
+<ol>
+<li><strong>Confidentiality:</strong> Which website travelled through the most hops? What are the security implications of data travelling through more networks?</li>
+<li><strong>Integrity:</strong> If a packet was altered during transmission, which step in the journey would detect it? (Hint: Think about TCP)</li>
+<li><strong>Availability:</strong> Compare the ping times. If a website had very high response times or packet loss, how would this affect availability?</li>
+<li><strong>Risk Assessment:</strong> For each website type (social media, educational, streaming), rate the importance of:</li>
+<li>Confidentiality (1-5): _____</li>
+<li>Integrity (1-5): _____</li>
+<li>Availability (1-5): _____</li>
+</ol>
+<p>Explain your ratings.</p>
+<h3 id="creative-challenge-design-your-own-protocol">Creative Challenge: Design Your Own Protocol</h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the same process that a High Frequency Trading firm might follow to design their own communication protocols for tracking markets, risk analysis or trading between 2 or more different departments (desks) within the same company.</p>
+</div>
+<p>Imagine you're designing a new way to send messages across a network where:</p>
+<ul>
+<li>Messages can be maximum 10 words long</li>
+<li>Networks can only handle 3 words at a time</li>
+<li>20% of packets get lost or delayed</li>
+</ul>
+<p><strong>Design a system that includes:</strong></p>
+<ol>
+<li>How you'll break messages into chunks</li>
+<li>How you'll number/identify chunks</li>
+<li>How you'll detect missing chunks</li>
+<li>How you'll ensure chunks are reassembled correctly</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Test Your Protocol</p>
+<p>Write your protocol rules and test it by:</p>
+<ul>
+<li>Writing a 10-word message</li>
+<li>Breaking it according to your rules</li>
+<li>Having a family member or friend "receive" the chunks out of order</li>
+<li>See if they can reassemble your message correctly</li>
+</ul>
+</div>
+<h2 id="part-5-reflection-extension-10-minutes">Part 5: Reflection &amp; Extension (10 minutes)</h2>
+<h3 id="learning-journal-entry">Learning Journal Entry</h3>
+<p>Answer these reflection questions:</p>
+<ol>
+<li>How is sending data across the internet similar to our jigsaw puzzle analogy? How is it different?</li>
+<li>What surprised you most about how data travels on the internet?</li>
+<li>Why do you think TCP ensures packets arrive in order? What would happen if they didn't?</li>
+<li>How does understanding data transmission help you think about internet security?</li>
+</ol>
+<h4 id="security-reflection">Security Reflection</h4>
+<ol>
+<li>
+<p><strong>Benefits of Secure Software:</strong> Now that you understand how many networks your data passes through, explain in your own words why developers need to build security into software from the beginning. What could go wrong if they don't?</p>
+</li>
+<li>
+<p><strong>CIA Triad Application:</strong> Give a specific example from today's lesson for each principle:</p>
+</li>
+<li><strong>Confidentiality:</strong> How could data packets be kept confidential? _____</li>
+<li><strong>Integrity:</strong> How does TCP maintain integrity? _____</li>
+<li>
+<p><strong>Availability:</strong> What threats to availability did you observe? _____</p>
+</li>
+<li>
+<p><strong>Real-world Impact:</strong> Think about an app you use daily (social media, banking, gaming, etc.). Based on what you learned about how data travels:</p>
+</li>
+<li>What security features do you think are protecting your data?</li>
+<li>What would happen if those security features were removed?</li>
+<li>How would you feel knowing your data travelled unencrypted through 10+ different networks?</li>
+</ol>
+<h3 id="extension-resources">Extension Resources</h3>
+<ul>
+<li><strong>Interactive visualisation:</strong> <a href="https://www.submarinecablemap.com/">Submarine Cable Map</a> - See physical internet infrastructure</li>
+<li><strong>Video:</strong> <ul>
+<li>Search for "Warriors of the Net" - a classic visualisation of packets travelling through the internet and a bit of a laugh.</li>
+<li><a href="https://www.netacad.com/learning-collections/cisco-packet-tracer?courseLang=en-US">Cisco Packet Tracer</a> - Simulate network traffic and protocols</li>
+<li><a href="https://www.youtube.com/watch?v=z98ECVn-w3Q"><span class="twemoji youtube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg></span> Client-Server and Peer-to-Peer Networks</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="prepare-for-next-lesson">Prepare for Next Lesson</h3>
+<p>Next time, we'll explore the different protocols that govern how data is formatted and secured. </p>
+<div class="admonition question">
+<p class="admonition-title">Think About</p>
+<p>What's the difference between HTTP and HTTPS? Why does it matter?</p>
+</div>
+<hr />
+<h2 id="syllabus-alignment">Syllabus Alignment</h2>
+<h3 id="programming-for-the-web">Programming for the Web</h3>
+<p>✓ Investigate how data is transferred on the internet (data packets, IP addresses IPv4, DNS)<br />
+✓ Explore and explain the influence of a web browser on web development, including dev tools</p>
+<h3 id="secure-software-architecture">Secure Software Architecture</h3>
+<p>✓ Describe benefits of developing secure software (data protection, minimising cyber attacks)<br />
+✓ Explore fundamental security concepts (introduction to confidentiality, integrity, availability)</p>
+<hr />
+<h2 id="checklist">Checklist</h2>
+<p>Before moving to the next lesson, ensure you have completed:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> The DNS investigation of 3 websites</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Created a Structure Chart for Visiting a Website</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Performed traceroute analysis with data recorded</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Analysed security implications of multiple network hops</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Completed Security vs. Speed discussion (weather app scenario)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Created your own packet protocol design</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Tested your protocol with another person</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Answered all reflection questions in your journal</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Created a flowchart showing the DNS lookup process</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Explained the benefits of secure software development in your journal</li>
+</ul>
+<hr />
+<details class="note">
+<summary>Teacher Notes</summary>
+<p><strong>Formative Assessment Opportunities:</strong></p>
+<ul>
+<li>Journal entries demonstrate understanding of both technical and security concepts</li>
+<li>Comparison table shows ability to use command-line tools</li>
+<li>Protocol design demonstrates creative application of packet concepts</li>
+<li>Security vs. Speed discussion reveals understanding of security benefits</li>
+<li>CIA Triad application shows grasp of fundamental security principles</li>
+<li>Reflection questions assess depth of understanding of security in data transmission</li>
+</ul>
+<p><strong>Common Misconceptions to Address:</strong></p>
+<ul>
+<li>Students may think data travels in one piece</li>
+<li>Students may confuse IP addresses with MAC addresses</li>
+<li>Students may not understand why packets take different routes</li>
+<li><strong>Students may assume "just technical data" doesn't need security</strong></li>
+<li><strong>Students may think encryption is only for "important" websites</strong></li>
+<li><strong>Students may not realise how many networks their data passes through</strong></li>
+</ul>
+<p><strong>Security Concepts Addressed:</strong></p>
+<ul>
+<li><strong>Confidentiality:</strong> Introduced through the vulnerability of unencrypted packets travelling through multiple networks</li>
+<li><strong>Integrity:</strong> Demonstrated through TCP checksums and packet verification</li>
+<li><strong>Availability:</strong> Explored through packet loss, response times, and DDoS concepts</li>
+<li><strong>Benefits of secure software:</strong> Connected to protecting data as it traverses untrusted networks</li>
+</ul>
+<p><strong>Differentiation:</strong></p>
+<ul>
+<li><strong>Extension:</strong> Research IPv6 and compare to IPv4; investigate DNS over HTTPS (DoH)</li>
+<li><strong>Support:</strong> Provide pre-filled partial tables and sentence starters for CIA analysis</li>
+<li><strong>Alternative:</strong> Use online traceroute tools if command line is not accessible</li>
+</ul>
+<p><strong>Key Teaching Point:</strong>
+This lesson establishes the foundation for understanding WHY security matters by showing students that their data travels through many untrusted networks. This makes the need for encryption (Lesson 2) and security practices (Lesson 3) concrete and relatable rather than abstract.</p>
+</details>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/mr-bev/software-engineering-stage6-nsw/issues/new/?title=[Feedback]+How%20the%20Web%20Works+-+/web_development/how_the_web_works/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../web_protocols_security/" class="md-footer__link md-footer__link--next" aria-label="Next: Web Protocols &amp; Security Foundations">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Web Protocols & Security Foundations
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024-25 <a href="https://github.com/mr-bev" target="_blank" rel="noopener">Aaron Beverley</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognise your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
