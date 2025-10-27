@@ -181,7 +181,7 @@ As an example of the hash, if we have 4 buckets to store values we could sum the
 
 
 #### More Information
-- [:simple-youtube:{ .youtube } Visualizing a HashMap](https://www.youtube.com/watch?v=WEILxTBDy0Y){target="_blank"}
+- [:simple-youtube:{ .youtube } Visualising a HashMap](https://www.youtube.com/watch?v=WEILxTBDy0Y){target="_blank"}
 
 #### Benefits
 - Efficient in finding information in constant time
