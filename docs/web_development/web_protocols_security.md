@@ -1,7 +1,9 @@
 # Web Protocols and Security
 
 **Duration:** 90-120 minutes  
+
 **Focus:** Investigate how web protocols secure data transmission through encryption, certificates, hashing, and access control to protect confidentiality, integrity, and availability.
+
 **Mode:** Self-paced, remote learning
 
 ---
@@ -625,46 +627,66 @@ For each scenario, identify which principle(s) are threatened and your solution:
     - Solution: ___
 
 ---
+## Syllabus Alignment
+### Programming For The Web
+✓ Investigate and describe the function of web protocols and their ports. Including:
 
-## Assessment Checklist
+- TCP/IP
+- FTP, SFTP
+- SSL, TLS
+- SMTP, POP 3, IMAP
 
-**Before finishing, verify you can:**
+✓ Explain the processes for securing the web. Including:
 
-### Web Protocols (Syllabus ✓)
+- Secure Sockets Layer (SSL) certificates
+- encryption algorithms
+- encryption keys
+- plain text and cipher text
+- authentication and authorisation
+- hash values
+- digital signatures
+
+### Secure Software Architecture
+
+✓ Explore fundamental security concepts (confidentiality, integrity, availability)
+
+## Checklist
+
+### Web Protocols
 
 - [ ] Explain the function of FTP, SFTP, SMTP, POP3, IMAP
 - [ ] Identify port numbers for each protocol
 - [ ] Describe SSL and TLS operation
 - [ ] Compare security features of different protocols
 
-### Encryption (Syllabus ✓)
+### Encryption
 
 - [ ] Define plain text and cipher text
 - [ ] Explain symmetric vs asymmetric encryption
 - [ ] Describe encryption keys and algorithms
 - [ ] Explain the SSL/TLS handshake process
 
-### SSL Certificates (Syllabus ✓)
+### SSL Certificates
 
 - [ ] Describe what SSL certificates contain
 - [ ] Explain how certificates are verified
 - [ ] Identify Certificate Authorities
 - [ ] Analyse real certificates
 
-### Authentication & Authorisation (Syllabus ✓)
+### Authentication & Authorisation
 
 - [ ] Distinguish between authentication and authorisation
 - [ ] Describe authentication methods
 - [ ] Design authorisation structures
 
-### Hash Values & Digital Signatures (Syllabus ✓)
+### Hash Values & Digital Signatures
 
 - [ ] Explain what hash values are
 - [ ] Describe properties of hash functions
 - [ ] Explain how digital signatures work
 - [ ] Apply hashing to real scenarios
 
-### Security Concepts (Syllabus ✓)
+### Security Concepts
 
 - [ ] Explain confidentiality, integrity, availability
 - [ ] Apply CIA triad to scenarios
