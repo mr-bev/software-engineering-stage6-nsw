@@ -266,17 +266,20 @@ Read this scenario and write your thoughts:
 **Scenario:** A developer is building a weather app. They're debating whether to use HTTP or HTTPS.
 
 **Arguments for HTTP:**
+
 - Faster (no encryption overhead)
 - Easier to implement
 - "It's just weather data, not sensitive information"
 
 **Arguments for HTTPS:**
+
 - Protects user privacy (what weather they check reveals their location)
 - Prevents data manipulation (fake weather warnings could be injected)
 - Builds user trust
 - Modern browsers mark HTTP as "Not Secure"
 
 **Your task:**
+
 1. Which approach would you recommend? Why?
 2. Can you think of scenarios where "non-sensitive" data could still be exploited?
 3. What would happen if an attacker could inject false information into the weather app?
