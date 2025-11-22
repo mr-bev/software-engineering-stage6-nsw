@@ -25,7 +25,7 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material mkdocs-glossary mkdocs-quiz
+      - run: pip install mkdocs-material mkdocs-glossary mkdocs-quiz mkdocs-macros-plugin
       - name: Build Docs
         env:
           GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
