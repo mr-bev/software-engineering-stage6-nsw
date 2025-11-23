@@ -1053,14 +1053,14 @@ git branch -d feature-contact-form
 
 ---
 
-### 📝 Activity 2.1: Initialize Git Repository (15 minutes)
+### 📝 Activity 2.1: Initialise Git Repository (15 minutes)
 
 !!! example "Version Control Practice"
     Set up Git for your portfolio project.
 
 **Steps:**
 
-1. **Initialize repository:**
+1. **Initialise repository:**
    ```bash
    cd your-project-folder
    git init
@@ -1185,7 +1185,7 @@ graph TD
 
 - **What:** Write code implementing the design
 - **Security Integration:**
-    - Secure coding practices (input validation, parameterized queries)
+    - Secure coding practices (input validation, parameterised queries)
     - Code reviews focused on security
     - Use version control (Git) for accountability
 - **Example:** *Implement input sanitisation; use prepared statements for SQL*
@@ -1268,7 +1268,7 @@ Privacy by Design means building privacy into systems from the start, not adding
 |----------|-------------------|-------------------|
 | Data Collection | Collect only necessary data | Collect everything, allow opt-out |
 | Password Storage | Hash passwords immediately | Store plaintext, encrypt later |
-| Analytics | Anonymous by default | Track everything, anonymize on request |
+| Analytics | Anonymous by default | Track everything, anonymise on request |
 | Data Retention | Auto-delete after period | Keep indefinitely unless requested |
 
 #### 4.2 End User Capabilities & Design Decisions
@@ -1323,7 +1323,7 @@ A social media app currently has these features:
 
 - Requires real name, birthdate, phone number to create account
 - Collects location data continuously in the background
-- Shares user data with third parties by default (for "personalized ads")
+- Shares user data with third parties by default (for "personalised ads")
 - No way to download or delete your data
 - Passwords stored with MD5 hashing
 - All posts are public by default
@@ -1448,7 +1448,7 @@ graph TD
 
 2. **Setup (Version Control)**
 
-    - Initialize Git repository
+    - Initialise Git repository
     - Create `.gitignore` for sensitive files
     - Set up branching strategy
 
@@ -1779,7 +1779,7 @@ Before moving on, verify you can:
 - [ ] Explain the benefits of using CSS frameworks over custom CSS
 - [ ] Apply Bootstrap or Tailwind classes to create responsive layouts
 - [ ] Describe when to use CDN vs local hosting for frameworks
-- [ ] Initialize a Git repository and make commits
+- [ ] Initialise a Git repository and make commits
 - [ ] Create, merge, and delete Git branches
 - [ ] Write clear, descriptive commit messages
 - [ ] Identify all six phases of the SDLC
@@ -1828,7 +1828,7 @@ Before moving on, verify you can:
 
     | Misconception | Reality | Correction Strategy |
     |---------------|---------|---------------------|
-    | "CSS frameworks make sites all look the same" | Frameworks are customizable; provide starting point | Show examples of diverse sites using same framework |
+    | "CSS frameworks make sites all look the same" | Frameworks are customisable; provide starting point | Show examples of diverse sites using same framework |
     | "Git is only for teams" | Version control benefits solo developers too | Demonstrate rollback and history features |
     | "Security is added at testing phase" | Security must be integrated throughout SDLC | Show consequences of late security integration |
     | "Accessibility is just for blind users" | Benefits many user groups (motor, cognitive, situational) | Demonstrate keyboard navigation, mobile benefits |
@@ -1871,10 +1871,10 @@ Before moving on, verify you can:
 ??? "Extension Activities"
 
     1. **Advanced Git:** Explore rebasing, cherry-picking, and Git hooks
-    2. **Framework Customization:** Create custom Bootstrap theme or Tailwind configuration
+    2. **Framework Customisation:** Create custom Bootstrap theme or Tailwind configuration
     3. **Automated Accessibility:** Integrate Lighthouse CI into Git workflow
     4. **Security Headers:** Research and implement Content Security Policy
-    5. **Performance:** Analyze and optimise load times with developer tools
+    5. **Performance:** Analyse and optimise load times with developer tools
     6. **Mobile-First:** Redesign existing desktop-only site for mobile
     7. **Design System:** Create comprehensive design system documentation
 
