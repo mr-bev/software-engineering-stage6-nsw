@@ -120,7 +120,7 @@ nav:
     - Algorithms: fundamentals/algorithms.md
     - Algorithm Complexity: fundamentals/big_o.md
     - Software Quality: fundamentals/software_quality.md
-    - Async and Threading: fundamentals\asynch_and_threading.md
+    - Async and Threading: fundamentals/asynch_and_threading.md
   - Object Oriented: 
     - Overview: object_oriented_software/index.md
     - Key Concepts: object_oriented_software/key_concepts.md
@@ -143,7 +143,7 @@ nav:
     - Front-End Development & Input Security:
       - JavaScript Fundamentals & Client-Side Security: web_development/javascript_fun_client_security.md
       - CSS Frameworks, Version Control & Secure Development Lifecycle: web_development/css_frameworks_version_control_secure_dev.md
-      - Advanced Client-Side Security & User Experience: web_development/advanced_client_side_security_user_experience.md
+      - Client-Side Security & User Experience: web_development/client_side_security_user_experience.md
     - Back-End Development & Core Security:
       - Server-Side Programming, Authentication & Template Engines: web_development/server_side_programming_authentication_template_engines.md
       - Database Integration, SQL Injection Prevention & REST Principles: web_development/database_integration_sql_prevention_rest.md
@@ -170,6 +170,6 @@ nav:
   - Glossary: glossary.md
 
 copyright: |
-  &copy; 2024-25 <a href="https://github.com/mr-bev" target="_blank" rel="noopener">Aaron Beverley</a>
+  &copy; 2024-26 <a href="https://github.com/mr-bev" target="_blank" rel="noopener">Aaron Beverley</a>
 repo_url: https://github.com/mr-bev/software-engineering-stage6-nsw
 repo_name: mr-bev/se-stage6-nsw

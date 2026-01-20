@@ -1,4 +1,4 @@
-# Lesson Plan: CSS Frameworks, Git & Secure Development Practices
+# CSS Frameworks, Git & Secure Development Practices
 
 ## 1. Lesson Overview
 

@@ -1,4 +1,4 @@
-# Week 4: JavaScript Fundamentals & Client-Side Security
+# JavaScript Fundamentals & Client-Side Security
 
 ## Lesson Overview
 
