@@ -1,0 +1,6847 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../how_the_web_works/">
+      
+      
+        <link rel="next" href="../web_development_security_mindset/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Web Protocols & Security Foundations - Software Engineering - Stage 6 - NSW</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-YG16K7VJ8G"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-YG16K7VJ8G",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-YG16K7VJ8G",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#web-protocols-and-security" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Software Engineering - Stage 6 - NSW" class="md-header__button md-logo" aria-label="Software Engineering - Stage 6 - NSW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Software Engineering - Stage 6 - NSW
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Web Protocols & Security Foundations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mr-bev/software-engineering-stage6-nsw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mr-bev/se-stage6-nsw
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+  
+  <nav id="quiz-progress-mobile" class="quiz-progress-mobile md-nav" aria-label="Quiz Progress" style="display: none;">
+    <!-- mkdocs-quiz progress sidebar (mobile) -->
+    <div class="quiz-progress-bar">
+      <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+      <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+    </div>
+    <div data-md-component="quiz-progress">
+        <div class="quiz-correct-reset">
+          <span class="md-ellipsis">
+            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span>
+          </span>
+          <span class="md-ellipsis">
+            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span>
+          </span>
+          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+            <span data-quiz-translate="Reset">Reset</span>
+          </a>
+        </div>
+    </div>
+  </nav>
+
+  
+  
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Syllabus/" class="md-tabs__link">
+          
+  
+  
+  Syllabus
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../principles/" class="md-tabs__link">
+          
+  
+  
+  Principles of SE
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../fundamentals/number_systems/" class="md-tabs__link">
+          
+  
+  
+  Software Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../object_oriented_software/" class="md-tabs__link">
+          
+  
+  
+  Object Oriented
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mechatronics/" class="md-tabs__link">
+          
+  
+  
+  Mechatronics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Secure Web Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../machine_learning/" class="md-tabs__link">
+          
+  
+  
+  Machine Learning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+  
+  
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Software Engineering - Stage 6 - NSW" class="md-nav__button md-logo" aria-label="Software Engineering - Stage 6 - NSW" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Software Engineering - Stage 6 - NSW
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mr-bev/software-engineering-stage6-nsw" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mr-bev/se-stage6-nsw
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Syllabus
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Syllabus
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/programming-fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/object-oriented-paradigm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Oriented Paradigm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/programming-mechatronics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming Mechatronics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/secure-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secure Software Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/web-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming For The Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/software-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Syllabus/se-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Engineering Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Principles of SE
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Principles of SE
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/sdlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDLC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/waterfall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Waterfall
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/agile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agile
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/other_sdlc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Development Lifecycles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../principles/revision_control_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Revision Control Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/number_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Number Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/data_types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/data_structures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Structures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/big_o/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Algorithm Complexity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/software_quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Quality
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fundamentals/asynch_and_threading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Async and Threading
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Oriented
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Object Oriented
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/key_concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/object_oriented_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Object Oriented Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../object_oriented_software/software_design_patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechatronics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mechatronics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/hardware_software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware and Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/sensors_actuators_effectors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensors, Actuators and End Effectors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/design_engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design and Engineering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/system_integration_control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Integration and Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/control_algorithms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mechatronics/programming_building/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programming and Building
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secure Web Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Secure Web Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Fundamentals + Security Awareness
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Fundamentals + Security Awareness
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how_the_web_works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How the Web Works
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Protocols & Security Foundations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Protocols & Security Foundations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-web-protocols-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Web Protocols Foundations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Web Protocols Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-protocol-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Protocol Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-11-protocol-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 1.1: Protocol Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-12-email-protocol-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 1.2: Email Protocol Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-encryption-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Encryption Fundamentals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Encryption Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-understanding-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Understanding Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ssltls-handshake-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SSL/TLS Handshake Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-21-certificate-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 2.1: Certificate Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-hash-values-and-digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Hash Values and Digital Signatures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Hash Values and Digital Signatures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-understanding-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Understanding Hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-hashing-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Hashing in Practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-31-digital-signatures-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 3.1: Digital Signatures Deep Dive
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-authentication-vs-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Authentication vs Authorisation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Authentication vs Authorisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-41-security-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 4.1: Security Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-42-independent-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 4.2: Independent Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-synthesis-and-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Synthesis and Application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Synthesis and Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-51-comprehensive-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 5.1: Comprehensive Scenario
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activity 5.1: Comprehensive Scenario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-a-protocol-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section A: Protocol Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-b-encryption-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section B: Encryption Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-c-authentication-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section C: Authentication &amp; Authorisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-d-integrity-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section D: Integrity &amp; Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-e-cia-triad-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section E: CIA Triad Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syllabus-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syllabus Alignment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syllabus Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programming-for-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming For The Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-software-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secure Software Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Protocols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSL Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication &amp; Authorisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-values-digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash Values &amp; Digital Signatures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Reflection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answer Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formative-assessment-opportunities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formative Assessment Opportunities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formative Assessment Opportunities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-11-protocol-comparison_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 1.1: Protocol Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-12-email-protocol-analysis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 1.2: Email Protocol Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-21-certificate-investigation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 2.1: Certificate Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-31-digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 3.1: Digital Signatures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-41-42-security-design-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 4.1 &amp; 4.2: Security Design Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-51-comprehensive-scenario_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 5.1: Comprehensive Scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misconceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#differentiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Differentiation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Differentiation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-students-who-need-additional-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Students Who Need Additional Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Students Who Need Additional Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaffolding-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaffolding Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web_development_security_mindset/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Development & Security Mindset
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Front-End Development & Input Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Front-End Development & Input Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../javascript_fun_client_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JavaScript Fundamentals & Client-Side Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../css_frameworks_version_control_secure_dev/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS Frameworks, Version Control & Secure Development Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client_side_security_user_experience/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Client-Side Security & User Experience
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Back-End Development & Core Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Back-End Development & Core Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server_side_programming_authentication_template_engines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Server-Side Programming, Authentication & Template Engines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database_integration_sql_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Integration & SQL Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced_auth_session_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Authentication, Authorisation & Session Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_security_safe_apis_cryptography/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Security, Safe APIs & Cryptography in Practice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secure Architecture & Progressive Web Apps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Secure Architecture & Progressive Web Apps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pwa_privacy_by_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Progressive Web Apps & Privacy by Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing_strategies_security_hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing Strategies & Security Hardening
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business_continuity_disaster_recovery_open_source/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Business Continuity, Disaster Recovery & Open Source
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collaborative_development_professional_practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Collaborative Development & Professional Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise Impact & Professional Standards
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Enterprise Impact & Professional Standards
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../enterprise_benefits_industry_imp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enterprise Benefits & Industry Impact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../social_ethical_legal_ram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Social, Ethical & Legal Ramifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine Learning
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Machine Learning
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/foundations_of_ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundations of AI, ML & Automation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/ml_training_models_data_fundamentals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ML Training Models & Data Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/classical_ml_algorithms_concepts_simple_implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classical ML Algorithms - Concepts & Simple Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/regression_models_linear_polynomial_implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regression Models - Linear & Polynomial Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/logistic_regression_model_comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logistic Regression & Model Comparison
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/neural_networks_simplified_introduction_advanced_class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Neural Networks - Simplified Introduction & Advanced Classical ML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/human_factors_behavior_bias_ml_ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Human Factors, Behaviour Patterns & Bias in ML/AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../machine_learning/impact_assessment_synthesis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Impact Assessment & Synthesis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-web-protocols-foundations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 1: Web Protocols Foundations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: Web Protocols Foundations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-protocol-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Protocol Discovery
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-11-protocol-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 1.1: Protocol Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-12-email-protocol-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 1.2: Email Protocol Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-encryption-fundamentals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 2: Encryption Fundamentals
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Encryption Fundamentals">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-understanding-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Understanding Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-ssltls-handshake-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The SSL/TLS Handshake Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-21-certificate-investigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 2.1: Certificate Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-hash-values-and-digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 3: Hash Values and Digital Signatures
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Hash Values and Digital Signatures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-understanding-hashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Understanding Hashing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#worked-example-hashing-in-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked Example: Hashing in Practice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-31-digital-signatures-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 3.1: Digital Signatures Deep Dive
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-authentication-vs-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 4: Authentication vs Authorisation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: Authentication vs Authorisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction-key-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction: Key Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-41-security-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 4.1: Security Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-42-independent-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 4.2: Independent Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-synthesis-and-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Part 5: Synthesis and Application
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 5: Synthesis and Application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-51-comprehensive-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 5.1: Comprehensive Scenario
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Activity 5.1: Comprehensive Scenario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#section-a-protocol-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section A: Protocol Selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-b-encryption-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section B: Encryption Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-c-authentication-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section C: Authentication &amp; Authorisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-d-integrity-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section D: Integrity &amp; Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#section-e-cia-triad-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Section E: CIA Triad Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syllabus-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syllabus Alignment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syllabus Alignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#programming-for-the-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programming For The Web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure-software-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secure Software Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Checklist">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-protocols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Protocols
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encryption
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssl-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSL Certificates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication &amp; Authorisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hash-values-digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hash Values &amp; Digital Signatures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Concepts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension Resources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-reflection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Learning Reflection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#answer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Answer Guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formative-assessment-opportunities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formative Assessment Opportunities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formative Assessment Opportunities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activity-11-protocol-comparison_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 1.1: Protocol Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-12-email-protocol-analysis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 1.2: Email Protocol Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-21-certificate-investigation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 2.1: Certificate Investigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-31-digital-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 3.1: Digital Signatures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-41-42-security-design-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 4.1 &amp; 4.2: Security Design Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activity-51-comprehensive-scenario_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activity 5.1: Comprehensive Scenario
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misconceptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misconceptions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#differentiation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Differentiation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Differentiation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-students-who-need-additional-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For Students Who Need Additional Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="For Students Who Need Additional Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scaffolding-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scaffolding Techniques
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+
+  
+  <div id="quiz-progress-sidebar" aria-label="Quiz Progress" style="display: none;">
+    <!-- mkdocs-quiz progress sidebar (desktop) -->
+    <label class="md-nav__title">
+      <span class="md-nav__icon md-icon"></span>
+      <span data-quiz-translate="Quiz Progress">Quiz Progress</span>
+    </label>
+    <ul class="md-nav__list" data-md-component="quiz-progress">
+      <li class="md-nav__item">
+        <div class="md-nav__link">
+          <span class="md-ellipsis">
+            <span data-quiz-translate="Answered:">Answered:</span> <span class="quiz-progress-answered">0</span> / <span class="quiz-progress-total">0</span> (<span class="quiz-progress-answered-percentage">0%</span>)
+          </span>
+        </div>
+      </li>
+      <li class="md-nav__item">
+        <div class="md-nav__link">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-bar-incorrect" style="width: 0%"></div>
+            <div class="quiz-progress-bar-correct" style="width: 0%"></div>
+          </div>
+        </div>
+      </li>
+      <li class="md-nav__item">
+        <div class="md-nav__link quiz-correct-reset">
+          <span class="md-ellipsis">
+            <span data-quiz-translate="Correct:">Correct:</span> <span class="quiz-progress-score">0</span> / <span class="quiz-progress-score-total">0</span> (<span class="quiz-progress-score-percentage">0%</span>)
+          </span>
+          <a href="#" class="quiz-reset-all-link" style="color: var(--md-primary-fg-color); text-decoration: none;">
+            <span data-quiz-translate="Reset">Reset</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="web-protocols-and-security">Web Protocols and Security</h1>
+<p><strong>Duration:</strong> 90-120 minutes  </p>
+<p><strong>Focus:</strong> Investigate how web protocols secure data transmission through encryption, certificates, hashing, and access control to protect confidentiality, integrity, and availability.</p>
+<p><strong>Mode:</strong> Self-paced, remote learning</p>
+<hr />
+<h2 id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+<li>describe and compare web protocols (FTP, SFTP, SSL, TLS, SMTP, POP3, IMAP) including their functions, port numbers, and security features</li>
+<li>Explain encryption fundamentals (symmetric vs asymmetric), the SSL/TLS handshake process, and analyse SSL certificates to verify secure connections</li>
+<li>Understand and apply hash values and digital signatures for data integrity, authentication, and non-repudiation</li>
+<li>Design secure systems by distinguishing between authentication and authorisation, and applying the CIA triad to real-world security scenarios</li>
+</ul>
+<hr />
+<h2 id="part-1-web-protocols-foundations">Part 1: Web Protocols Foundations</h2>
+<p><em>Duration: 25-30 minutes</em></p>
+<h3 id="introduction-protocol-discovery">Introduction: Protocol Discovery</h3>
+<p><em>Read the following (10 minutes):</em></p>
+<p><strong>What are Web Protocols?</strong></p>
+<p>Protocols are standardised rules that govern how data is transmitted across networks. Think of them as languages that computers use to communicate.</p>
+<p><strong>Key Protocols and Their Ports:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Port</th>
+<th>Function</th>
+<th>Security Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FTP</strong> (File Transfer Protocol)</td>
+<td>20, 21</td>
+<td>Transfers files between client and server</td>
+<td>⚠️ Insecure - sends credentials in plain text</td>
+</tr>
+<tr>
+<td><strong>SFTP</strong> (SSH File Transfer Protocol)</td>
+<td>22</td>
+<td>Secure file transfer using SSH encryption</td>
+<td>✅ Secure - all data encrypted</td>
+</tr>
+<tr>
+<td><strong>SMTP</strong> (Simple Mail Transfer Protocol)</td>
+<td>25, 587</td>
+<td>Sends email from client to server</td>
+<td>⚠️ Can be insecure without TLS</td>
+</tr>
+<tr>
+<td><strong>POP3</strong> (Post Office Protocol 3)</td>
+<td>110, 995</td>
+<td>Downloads email from server (deletes from server)</td>
+<td>995 = secure version</td>
+</tr>
+<tr>
+<td><strong>IMAP</strong> (Internet Message Access Protocol)</td>
+<td>143, 993</td>
+<td>Syncs email across devices (keeps on server)</td>
+<td>993 = secure version</td>
+</tr>
+<tr>
+<td><strong>SSL/TLS</strong></td>
+<td>443 (HTTPS)</td>
+<td>Encrypts web traffic</td>
+<td>✅ Secure communication layer</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Port Numbers</p>
+<p>Think of ports as "doors" on a computer. Port numbers tell data which application to go to (port 80 = HTTP, port 443 = HTTPS).</p>
+</div>
+<hr />
+<h3 id="activity-11-protocol-comparison">Activity 1.1: Protocol Comparison</h3>
+<p><em>Complete this guided comparison (10 minutes)</em></p>
+<p><strong>Scenario:</strong> You need to transfer a file containing customer passwords to a web server.</p>
+<div class="admonition activity">
+<p class="admonition-title">Activity</p>
+<p><strong>Option A: FTP</strong></p>
+<ul>
+<li>Connects to port 21</li>
+<li>Credentials sent as plain text: username = "admin", password = "secret123"</li>
+<li>Anyone monitoring the network can read this information</li>
+<li><strong>Security issue? :</strong> ___</li>
+</ul>
+<p><strong>Option B: SFTP</strong></p>
+<ul>
+<li>Connects to port 22</li>
+<li>All data encrypted before transmission</li>
+<li>Credentials appear as: "8f3$kL9@pQ2#mN7&amp;"</li>
+<li><strong>Advantage over FTP? :</strong> ___</li>
+</ul>
+<p><strong>Your analysis:</strong> Which protocol should you use and why?</p>
+</div>
+<details class="success">
+<summary>Check your thinking</summary>
+<p><strong>Security issue:</strong> Data travels in plain text, making it vulnerable to interception (man-in-the-middle attacks).</p>
+<p><strong>Advantage:</strong> Encryption protects data confidentiality and integrity during transmission.</p>
+<p><strong>Correct choice:</strong> SFTP - never transmit sensitive data over unencrypted protocols.</p>
+</details>
+<hr />
+<h3 id="activity-12-email-protocol-analysis">Activity 1.2: Email Protocol Analysis</h3>
+<p><em>Independent Task (8 minutes)</em></p>
+<p>Your company needs to set up email for 50 employees who work both in-office and remotely. They need to access email from phones, laptops, and desktop computers.</p>
+<p><strong>Compare POP3 vs IMAP:</strong></p>
+<ol>
+<li>Draw a dataflow diagram showing:</li>
+<li>How POP3 handles email (client → downloads → deletes from server)</li>
+<li>
+<p>How IMAP handles email (client ↔ syncs ↔ server keeps copy)</p>
+</li>
+<li>
+<p>Answer: Which protocol would you recommend and why?</p>
+</li>
+<li>
+<p>What port numbers would you specify for secure configuration?</p>
+</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Success criteria</p>
+<ul>
+<li>Diagram shows direction of data flow</li>
+<li>Recommendation considers multi-device access</li>
+<li>Port numbers include secure versions (995 or 993)</li>
+</ul>
+</div>
+<hr />
+<h2 id="part-2-encryption-fundamentals">Part 2: Encryption Fundamentals</h2>
+<p><em>Duration: 30-35 minutes</em></p>
+<h3 id="introduction-understanding-encryption">Introduction: Understanding Encryption</h3>
+<p><em>Read the following (12 minutes):</em></p>
+<p><strong>Core Security Principles (<a href="../how_the_web_works/#introduction-to-the-cia-triad">CIA Triad</a>):</strong></p>
+<pre class="mermaid"><code>graph TD
+    A[CIA Triad] --&gt; B[Confidentiality]
+    A --&gt; C[Integrity]
+    A --&gt; D[Availability]
+    B --&gt; E[Only authorised people can read data]
+    C --&gt; F[Data hasn't been altered or tampered with]
+    D --&gt; G[Data is accessible when needed]</code></pre>
+<p><strong>Plain Text vs Cipher Text:</strong></p>
+<pre class="mermaid"><code>flowchart LR
+    A[Plain text: 'Hello World'] --&gt; B[Encryption Algorithm + Key]
+    B --&gt; C[Cipher text: 'U2FsdGVkX1+5fK8...']
+    C --&gt; D[Decryption Algorithm + Key]
+    D --&gt; E[Plain text: 'Hello World']</code></pre>
+<hr />
+<p><strong>Two Types of Encryption:</strong></p>
+<p><strong>1. Symmetric Encryption</strong></p>
+<ul>
+<li>Same key encrypts AND decrypts</li>
+<li>Fast and efficient</li>
+<li>Problem: How do you securely share the key?</li>
+<li>Example: AES (Advanced Encryption Standard)</li>
+</ul>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Alice
+    participant Internet
+    participant Bob
+    Alice-&gt;&gt;Alice: Encrypts with Key: "secret123"
+    Alice-&gt;&gt;Internet: Sends cipher text
+    Internet-&gt;&gt;Bob: Delivers cipher text
+    Bob-&gt;&gt;Bob: Decrypts with Key: "secret123"</code></pre>
+<p><strong>2. Asymmetric Encryption</strong></p>
+<ul>
+<li>Two keys: public key (can share) and private key (keep secret)</li>
+<li>Public key encrypts, private key decrypts</li>
+<li>Slower but solves key distribution problem</li>
+<li>Example: RSA</li>
+</ul>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Alice
+    participant Bob
+    Bob-&gt;&gt;Alice: Shares Public Key (openly)
+    Alice-&gt;&gt;Alice: Encrypts message with Bob's Public Key
+    Alice-&gt;&gt;Bob: Sends cipher text
+    Bob-&gt;&gt;Bob: Decrypts with Private Key (kept secret)</code></pre>
+<hr />
+<h3 id="the-ssltls-handshake-process">The SSL/TLS Handshake Process</h3>
+<p><em>Read through this process - you'll apply it in the next activity:</em></p>
+<p>This happens every time you visit an HTTPS website.</p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Browser as Your Browser
+    participant Server as Web Server
+    Browser-&gt;&gt;Server: 1. Client Hello&lt;br/&gt;"I want secure connection&lt;br/&gt;I support these encryption methods"
+    Server-&gt;&gt;Browser: 2. Server Hello&lt;br/&gt;"Here's my SSL certificate&lt;br/&gt;and public key&lt;br/&gt;Let's use AES-256"
+    Browser-&gt;&gt;Browser: 3. Certificate Check&lt;br/&gt;✓ Valid?&lt;br/&gt;✓ Trusted CA?&lt;br/&gt;✓ Domain match?
+    Browser-&gt;&gt;Server: 4. Key Exchange&lt;br/&gt;Session key encrypted&lt;br/&gt;with server's public key
+    Browser&lt;&lt;-&gt;&gt;Server: 5. Secure Connection&lt;br/&gt;Using symmetric encryption&lt;br/&gt;with session key</code></pre>
+<p><strong>Step-by-step process:</strong></p>
+<ol>
+<li>
+<p><strong>Client Hello:</strong> Your browser contacts server: "I want a secure connection. I support these encryption methods..."</p>
+</li>
+<li>
+<p><strong>Server Hello:</strong> Server responds: "Here's my SSL certificate and public key. Let's use AES-256 encryption."</p>
+</li>
+<li>
+<p><strong>Certificate Check:</strong> Your browser verifies:</p>
+</li>
+<li>Is this certificate valid?</li>
+<li>Is it issued by a trusted Certificate Authority (CA)?</li>
+<li>
+<p>Does the domain name match?</p>
+</li>
+<li>
+<p><strong>Key Exchange:</strong> Browser generates a random session key, encrypts it with server's public key, sends it back.</p>
+</li>
+<li>
+<p><strong>Secure Connection:</strong> Both sides now have the same session key (symmetric encryption) for fast, secure communication.</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Why this matters</p>
+<p>Asymmetric encryption solves the "how do we share keys" problem. Then switches to faster symmetric encryption for actual data transfer.</p>
+</div>
+<p><strong>Video:</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ZkL10eoG1PY"><span class="twemoji youtube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"/></svg></span> TLS Handshake - EVERYTHING that happens when you visit an HTTPS website</a></li>
+</ul>
+<hr />
+<h3 id="activity-21-certificate-investigation">Activity 2.1: Certificate Investigation</h3>
+<p><em>Practical Exercise (12 minutes)</em></p>
+<p><strong>Part A: Examine an SSL Certificate</strong></p>
+<ol>
+<li>Visit any HTTPS website (e.g., https://www.google.com)</li>
+<li>Click the padlock or info icon in the address bar</li>
+<li>View certificate details</li>
+</ol>
+<p><img alt="" src="../assets/certificate_general.png" width="400" />
+<img alt="" src="../assets/certificate_details.png" width="400" /></p>
+<p><strong>Record the following information:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>- Issued to (domain): 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>- Issued by (Certificate Authority): 
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>- Valid from: 
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- Valid until: 
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- Public key algorithm: 
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>- Signature algorithm: 
+</code></pre></div></p>
+<p><strong>Part B: Analysis Questions</strong></p>
+<ol>
+<li>Why does the certificate have an expiration date?</li>
+<li>What would happen if the domain name on the certificate didn't match the website URL?</li>
+<li>Why must the Certificate Authority be trusted?</li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Extension Challenge</p>
+<p>Try visiting http://expired.badssl.com/ (intentionally expired certificate). What warning does your browser show? Why is this security feature important?</p>
+</div>
+<hr />
+<h2 id="part-3-hash-values-and-digital-signatures">Part 3: Hash Values and Digital Signatures</h2>
+<p><em>Duration: 25-30 minutes</em></p>
+<h3 id="introduction-understanding-hashing">Introduction: Understanding Hashing</h3>
+<p><em>Read the following (10 minutes):</em></p>
+<p><strong>What is a Hash Value?</strong></p>
+<p>A hash function takes any input and produces a fixed-size output (the hash). It's a one-way process - you can't reverse it.</p>
+<pre class="mermaid"><code>flowchart LR
+    A[Any input&lt;br/&gt;any size] --&gt; B[Hash Function&lt;br/&gt;SHA-256]
+    B --&gt; C[Fixed output&lt;br/&gt;256 bits]
+    C -.-&gt;|Cannot reverse| A</code></pre>
+<p><strong>Key Properties:</strong></p>
+<ul>
+<li><strong>Deterministic:</strong> Same input always produces same hash</li>
+<li><strong>Fixed size:</strong> Any input size → same hash length</li>
+<li><strong>One-way:</strong> Can't reverse engineer original from hash</li>
+<li><strong>Avalanche effect:</strong> Tiny change in input = completely different hash</li>
+</ul>
+<p><strong>Example using SHA-256:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Input: &quot;Hello&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Hash:  185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Input: &quot;Hello!&quot;  (just added one character!)
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Hash:  334d016f755cd6dc58c53a86e183882f8ec14f52fb05345887c8a5edd42c87b7
+</code></pre></div>
+<p><strong>Common Hash Algorithms:</strong></p>
+<ul>
+<li><strong>MD5:</strong> 128-bit (outdated, insecure)</li>
+<li><strong>SHA-1:</strong> 160-bit (deprecated)</li>
+<li><strong>SHA-256:</strong> 256-bit (current standard)</li>
+<li><strong>SHA-512:</strong> 512-bit (very secure)</li>
+</ul>
+<p><strong>Use Cases:</strong></p>
+<ul>
+<li>Password storage (store hash, not actual password)</li>
+<li>File integrity verification (download hash = file wasn't corrupted/tampered)</li>
+<li>Digital signatures</li>
+<li>Blockchain</li>
+</ul>
+<hr />
+<h3 id="worked-example-hashing-in-practice">Worked Example: Hashing in Practice</h3>
+<p><strong>Scenario: Password Security</strong></p>
+<p><strong>Poor Practice:</strong></p>
+<ul>
+<li>store password as plain text</li>
+<li>anyone can view and use the password if the have access to the database
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Database stores:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Username: alice
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Password: password123  ← Stored as plain text!
+</code></pre></div></li>
+</ul>
+<p><strong>Better Practice:</strong></p>
+<ul>
+<li>password is hashed </li>
+<li>hash is stored instead of actual password</li>
+<li>is vulnerable to brute force attacks, rainbow tables, grouping of identical passwords
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Database stores:
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Username: alice
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Password: ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>(This is the SHA-256 hash of &quot;password123&quot;)
+</code></pre></div></li>
+</ul>
+<p><strong>Best Practice:</strong></p>
+<ul>
+<li>password is hashed and salted</li>
+<li>unique salt per user</li>
+<li>salt is stored with the hash
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Database stores:
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Username: alice
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Salt: 1a2b3c4d5e6f7g8h9i0jklmno
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Password: 39192c8e95ad9fdc20087163df96cdbb26f72c6b349e16ad3d0a77ebdaba3f08
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>(This is the SHA-256 hash with salting)
+</code></pre></div></li>
+</ul>
+<p>Try it out: <a href="https://emn178.github.io/online-tools/sha256.html">Online SHA256 tool</a></p>
+<p><strong>Login Process:</strong></p>
+<pre class="mermaid"><code>sequenceDiagram
+    participant User as Alice
+    participant System
+    participant Database
+    User-&gt;&gt;System: Enters "password123"
+    System-&gt;&gt;System: Hashes input&lt;br/&gt;→ ef92b778bafe...
+    System-&gt;&gt;Database: Request stored hash
+    Database-&gt;&gt;System: Returns ef92b778bafe...
+    System-&gt;&gt;System: Compare hashes
+    alt Hashes match
+        System-&gt;&gt;User: ✅ Login successful
+    else Hashes don't match
+        System-&gt;&gt;User: ❌ Login failed
+    end</code></pre>
+<div class="admonition success">
+<p class="admonition-title">Why this is secure</p>
+<p>Even if hackers steal the database, they can't reverse the hash to get actual passwords. They can only see the hash, not the original but their are techniques to brute force the hash and find a matching password.    </p>
+</div>
+<hr />
+<h3 id="activity-31-digital-signatures-deep-dive">Activity 3.1: Digital Signatures Deep Dive</h3>
+<p><em>(8 minutes)</em></p>
+<p><strong>Understanding Digital Signatures</strong></p>
+<p>First, read this explanation:</p>
+<p>A digital signature proves:</p>
+<ol>
+<li><strong>Authentication:</strong> The message is from who it claims to be from</li>
+<li><strong>Integrity:</strong> The message hasn't been altered</li>
+<li><strong>Non-repudiation:</strong> Sender can't deny sending it</li>
+</ol>
+<p><strong>How it works:</strong></p>
+<pre class="mermaid"><code>flowchart TD
+    subgraph Signing Process
+    A[Document] --&gt; B[Hash Function]
+    B --&gt; C[Hash Value]
+    C --&gt; D[Encrypt with&lt;br/&gt;Sender's PRIVATE Key]
+    D --&gt; E[Digital Signature]
+    end
+
+    subgraph Verification Process
+    F[Received Document] --&gt; G[Hash Function]
+    G --&gt; H[New Hash]
+    E --&gt; I[Decrypt with&lt;br/&gt;Sender's PUBLIC Key]
+    I --&gt; J[Original Hash]
+    H --&gt; K{Hashes Match?}
+    J --&gt; K
+    K --&gt;|Yes| L[✅ Authentic &amp; Unaltered]
+    K --&gt;|No| M[❌ Tampered or Fake]
+    end</code></pre>
+<p><strong>Your Task:</strong></p>
+<p>Explain in your own words why digital signatures use the private key to encrypt (opposite of normal encryption). Consider:</p>
+<ul>
+<li>What does this prove?</li>
+<li>Why can't someone forge a signature?</li>
+<li>How does this provide non-repudiation?</li>
+</ul>
+<hr />
+<h2 id="part-4-authentication-vs-authorisation">Part 4: Authentication vs Authorisation</h2>
+<p><em>Duration: 15-20 minutes</em></p>
+<h3 id="introduction-key-concepts">Introduction: Key Concepts</h3>
+<p><em>Read the following (6 minutes):</em></p>
+<p><strong>Authentication vs Authorisation</strong></p>
+<table>
+<thead>
+<tr>
+<th>Authentication</th>
+<th>Authorisation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>"Who are you?"</strong></td>
+<td><strong>"What can you do?"</strong></td>
+</tr>
+<tr>
+<td>Proving identity</td>
+<td>Defining permissions</td>
+</tr>
+<tr>
+<td>Username/password, biometrics, tokens</td>
+<td>Access control lists, roles, policies</td>
+</tr>
+<tr>
+<td>Happens first</td>
+<td>Happens after authentication</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart LR
+    A[User Arrives] --&gt; B[Authentication&lt;br/&gt;Who are you?]
+    B --&gt;|Verified| C[Authorisation&lt;br/&gt;What can you do?]
+    B --&gt;|Failed| D[Access Denied]
+    C --&gt;|Permitted| E[Access Granted]
+    C --&gt;|Not Permitted| D</code></pre>
+<p><strong>Example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Analogy</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>Showing your <strong>Student ID card to the librarian</strong> to check out a book.</td>
+<td>You prove your identity to the librarian.</td>
+</tr>
+<tr>
+<td><strong>Authorisation</strong></td>
+<td>Being told you can only check out <strong>5 books</strong> at a time, or only books from the <strong>Junior/Senior section</strong>.</td>
+<td>Your status (student) determines the <strong>limits and permissions</strong> of your access (how many, what kind).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Authentication Methods:</strong></p>
+<ul>
+<li>Something you <strong>know</strong> (password, PIN)</li>
+<li>Something you <strong>have</strong> (phone, security token)</li>
+<li>Something you <strong>are</strong> (fingerprint, face)</li>
+<li><strong>Multi-factor authentication (MFA):</strong> Combining 2+ methods</li>
+</ul>
+<pre class="mermaid"><code>graph TD
+    A[Authentication Methods] --&gt; B[Something you KNOW]
+    A --&gt; C[Something you HAVE]
+    A --&gt; D[Something you ARE]
+    B --&gt; E[Password, PIN, Security Question]
+    C --&gt; F[Phone, Token, Smart Card]
+    D --&gt; G[Fingerprint, Face, Iris]
+    B &amp; C --&gt; H[MFA: 2+ methods combined]
+    B &amp; D --&gt; H
+    C &amp; D --&gt; H</code></pre>
+<hr />
+<h3 id="activity-41-security-analysis">Activity 4.1: Security Analysis</h3>
+<p><em>Case Study (8 minutes)</em></p>
+<p><strong>Case Study: Securing a Student Portal</strong></p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>10,000 students need access</li>
+<li>Students can view grades, enrol in subjects</li>
+<li>Teachers can view all student data and enter grades</li>
+<li>Administrators can modify student records</li>
+</ul>
+<p><strong>Let's design the security together:</strong></p>
+<p><strong>Authentication Layer:</strong></p>
+<ol>
+<li>What authentication method(s) would you use?</li>
+<li>Should we implement MFA? For whom?</li>
+<li>How should passwords be stored?</li>
+</ol>
+<p><strong>Authorisation Layer:</strong></p>
+<ol>
+<li>What roles do we need? (Student, Teacher, Admin)</li>
+<li>What permissions does each role have?</li>
+<li>How do we prevent a student from accessing teacher functions?</li>
+</ol>
+<p><strong>Fill in this table:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Can View Grades</th>
+<th>Can Edit Grades</th>
+<th>Can Modify Records</th>
+<th>Authentication Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Student</td>
+<td>Own only</td>
+<td>❌</td>
+<td>❌</td>
+<td>Username/Password</td>
+</tr>
+<tr>
+<td>Teacher</td>
+<td>All students</td>
+<td>✅</td>
+<td>❌</td>
+<td>?</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>All</td>
+<td>✅</td>
+<td>✅</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="activity-42-independent-application">Activity 4.2: Independent Application</h3>
+<p><em>Design Challenge (8 minutes)</em></p>
+<p>You're building a healthcare patient portal. Consider these security requirements:</p>
+<p><strong>Stakeholders:</strong></p>
+<ul>
+<li>Patients (view own records)</li>
+<li>Doctors (view/edit patient records they treat)</li>
+<li>Nurses (view records, add notes)</li>
+<li>Billing staff (view insurance info only)</li>
+<li>System admins (full access)</li>
+</ul>
+<div class="admonition activity">
+<p class="admonition-title">Activity</p>
+<ol>
+<li>
+<p><strong>Design the authentication system:</strong></p>
+<ul>
+<li>What methods will you use for each user type?</li>
+<li>Which users should have MFA mandatory?</li>
+<li>How will you handle password storage?</li>
+</ul>
+</li>
+<li>
+<p><strong>Design the authorisation matrix:</strong></p>
+<ul>
+<li>Create a table showing what each role can access</li>
+<li>Consider the CIA triad (Confidentiality, Integrity, Availability)</li>
+</ul>
+</li>
+<li>
+<p><strong>Security protocols:</strong></p>
+<ul>
+<li>Which protocols (HTTPS, TLS) are mandatory? Why?</li>
+<li>Should you log access attempts? What information?</li>
+</ul>
+</li>
+<li>
+<p><strong>Encryption requirements:</strong></p>
+<ul>
+<li>What data must be encrypted at rest (in database)?</li>
+<li>What data must be encrypted in transit?</li>
+<li>Symmetric or asymmetric encryption for stored medical records?</li>
+</ul>
+</li>
+</ol>
+</div>
+<hr />
+<h2 id="part-5-synthesis-and-application">Part 5: Synthesis and Application</h2>
+<p><em>Duration: 15-20 minutes</em></p>
+<h3 id="activity-51-comprehensive-scenario">Activity 5.1: Comprehensive Scenario</h3>
+<p><em>Real-World Challenge</em></p>
+<p><strong>Real-World Challenge: Securing an E-Commerce Platform</strong></p>
+<p>You're the security architect for a new online store. You must make decisions about every security layer.</p>
+<p><strong>Complete the following security audit:</strong></p>
+<h4 id="section-a-protocol-selection">Section A: Protocol Selection</h4>
+<p>For each function, choose and justify the protocol:</p>
+<ol>
+<li><strong>Uploading product images from vendor computers:</strong></li>
+<li>Protocol choice: ___</li>
+<li>Port number: ___</li>
+<li>
+<p>Justification: ___</p>
+</li>
+<li>
+<p><strong>Sending order confirmation emails:</strong></p>
+</li>
+<li>Protocol choice: ___</li>
+<li>Port number: ___</li>
+<li>
+<p>Security consideration: ___</p>
+</li>
+<li>
+<p><strong>Customer support accessing email from multiple devices:</strong></p>
+</li>
+<li>Protocol choice: ___</li>
+<li>Justification: ___</li>
+</ol>
+<h4 id="section-b-encryption-strategy">Section B: Encryption Strategy</h4>
+<ol>
+<li><strong>Customer credit card information:</strong></li>
+<li>Storage: Encrypted or hashed? Why?</li>
+<li>Algorithm suggestion: ___</li>
+<li>
+<p>Type (symmetric/asymmetric): ___</p>
+</li>
+<li>
+<p><strong>Customer passwords:</strong></p>
+</li>
+<li>Storage method: ___</li>
+<li>Algorithm: ___</li>
+<li>
+<p>Why not store plain text: ___</p>
+</li>
+<li>
+<p><strong>HTTPS implementation:</strong></p>
+</li>
+<li>Describe the SSL/TLS handshake for your site</li>
+<li>Which encryption is used during handshake: ___</li>
+<li>Which encryption is used for data transfer: ___</li>
+</ol>
+<h4 id="section-c-authentication-authorisation">Section C: Authentication &amp; Authorisation</h4>
+<ol>
+<li><strong>Design three user roles:</strong></li>
+<li>Customer permissions: ___</li>
+<li>Staff permissions: ___</li>
+<li>
+<p>Admin permissions: ___</p>
+</li>
+<li>
+<p><strong>Should you implement MFA?</strong></p>
+</li>
+<li>For which roles: ___</li>
+<li>Justification: ___</li>
+</ol>
+<h4 id="section-d-integrity-verification">Section D: Integrity &amp; Verification</h4>
+<ol>
+<li><strong>Software updates for your platform:</strong></li>
+<li>How will you use hash values: ___</li>
+<li>
+<p>Which hash algorithm: ___</p>
+</li>
+<li>
+<p><strong>Digital signatures:</strong></p>
+<ul>
+<li>Where will you use them in your e-commerce flow: ___</li>
+<li>What do they verify: ___</li>
+</ul>
+</li>
+</ol>
+<h4 id="section-e-cia-triad-application">Section E: CIA Triad Application</h4>
+<p>For each scenario, identify which principle(s) are threatened and your solution:</p>
+<ol>
+<li>
+<p><strong>Competitor tries to read customer database:</strong></p>
+<ul>
+<li>Principle: ___</li>
+<li>Solution: ___</li>
+</ul>
+</li>
+<li>
+<p><strong>Hacker modifies product prices in database:</strong></p>
+<ul>
+<li>Principle: ___</li>
+<li>Solution: ___</li>
+</ul>
+</li>
+<li>
+<p><strong>DDoS attack makes website unavailable:</strong></p>
+<ul>
+<li>Principle: ___</li>
+<li>Solution: ___</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="syllabus-alignment">Syllabus Alignment</h2>
+<h3 id="programming-for-the-web">Programming For The Web</h3>
+<p>✓ Investigate and describe the function of web protocols and their ports. Including:</p>
+<ul>
+<li>TCP/IP</li>
+<li>FTP, SFTP</li>
+<li>SSL, TLS</li>
+<li>SMTP, POP 3, IMAP</li>
+</ul>
+<p>✓ Explain the processes for securing the web. Including:</p>
+<ul>
+<li>Secure Sockets Layer (SSL) certificates</li>
+<li>encryption algorithms</li>
+<li>encryption keys</li>
+<li>plain text and cipher text</li>
+<li>authentication and authorisation</li>
+<li>hash values</li>
+<li>digital signatures</li>
+</ul>
+<h3 id="secure-software-architecture">Secure Software Architecture</h3>
+<p>✓ Explore fundamental security concepts (confidentiality, integrity, availability)</p>
+<h2 id="checklist">Checklist</h2>
+<h3 id="web-protocols">Web Protocols</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Explain the function of FTP, SFTP, SMTP, POP3, IMAP</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Identify port numbers for each protocol</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Describe SSL and TLS operation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Compare security features of different protocols</li>
+</ul>
+<h3 id="encryption">Encryption</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Define plain text and cipher text</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Explain symmetric vs asymmetric encryption</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Describe encryption keys and algorithms</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Explain the SSL/TLS handshake process</li>
+</ul>
+<h3 id="ssl-certificates">SSL Certificates</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Describe what SSL certificates contain</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Explain how certificates are verified</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Identify Certificate Authorities</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Analyse real certificates</li>
+</ul>
+<h3 id="authentication-authorisation">Authentication &amp; Authorisation</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Distinguish between authentication and authorisation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Describe authentication methods</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Design authorisation structures</li>
+</ul>
+<h3 id="hash-values-digital-signatures">Hash Values &amp; Digital Signatures</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Explain what hash values are</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Describe properties of hash functions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Explain how digital signatures work</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Apply hashing to real scenarios</li>
+</ul>
+<h3 id="security-concepts">Security Concepts</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Explain confidentiality, integrity, availability</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Apply CIA triad to scenarios</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Analyse security threats and solutions</li>
+</ul>
+<hr />
+<h2 id="extension-resources">Extension Resources</h2>
+<p><strong>If you finish early or want to go deeper:</strong></p>
+<ol>
+<li>
+<p><strong>Interactive SSL/TLS Simulator:</strong></p>
+<ul>
+<li>Try the SSL Labs test: <a href="https://www.ssllabs.com/ssltest/">https://www.ssllabs.com/ssltest/</a></li>
+<li>Test your favourite websites' security</li>
+</ul>
+</li>
+<li>
+<p><strong>Hashing Practice:</strong></p>
+<ul>
+<li>Use an <a href="https://emn178.github.io/online-tools/sha256.html">online SHA-256 generator</a></li>
+<li>Hash your name, then change one letter - observe the avalanche effect</li>
+<li>Try salting you name and then hashing it</li>
+</ul>
+</li>
+<li>
+<p><strong>Certificate Exploration:</strong></p>
+<ul>
+<li>Find three different websites</li>
+<li>Compare their SSL certificates</li>
+<li>Identify different Certificate Authorities</li>
+</ul>
+</li>
+<li>
+<p><strong>Protocol Investigation:</strong></p>
+<ul>
+<li>Use your computer's terminal/command prompt</li>
+<li>Try: <code>nslookup</code> commands to see DNS</li>
+<li>Observe protocol communications</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="learning-reflection">Learning Reflection</h2>
+<p><em>Complete before finishing (5 minutes):</em></p>
+<ol>
+<li><strong>Most challenging concept:</strong> ___</li>
+<li><strong>How I overcame it:</strong> ___</li>
+<li><strong>Real-world application I found interesting:</strong> ___</li>
+<li><strong>One question I still have:</strong> ___</li>
+<li><strong>Confidence rating (1-5) for each topic:</strong></li>
+<li>Protocols: ___/5</li>
+<li>Encryption: ___/5</li>
+<li>Certificates: ___/5</li>
+<li>Hashing: ___/5</li>
+<li>Authentication: ___/5</li>
+</ol>
+<hr />
+<h2 id="answer-guide">Answer Guide</h2>
+<p><strong>For Self-Checking - only reveal after attempting activities</strong></p>
+<details class="success">
+<summary>Activity 1.2 - Email Protocol Answer</summary>
+<p><strong>Recommended:</strong> IMAP on port 993 (secure)</p>
+<p><strong>Reasoning:</strong></p>
+<ul>
+<li>Employees need multi-device access</li>
+<li>IMAP syncs across all devices</li>
+<li>Email stays on server (accessible anywhere)</li>
+<li>Port 993 provides encryption</li>
+<li>POP3 would download and delete, losing sync capability</li>
+</ul>
+</details>
+<details class="success">
+<summary>Activity 4.1 - Security Design Answer</summary>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Can View Grades</th>
+<th>Can Edit Grades</th>
+<th>Can Modify Records</th>
+<th>Authentication Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Student</td>
+<td>Own only</td>
+<td>❌</td>
+<td>❌</td>
+<td>Username/Password</td>
+</tr>
+<tr>
+<td>Teacher</td>
+<td>All students</td>
+<td>✅</td>
+<td>❌</td>
+<td>Username/Password + MFA</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>All</td>
+<td>✅</td>
+<td>✅</td>
+<td>Username/Password + MFA + IP restriction</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Passwords:</strong> Stored as SHA-256 hashes with salt</p>
+</details>
+<hr />
+<div class="admonition success">
+<p class="admonition-title">Congratulations!</p>
+<p>You've completed coverage of NSW Software Engineering web protocols and security syllabus content. You should now be able to describe, explain, and analyse all required concepts.</p>
+</div>
+<details class="notes">
+<summary>Teacher Notes - Formative Assessment</summary>
+<h2 id="formative-assessment-opportunities">Formative Assessment Opportunities</h2>
+<h3 id="activity-11-protocol-comparison_1">Activity 1.1: Protocol Comparison</h3>
+<p>What to assess:</p>
+<ul>
+<li>Can students identify security vulnerabilities in plain text transmission?</li>
+<li>Do they understand the fundamental difference between secure and insecure protocols?</li>
+</ul>
+<p>Look for:</p>
+<ul>
+<li>✅ Recognition that FTP sends credentials in plain text</li>
+<li>✅ Understanding that encryption protects data in transit</li>
+<li>❌ Students who think "it's okay if the network is private"</li>
+</ul>
+<p><strong>Intervention:</strong>
+- If students struggle, revisit the concept of network monitoring and man-in-the-middle attacks. Ask: "Who else might be on the network between you and the server?"</p>
+<h3 id="activity-12-email-protocol-analysis_1">Activity 1.2: Email Protocol Analysis</h3>
+<p>What to assess:</p>
+<ul>
+<li>Understanding of protocol functionality (POP3 vs IMAP)</li>
+<li>Ability to match technical solutions to real-world requirements</li>
+<li>Knowledge of secure port numbers</li>
+</ul>
+<p>Look for:</p>
+<ul>
+<li>✅ Recognition that IMAP is better for multi-device scenarios</li>
+<li>✅ Use of secure ports (993 or 995)</li>
+<li>❌ Confusion about when email is deleted from server</li>
+<li>❌ Selecting insecure ports (110, 143)</li>
+</ul>
+<p><strong>Quick formative check:</strong>
+Ask students: "If you delete an email on your phone using POP3, will it still be on your laptop?" This reveals understanding of the protocol's behaviour.</p>
+<h3 id="activity-21-certificate-investigation_1">Activity 2.1: Certificate Investigation</h3>
+<p>What to assess:</p>
+<ul>
+<li>Ability to navigate browser security features</li>
+<li>Understanding of certificate components</li>
+<li>Critical thinking about trust and verification</li>
+</ul>
+<p>Look for:</p>
+<ul>
+<li>✅ Students can locate and read certificate details</li>
+<li>✅ Understanding that CA trust is hierarchical</li>
+<li>❌ Accepting certificates without checking expiry</li>
+<li>❌ Not understanding domain name matching</li>
+</ul>
+<p>Extension for advanced students:
+Ask them to investigate what happens with self-signed certificates and why browsers warn against them.</p>
+<h3 id="activity-31-digital-signatures">Activity 3.1: Digital Signatures</h3>
+<p>What to assess:</p>
+<ul>
+<li>Understanding of asymmetric encryption application</li>
+<li>Ability to explain authentication vs confidentiality</li>
+<li>Comprehension of one-way hash functions</li>
+</ul>
+<p>Look for:</p>
+<ul>
+<li>✅ Recognition that signing uses private key (opposite of encryption)</li>
+<li>✅ Understanding that public key verification proves identity</li>
+<li>❌ Confusion about which key to use when</li>
+<li>❌ Thinking digital signatures encrypt the entire document</li>
+</ul>
+<p><strong>Intervention:</strong>
+Use the analogy of a physical signature sealed in wax. Only you can create your signature (private key), but anyone can verify it's yours (public key).</p>
+<h3 id="activity-41-42-security-design-tasks">Activity 4.1 &amp; 4.2: Security Design Tasks</h3>
+<p>What to assess:</p>
+<ul>
+<li>Application of authentication vs authorisation concepts</li>
+<li>Risk assessment and appropriate security measures</li>
+<li>Understanding of role-based access control</li>
+</ul>
+<p>Look for:</p>
+<ul>
+<li>✅ MFA applied to privileged accounts</li>
+<li>✅ Password storage using hashing (not encryption)</li>
+<li>✅ Principle of least privilege in authorisation design</li>
+<li>❌ Over-engineering security for low-risk users</li>
+<li>❌ Under-protecting sensitive data/roles</li>
+</ul>
+<p><strong>Discussion prompt:</strong>
+"Why do we hash passwords but encrypt credit cards?" This reveals understanding of one-way vs reversible cryptography.</p>
+<h3 id="activity-51-comprehensive-scenario_1">Activity 5.1: Comprehensive Scenario</h3>
+<p>What to assess:</p>
+<ul>
+<li>Synthesis of all concepts</li>
+<li>Decision-making with justification</li>
+<li>Application of CIA triad principles</li>
+</ul>
+<p>Look for:</p>
+<ul>
+<li>✅ Consistent security approach across all sections</li>
+<li>✅ Appropriate protocol/algorithm selection with reasoning</li>
+<li>✅ Recognition of trade-offs (security vs usability)</li>
+<li>❌ Contradictory decisions (e.g., secure protocols but plain text passwords)</li>
+<li>❌ Missing critical security measures</li>
+</ul>
+</details>
+<details class="notes">
+<summary>Teacher Notes - Common Misconceptions</summary>
+<h2 id="common-misconceptions">Common Misconceptions</h2>
+<ol>
+<li>
+<p><strong>"Encryption and hashing are the same thing"</strong></p>
+<p><strong>Misconception:</strong> Students often use these terms interchangeably.</p>
+<p><strong>Reality:</strong></p>
+<ul>
+<li>Encryption is reversible (cipher text → plain text with key)</li>
+<li>Hashing is one-way (cannot reverse hash → original)</li>
+</ul>
+<p><strong>Teaching strategy:</strong>
+<pre class="mermaid"><code>flowchart LR
+    A[Encryption] --&gt; B[Reversible]
+    B --&gt; C[Used for: Credit cards,&lt;br/&gt;files, communications]
+    D[Hashing] --&gt; E[One-way]
+    E --&gt; F[Used for: Passwords,&lt;br/&gt;integrity checks]</code></pre>
+<strong>Key question:</strong> "If a hacker steals your database, would you rather they have encrypted passwords or hashed passwords? Why?"</p>
+</li>
+<li>
+<p><strong>"HTTPS just means the website is safe/trustworthy"</strong></p>
+<p><strong>Misconception:</strong> The padlock icon means the website owner is legitimate and won't scam you.</p>
+<p><strong>Reality:</strong> HTTPS only guarantees:</p>
+<ul>
+<li>The connection is encrypted (confidentiality)</li>
+<li>You're connected to the domain shown (authentication)</li>
+<li>It does NOT verify the website owner's intentions</li>
+</ul>
+<p><strong>Teaching strategy:</strong>
+- Demonstrate that phishing sites can have valid HTTPS certificates. The padlock protects your data in transit, not from a malicious website owner.
+- Example: https://definitely-not-fake-bank.com can have a valid certificate.</p>
+</li>
+<li>
+<p><strong>"Symmetric encryption is less secure than asymmetric"</strong></p>
+<p><strong>Misconception:</strong> Students think asymmetric encryption is "better" because it's more complex.</p>
+<p><strong>Reality:</strong></p>
+<ul>
+<li>Both can be equally secure with proper key lengths</li>
+<li>Asymmetric is slower (used for key exchange)</li>
+<li>Symmetric is faster (used for bulk data)</li>
+<li>They solve different problems</li>
+</ul>
+<p><strong>Teaching strategy:</strong>
+Use the SSL/TLS handshake to show they work together. Asymmetric solves key distribution; symmetric provides speed.</p>
+</li>
+<li>
+<p><strong>"Port numbers are security features"</strong></p>
+<p><strong>Misconception:</strong> Using port 443 instead of 80 makes data secure.</p>
+<p><strong>Reality:</strong></p>
+<ul>
+<li>Ports are just addresses/doorways</li>
+<li>The protocol (HTTP vs HTTPS) provides security</li>
+<li>You could run HTTP on port 443 (insecure)</li>
+<li>You could run HTTPS on port 8080 (secure)</li>
+</ul>
+<p><strong>Teaching strategy:</strong>
+- Analogy: "A secure door on a building doesn't depend on its number. Port 443 is just the standard address where we expect to find HTTPS, but the HTTPS protocol is what provides security."</p>
+</li>
+<li>
+<p><strong>"Authentication and authorisation are the same thing"</strong></p>
+<p><strong>Misconception:</strong> Students treat these as synonyms.</p>
+<p><strong>Reality:</strong></p>
+<ul>
+<li>Authentication = identity verification ("Who are you?")</li>
+<li>Authorisation = permission checking ("What can you do?")</li>
+<li>Must authenticate before authorising</li>
+<li>Can be authenticated but not authorised</li>
+</ul>
+<p><strong>Teaching strategy:</strong>
+- Physical analogy: Your student ID authenticates you as a student. But that doesn't authorise you to enter the staff room or change grades in the system.</p>
+</li>
+<li>
+<p><strong>"Digital signatures encrypt documents"</strong></p>
+<p><strong>Misconception:</strong> If you sign a document digitally, it becomes encrypted/unreadable.</p>
+<p><strong>Reality:</strong></p>
+<ul>
+<li>Digital signatures prove authenticity and integrity</li>
+<li>The document remains readable</li>
+<li>Only the hash is encrypted (not the document)</li>
+</ul>
+<p><strong>Teaching strategy:</strong>
+<pre class="mermaid"><code>flowchart TD
+    A[Document remains&lt;br/&gt;in plain text] --&gt; B[Hash of document&lt;br/&gt;is created]
+    B --&gt; C[Hash is encrypted&lt;br/&gt;with private key]
+    C --&gt; D[Signature attached&lt;br/&gt;to readable document]</code></pre></p>
+</li>
+<li>
+<p><strong>"SSL and TLS are different things"</strong></p>
+<p><strong>Misconception:</strong> These are two competing protocols to choose between.</p>
+<p><strong>Reality:</strong></p>
+<ul>
+<li>TLS is the successor to SSL</li>
+<li>SSL is deprecated (insecure)</li>
+<li>Industry still says "SSL certificate" but means TLS</li>
+<li>Modern browsers only support TLS 1.2+</li>
+</ul>
+<p><strong>Teaching strategy:</strong>
+"SSL is the old name that stuck. Think of it like calling all tissues 'Kleenex' even when they're a different brand. We're actually using TLS, but everyone still says SSL."</p>
+</li>
+<li>
+<p><strong>"Longer passwords are harder to hash"</strong></p>
+<p><strong>Misconception:</strong> Hash time increases significantly with password length.</p>
+<p><strong>Reality:</strong></p>
+<ul>
+<li>Hash functions produce fixed-length output regardless of input size</li>
+<li>"hello" and a 10,000-character document produce same-length SHA-256 hash</li>
+<li>Computation time increases minimally with input length</li>
+</ul>
+<p><strong>Teaching strategy:</strong>
+- Demonstrate with an online hash generator: hash a short and long string, showing same output length and similar computation time.</p>
+</li>
+</ol>
+</details>
+<details class="teacher notes - differentiation">
+<summary>Teacher</summary>
+<h2 id="differentiation">Differentiation</h2>
+</details>
+<h3 id="for-students-who-need-additional-support">For Students Who Need Additional Support</h3>
+<h4 id="scaffolding-techniques"><strong>Scaffolding Techniques</strong></h4>
+<p><strong>1. Protocol Selection (Activity 1.2)</strong></p>
+<div class="highlight"><pre><span></span><code>Provide a decision tree:
+
+```mermaid
+flowchart TD
+    A[Email Protocol?] --&gt; B{Multiple devices?}
+    B --&gt;|Yes| C[IMAP]
+    B --&gt;|No| D[POP3 or IMAP]
+    C --&gt; E{Need security?}
+    D --&gt; E
+    E --&gt;|Yes| F[Use secure port&lt;br/&gt;IMAP: 993&lt;br/&gt;POP3: 995]
+    E --&gt;|No| G[Standard port&lt;br/&gt;IMAP: 143&lt;br/&gt;POP3: 110]
+```
+
+**2. Encryption Concepts**
+
+Provide a comparison table template:
+
+|Feature|Symmetric|Asymmetric|
+|---|---|---|
+|Number of keys|||
+|Speed|||
+|Best use|||
+|Key distribution|||
+|Example|||
+
+**3. Visual Aids**
+
+Create physical cards for key concepts:
+
+- Green cards = Secure protocols (SFTP, HTTPS, IMAPS)
+- Red cards = Insecure protocols (FTP, HTTP, IMAP)
+- Students sort scenarios with appropriate cards
+
+**4. Worked Examples**
+
+Before Activity 5.1, provide a simpler parallel example (school library system) with completed security audit they can use as a model.
+
+---
+
+### For Advanced Students
+
+#### **Extension Challenges**
+
+**1. Protocol Deep Dive**
+
+Research and present on:
+
+- How does STARTTLS work in email protocols?
+- What are the differences between TLS 1.2 and TLS 1.3?
+- Investigate certificate pinning and its security benefits
+
+**2. Cryptographic Analysis**
+
+- Compare different hash algorithms (MD5, SHA-1, SHA-256, bcrypt, Argon2)
+- Research rainbow tables and salt in password hashing
+- Investigate quantum computing threats to current encryption
+
+**3. Real-World Security Audit**
+
+Conduct a security assessment of a real website or application:
+
+- Analyse SSL/TLS configuration using SSL Labs
+- Document certificate chain
+- Identify security headers (CSP, HSTS, X-Frame-Options)
+- Propose improvements
+
+**4. Build a Demonstration**
+
+Create a working demonstration:
+
+- Simple symmetric encryption tool (Caesar cipher, then AES)
+- Password hashing demonstration with timing attacks
+- Mini SSL/TLS handshake simulator
+- Digital signature verification system
+</code></pre></div><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+  position: relative;
+}
+/* Set margin-top of first quiz child (skip the header link) */
+.quiz > .quiz-question:first-of-type {
+  margin-top: 0;
+}
+/* Remove top margin from first element inside quiz-question */
+.quiz-question > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    background-color 0.2s;
+}
+
+form button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+form button:disabled {
+  background-color: var(--md-default-fg-color--lighter, #ccc);
+  color: var(--md-default-fg-color--light, #666);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.wrong label,
+.wrong label * {
+  color: #dc3545;
+}
+.correct label,
+.correct label * {
+  color: #198754;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+input[type="radio"].correct {
+  accent-color: #198754;
+}
+input[type="radio"].wrong {
+  accent-color: #dc3545;
+}
+.content {
+  margin: 10px;
+}
+
+/* Quiz feedback message */
+.quiz-feedback {
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.quiz-feedback.correct {
+  background-color: #d1e7dd;
+  border: 1px solid #a3cfbb;
+  color: #198754;
+}
+
+.quiz-feedback.incorrect {
+  background-color: #f8d7da;
+  border: 1px solid #f1aeb5;
+  color: #dc3545;
+}
+
+[data-md-color-scheme="slate"] .quiz-feedback.correct {
+  background-color: #051b11;
+  border: 1px solid #0f5132;
+}
+
+[data-md-color-scheme="slate"] .quiz-feedback.incorrect {
+  background-color: #2c0b0e;
+  border: 1px solid #842029;
+}
+
+/* Quiz header link styling - positioned in top right corner */
+.quiz-header-link {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  opacity: 0;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--md-default-fg-color--light, #888);
+  transition: opacity 0.2s;
+  padding: 0.25rem 0.5rem;
+}
+.quiz:hover .quiz-header-link {
+  opacity: 1;
+}
+
+/* Quiz number header styling */
+.quiz-number {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Quiz Progress Sidebar - Progress bar styling */
+/* Most styling comes from Material's .md-nav classes */
+#quiz-progress-sidebar {
+  margin-top: 1.5rem;
+}
+/* if config progress_sidebar_position is top, need top padding instead of bottom */
+.md-nav--secondary > #quiz-progress-sidebar:first-child {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 59.9375em) {
+  #quiz-progress-sidebar .md-nav__list {
+    border-left: 3px solid var(--md-default-fg-color--lightest);
+  }
+}
+
+.quiz-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.07));
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0.2rem 0;
+  display: flex;
+}
+
+.quiz-progress-bar-incorrect {
+  height: 100%;
+  background: rgba(244, 67, 54, 0.8);
+  transition: width 0.3s ease;
+}
+
+.quiz-progress-bar-correct {
+  height: 100%;
+  background: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.quiz-correct-reset {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Mobile Quiz Progress Tracker */
+/* Shows under navbar on mobile, hidden on desktop */
+.quiz-progress-mobile {
+  display: none; /* Hidden by default on desktop */
+  background-color: var(--md-default-bg-color);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest, rgba(0, 0, 0, 0.07));
+  padding: 0.8rem;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: sticky;
+  top: 48px;
+  z-index: 3; /* Below Material header (z-index: 4) but above page content */
+}
+
+/* Show mobile tracker only on small screens (mobile/tablet) */
+/* Material breakpoint: up to 76.1875em (1219px) */
+@media screen and (max-width: 76.1875em) {
+  .quiz-progress-mobile {
+    display: block;
+  }
+}
+
+/* Mobile tracker styling adjustments */
+.quiz-progress-mobile .md-nav__list {
+  padding: 0;
+  margin: 0;
+  max-width: 61rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+
+.quiz-progress-mobile .md-nav__item {
+  margin: 0.3rem 0;
+}
+
+.quiz-progress-mobile .md-nav__link {
+  padding: 0.2rem 0;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quiz-progress-mobile .quiz-progress-bar {
+  margin: 0.3rem 0;
+}
+
+.quiz-progress-mobile .md-ellipsis {
+  flex: 1;
+}
+
+/* Quiz Intro */
+.quiz-intro {
+  margin: 1rem 0;
+}
+
+.quiz-intro p {
+  margin: 0 0 0.5rem 0;
+}
+
+/* Quiz Results End Screen */
+.quiz-results {
+  border: 1px solid black;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background-color: var(--md-default-bg-color);
+  transition: all 0.3s ease;
+}
+
+/* Progress state - subtle styling */
+.quiz-results-progress {
+  text-align: center;
+  color: var(--md-default-fg-color--light);
+}
+
+.quiz-results-progress h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color);
+}
+
+.quiz-results-stats,
+.quiz-results-correct-stats {
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+.quiz-results-answered,
+.quiz-results-correct,
+.quiz-results-total,
+.quiz-results-percentage {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+/* Complete state - bold and prominent styling */
+.quiz-results-complete {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.quiz-results-complete.hidden {
+  display: none;
+}
+
+.quiz-results-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  color: var(--md-default-fg-color);
+}
+
+.quiz-results-score-display {
+  margin: 1.5rem 0;
+}
+
+.quiz-results-score-value {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Score color coding */
+.quiz-results-score-excellent {
+  color: #198754;
+  background-color: rgba(25, 135, 84, 0.1);
+}
+
+.quiz-results-score-good {
+  color: #28a745;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.quiz-results-score-average {
+  color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.quiz-results-score-poor {
+  color: #fd7e14;
+  background-color: rgba(253, 126, 20, 0.1);
+}
+
+.quiz-results-score-fail {
+  color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.quiz-results-message {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin: 1rem 0 2rem 0;
+  color: var(--md-default-fg-color);
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .quiz-results-score-excellent {
+  color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.15);
+}
+
+[data-md-color-scheme="slate"] .quiz-results-score-good {
+  color: #66bb6a;
+  background-color: rgba(102, 187, 106, 0.15);
+}
+
+[data-md-color-scheme="slate"] .quiz-results-score-average {
+  color: #ffeb3b;
+  background-color: rgba(255, 235, 59, 0.15);
+}
+
+[data-md-color-scheme="slate"] .quiz-results-score-poor {
+  color: #ff9800;
+  background-color: rgba(255, 152, 0, 0.15);
+}
+
+[data-md-color-scheme="slate"] .quiz-results-score-fail {
+  color: #f44336;
+  background-color: rgba(244, 67, 54, 0.15);
+}
+</style><script type="text/javascript">var JSConfetti=function(){"use strict";function t(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function e(t,e){for(var i=0;i<e.length;i++){var n=e[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(t,n.key,n)}}function i(t,i,n){return i&&e(t.prototype,i),n&&e(t,n),t}function n(t){return+t.replace(/px/,"")}function s(t,e){var i=arguments.length>2&&void 0!==arguments[2]?arguments[2]:0,n=Math.random()*(e-t)+t;return Math.floor(n*Math.pow(10,i))/Math.pow(10,i)}function o(t){return t[s(0,t.length)]}var a=["#fcf403","#62fc03","#f4fc03","#03e7fc","#03fca5","#a503fc","#fc03ad","#fc03c2"];function r(t){return Math.log(t)/Math.log(1920)}var h=function(){function e(i){t(this,e);var n=i.initialPosition,a=i.direction,h=i.confettiRadius,c=i.confettiColors,u=i.emojis,l=i.emojiSize,d=i.canvasWidth,f=s(.9,1.7,3)*r(d);this.confettiSpeed={x:f,y:f},this.finalConfettiSpeedX=s(.2,.6,3),this.rotationSpeed=u.length?.01:s(.03,.07,3)*r(d),this.dragForceCoefficient=s(5e-4,9e-4,6),this.radius={x:h,y:h},this.initialRadius=h,this.rotationAngle="left"===a?s(0,.2,3):s(-.2,0,3),this.emojiSize=l,this.emojiRotationAngle=s(0,2*Math.PI),this.radiusYUpdateDirection="down";var m="left"===a?s(82,15)*Math.PI/180:s(-15,-82)*Math.PI/180;this.absCos=Math.abs(Math.cos(m)),this.absSin=Math.abs(Math.sin(m));var v=s(-150,0),p={x:n.x+("left"===a?-v:v)*this.absCos,y:n.y-v*this.absSin};this.currentPosition=Object.assign({},p),this.initialPosition=Object.assign({},p),this.color=u.length?null:o(c),this.emoji=u.length?o(u):null,this.createdAt=(new Date).getTime(),this.direction=a}return i(e,[{key:"draw",value:function(t){var e=this.currentPosition,i=this.radius,n=this.color,s=this.emoji,o=this.rotationAngle,a=this.emojiRotationAngle,r=this.emojiSize,h=window.devicePixelRatio;n?(t.fillStyle=n,t.beginPath(),t.ellipse(e.x*h,e.y*h,i.x*h,i.y*h,o,0,2*Math.PI),t.fill()):s&&(t.font="".concat(r,"px serif"),t.save(),t.translate(h*e.x,h*e.y),t.rotate(a),t.textAlign="center",t.fillText(s,0,0),t.restore())}},{key:"updatePosition",value:function(t,e){var i=this.confettiSpeed,n=this.dragForceCoefficient,s=this.finalConfettiSpeedX,o=this.radiusYUpdateDirection,a=this.rotationSpeed,r=this.createdAt,h=this.direction,c=e-r;i.x>s&&(this.confettiSpeed.x-=n*t),this.currentPosition.x+=i.x*("left"===h?-this.absCos:this.absCos)*t,this.currentPosition.y=this.initialPosition.y-i.y*this.absSin*c+.00125*Math.pow(c,2)/2,this.rotationSpeed-=this.emoji?1e-4:1e-5*t,this.rotationSpeed<0&&(this.rotationSpeed=0),this.emoji?this.emojiRotationAngle+=this.rotationSpeed*t%(2*Math.PI):"down"===o?(this.radius.y-=t*a,this.radius.y<=0&&(this.radius.y=0,this.radiusYUpdateDirection="up")):(this.radius.y+=t*a,this.radius.y>=this.initialRadius&&(this.radius.y=this.initialRadius,this.radiusYUpdateDirection="down"))}},{key:"getIsVisibleOnCanvas",value:function(t){return this.currentPosition.y<t+100}}]),e}();function c(){var t=document.createElement("canvas");return t.style.position="fixed",t.style.width="100%",t.style.height="100%",t.style.top="0",t.style.left="0",t.style.zIndex="1000",t.style.pointerEvents="none",document.body.appendChild(t),t}function u(t){var e=t.confettiRadius,i=void 0===e?6:e,n=t.confettiNumber,s=void 0===n?t.confettiesNumber||(t.emojis?40:250):n,o=t.confettiColors,r=void 0===o?a:o,h=t.emojis,c=void 0===h?t.emojies||[]:h,u=t.emojiSize,l=void 0===u?80:u;return t.emojies&&console.error("emojies argument is deprecated, please use emojis instead"),t.confettiesNumber&&console.error("confettiesNumber argument is deprecated, please use confettiNumber instead"),{confettiRadius:i,confettiNumber:s,confettiColors:r,emojis:c,emojiSize:l}}var l=function(){function e(i){var n=this;t(this,e),this.canvasContext=i,this.shapes=[],this.promise=new Promise((function(t){return n.resolvePromise=t}))}return i(e,[{key:"getBatchCompletePromise",value:function(){return this.promise}},{key:"addShapes",value:function(){var t;(t=this.shapes).push.apply(t,arguments)}},{key:"complete",value:function(){var t;return!this.shapes.length&&(null===(t=this.resolvePromise)||void 0===t||t.call(this),!0)}},{key:"processShapes",value:function(t,e,i){var n=this,s=t.timeDelta,o=t.currentTime;this.shapes=this.shapes.filter((function(t){return t.updatePosition(s,o),t.draw(n.canvasContext),!i||t.getIsVisibleOnCanvas(e)}))}}]),e}();return function(){function e(){var i=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};t(this,e),this.activeConfettiBatches=[],this.canvas=i.canvas||c(),this.canvasContext=this.canvas.getContext("2d"),this.requestAnimationFrameRequested=!1,this.lastUpdated=(new Date).getTime(),this.iterationIndex=0,this.loop=this.loop.bind(this),requestAnimationFrame(this.loop)}return i(e,[{key:"loop",value:function(){var t,e,i,s,o;this.requestAnimationFrameRequested=!1,t=this.canvas,e=window.devicePixelRatio,i=getComputedStyle(t),s=n(i.getPropertyValue("width")),o=n(i.getPropertyValue("height")),t.setAttribute("width",(s*e).toString()),t.setAttribute("height",(o*e).toString());var a=(new Date).getTime(),r=a-this.lastUpdated,h=this.canvas.offsetHeight,c=this.iterationIndex%10==0;this.activeConfettiBatches=this.activeConfettiBatches.filter((function(t){return t.processShapes({timeDelta:r,currentTime:a},h,c),!c||!t.complete()})),this.iterationIndex++,this.queueAnimationFrameIfNeeded(a)}},{key:"queueAnimationFrameIfNeeded",value:function(t){this.requestAnimationFrameRequested||this.activeConfettiBatches.length<1||(this.requestAnimationFrameRequested=!0,this.lastUpdated=t||(new Date).getTime(),requestAnimationFrame(this.loop))}},{key:"addConfetti",value:function(){for(var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=u(t),i=e.confettiRadius,n=e.confettiNumber,s=e.confettiColors,o=e.emojis,a=e.emojiSize,r=this.canvas.getBoundingClientRect(),c=r.width,d=r.height,f=5*d/7,m={x:0,y:f},v={x:c,y:f},p=new l(this.canvasContext),y=0;y<n/2;y++){var g=new h({initialPosition:m,direction:"right",confettiRadius:i,confettiColors:s,confettiNumber:n,emojis:o,emojiSize:a,canvasWidth:c}),C=new h({initialPosition:v,direction:"left",confettiRadius:i,confettiColors:s,confettiNumber:n,emojis:o,emojiSize:a,canvasWidth:c});p.addShapes(g,C)}return this.activeConfettiBatches.push(p),this.queueAnimationFrameIfNeeded(),p.getBatchCompletePromise()}},{key:"clearCanvas",value:function(){this.activeConfettiBatches=[]}},{key:"destroyCanvas",value:function(){this.canvas.remove()}}]),e}()}();
+</script><script type="text/javascript">
+window.mkdocsQuizTranslations = {};
+</script><script type="text/javascript">
+window.mkdocsQuizConfig = {
+  confetti: true,
+  showProgress: true,
+  progressSidebarPosition: "top"
+};
+</script><script type="text/javascript" defer>// Wrap everything in an IIFE to avoid variable redeclaration issues
+// when Material for MkDocs instant navigation reloads the page
+(function () {
+  // Constants
+  const STORAGE_KEY_PREFIX = "quiz_progress_";
+
+  // Translation helper function
+  function t(key, params = {}) {
+    let text = window.mkdocsQuizTranslations?.[key] || key;
+    // Simple template replacement for {n} and {key} style placeholders
+    return text.replace(/{(\w+)}/g, (_, k) => (params[k] !== undefined ? params[k] : `{${k}}`));
+  }
+
+  // Confetti instance (will be initialized if enabled)
+  let jsConfetti = null;
+
+  // Store event listeners for cleanup
+  let eventListeners = [];
+
+  // Initialize confetti if enabled
+  if (window.mkdocsQuizConfig && window.mkdocsQuizConfig.confetti) {
+    if (typeof JSConfetti !== "undefined") {
+      jsConfetti = new JSConfetti();
+    }
+  }
+
+  // Function to move quiz progress sidebar into TOC sidebar
+  // This needs to run on every page load for Material instant navigation
+  function repositionSidebar() {
+    // Use requestAnimationFrame to ensure DOM is ready
+    requestAnimationFrame(() => {
+      const sidebar = document.getElementById("quiz-progress-sidebar");
+      const tocSidebar = document.querySelector(".md-sidebar--secondary .md-sidebar__inner .md-nav--secondary");
+
+      if (sidebar && tocSidebar) {
+        // Check if sidebar is already in the correct position
+        // by seeing if it's already a child of tocSidebar
+        if (!tocSidebar.contains(sidebar)) {
+          // Get position from config (default: "top")
+          const position =
+            window.mkdocsQuizConfig && window.mkdocsQuizConfig.progressSidebarPosition
+              ? window.mkdocsQuizConfig.progressSidebarPosition
+              : "top";
+
+          // Move sidebar based on configured position
+          if (position === "bottom") {
+            // Append to the end (below TOC)
+            tocSidebar.appendChild(sidebar);
+          } else {
+            // Default: insert at the top (above TOC)
+            if (tocSidebar.firstChild) {
+              tocSidebar.insertBefore(sidebar, tocSidebar.firstChild);
+            } else {
+              tocSidebar.appendChild(sidebar);
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // Cleanup function to remove event listeners and prevent memory leaks
+  function cleanup() {
+    eventListeners.forEach(({ element, event, handler }) => {
+      element.removeEventListener(event, handler);
+    });
+    eventListeners = [];
+  }
+
+  // Helper function to add tracked event listeners
+  function addTrackedEventListener(element, event, handler) {
+    element.addEventListener(event, handler);
+    eventListeners.push({ element, event, handler });
+  }
+
+  // Global quiz tracker
+  const quizTracker = {
+    quizzes: {},
+    totalQuizzes: 0,
+    answeredQuizzes: 0,
+    correctQuizzes: 0,
+
+    init: function () {
+      this.totalQuizzes = document.querySelectorAll(".quiz").length;
+      this.loadFromStorage();
+      // Initialize wasCompleted based on restored state to prevent confetti on page load
+      // Only fire confetti when completing quizzes in the current session, not from localStorage
+      const progress = this.getProgress();
+      this.wasCompleted = progress.answered === progress.total && progress.total > 0;
+      this.updateDisplay();
+    },
+
+    markQuiz: function (quizId, isCorrect, selectedValues = []) {
+      const wasAnswered = !!this.quizzes[quizId];
+      const wasCorrect = this.wasPreviouslyCorrect(quizId);
+
+      if (!wasAnswered) {
+        this.answeredQuizzes++;
+      }
+
+      this.quizzes[quizId] = {
+        answered: true,
+        correct: isCorrect,
+        selectedValues: selectedValues,
+      };
+
+      if (isCorrect && !wasCorrect) {
+        this.correctQuizzes++;
+      } else if (!isCorrect && wasCorrect) {
+        this.correctQuizzes--;
+      }
+
+      this.saveToStorage();
+      this.updateDisplay();
+    },
+
+    wasPreviouslyCorrect: function (quizId) {
+      return this.quizzes[quizId] && this.quizzes[quizId].correct;
+    },
+
+    resetQuiz: function (quizId) {
+      if (this.quizzes[quizId]) {
+        if (this.quizzes[quizId].correct) {
+          this.correctQuizzes--;
+        }
+        this.answeredQuizzes--;
+        delete this.quizzes[quizId];
+        this.saveToStorage();
+        this.updateDisplay();
+      }
+    },
+
+    resetAllQuiz: function () {
+      this.quizzes = {};
+      this.answeredQuizzes = 0;
+      this.correctQuizzes = 0;
+      this.saveToStorage();
+      this.updateDisplay();
+
+      // Reset all quiz forms on the page
+      document.querySelectorAll(".quiz").forEach((quiz) => {
+        const form = quiz.querySelector("form");
+        const fieldset = form.querySelector("fieldset");
+        const submitButton = form.querySelector('button[type="submit"]');
+        const resetButton = form.querySelector(".quiz-reset-button");
+        const feedbackDiv = form.querySelector(".quiz-feedback");
+        const section = quiz.querySelector("section");
+
+        // Clear all selections
+        const allInputs = fieldset.querySelectorAll('input[name="answer"]');
+        allInputs.forEach((input) => {
+          input.checked = false;
+          input.disabled = false;
+        });
+
+        // Reset colors
+        resetFieldset(fieldset);
+
+        // Hide content section
+        if (section) {
+          section.classList.add("hidden");
+        }
+
+        // Hide feedback message
+        feedbackDiv.classList.add("hidden");
+        feedbackDiv.classList.remove("correct", "incorrect");
+        feedbackDiv.textContent = "";
+
+        // Show submit button, hide reset button
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.classList.remove("hidden");
+        }
+        if (resetButton) {
+          resetButton.classList.add("hidden");
+        }
+      });
+    },
+
+    getProgress: function () {
+      return {
+        total: this.totalQuizzes,
+        answered: this.answeredQuizzes,
+        correct: this.correctQuizzes,
+        percentage: this.totalQuizzes > 0 ? Math.round((this.answeredQuizzes / this.totalQuizzes) * 100) : 0,
+        score: this.totalQuizzes > 0 ? Math.round((this.correctQuizzes / this.totalQuizzes) * 100) : 0,
+      };
+    },
+
+    saveToStorage: function () {
+      try {
+        const pageKey = STORAGE_KEY_PREFIX + window.location.pathname;
+        const data = JSON.stringify(this.quizzes);
+
+        // Check size limit (50KB max to prevent quota issues)
+        if (data.length > 50000) {
+          console.warn("Quiz progress data exceeds size limit, not saving to localStorage");
+          this.showStorageWarning("Quiz progress is too large to save");
+          return;
+        }
+
+        localStorage.setItem(pageKey, data);
+      } catch (e) {
+        // Handle quota exceeded or localStorage disabled
+        console.error("Failed to save quiz progress:", e);
+        this.showStorageWarning(
+          "Unable to save quiz progress. Your browser may have storage disabled or quota exceeded.",
+        );
+      }
+    },
+
+    loadFromStorage: function () {
+      try {
+        const pageKey = STORAGE_KEY_PREFIX + window.location.pathname;
+        const stored = localStorage.getItem(pageKey);
+
+        if (stored) {
+          // Validate size before parsing (50KB max)
+          if (stored.length > 50000) {
+            console.warn("Stored quiz data exceeds size limit, clearing corrupted data");
+            localStorage.removeItem(pageKey);
+            return;
+          }
+
+          const parsed = JSON.parse(stored);
+
+          // Validate structure: should be an object
+          if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+            console.warn("Invalid quiz data structure, clearing corrupted data");
+            localStorage.removeItem(pageKey);
+            return;
+          }
+
+          this.quizzes = parsed;
+
+          // Recalculate counts and validate quiz data structure
+          this.answeredQuizzes = 0;
+          this.correctQuizzes = 0;
+          for (let key in this.quizzes) {
+            const quiz = this.quizzes[key];
+            // Validate each quiz entry has expected structure
+            if (typeof quiz !== "object" || typeof quiz.answered !== "boolean" || typeof quiz.correct !== "boolean") {
+              console.warn("Invalid quiz entry structure, clearing corrupted data");
+              this.quizzes = {};
+              localStorage.removeItem(pageKey);
+              return;
+            }
+
+            if (quiz.answered) {
+              this.answeredQuizzes++;
+            }
+            if (quiz.correct) {
+              this.correctQuizzes++;
+            }
+          }
+        }
+      } catch (e) {
+        // Handle parsing errors or localStorage unavailable
+        console.error("Failed to load quiz progress:", e);
+        const pageKey = STORAGE_KEY_PREFIX + window.location.pathname;
+        try {
+          localStorage.removeItem(pageKey); // Clear corrupted data
+        } catch (cleanupError) {
+          // localStorage might be completely unavailable
+        }
+      }
+    },
+
+    updateDisplay: function () {
+      const progress = this.getProgress();
+      const wasComplete = this.wasCompleted;
+      const isComplete = progress.answered === progress.total && progress.total > 0;
+
+      // Dispatch custom event for sidebar/other UI components
+      window.dispatchEvent(
+        new CustomEvent("quizProgressUpdate", {
+          detail: progress,
+        }),
+      );
+      // Update sidebar if it exists
+      this.updateSidebar();
+      // Update results div if it exists
+      this.updateResultsDiv(progress, isComplete, wasComplete);
+
+      // Track completion state
+      this.wasCompleted = isComplete;
+    },
+
+    updateResultsDiv: function (progress, isComplete, wasComplete) {
+      const resultsDiv = document.getElementById("quiz-results");
+      if (!resultsDiv) return;
+
+      // Update progress section
+      const answeredEl = resultsDiv.querySelector(".quiz-results-answered");
+      const totalEl = resultsDiv.querySelector(".quiz-results-total");
+      const percentageEl = resultsDiv.querySelector(".quiz-results-percentage");
+      const correctEl = resultsDiv.querySelector(".quiz-results-correct");
+
+      if (answeredEl) answeredEl.textContent = progress.answered;
+      if (totalEl) totalEl.textContent = progress.total;
+      if (percentageEl) percentageEl.textContent = progress.percentage + "%";
+      if (correctEl) correctEl.textContent = progress.correct;
+
+      // Handle completion state
+      const progressSection = resultsDiv.querySelector(".quiz-results-progress");
+      const completeSection = resultsDiv.querySelector(".quiz-results-complete");
+
+      if (isComplete) {
+        // Hide progress, show complete
+        if (progressSection) progressSection.classList.add("hidden");
+        if (completeSection) {
+          completeSection.classList.remove("hidden");
+
+          // Update score display
+          const scoreValue = resultsDiv.querySelector(".quiz-results-score-value");
+          const scoreMessage = resultsDiv.querySelector(".quiz-results-message");
+
+          if (scoreValue) {
+            scoreValue.textContent = progress.score + "%";
+
+            // Remove all score classes
+            scoreValue.classList.remove(
+              "quiz-results-score-excellent",
+              "quiz-results-score-good",
+              "quiz-results-score-average",
+              "quiz-results-score-poor",
+              "quiz-results-score-fail",
+            );
+
+            // Add appropriate score class and message
+            let message = "";
+            if (progress.score >= 90) {
+              scoreValue.classList.add("quiz-results-score-excellent");
+              message = t("Outstanding! You aced it!");
+            } else if (progress.score >= 75) {
+              scoreValue.classList.add("quiz-results-score-good");
+              message = t("Great job! You really know your stuff!");
+            } else if (progress.score >= 60) {
+              scoreValue.classList.add("quiz-results-score-average");
+              message = t("Good effort! Keep learning!");
+            } else if (progress.score >= 40) {
+              scoreValue.classList.add("quiz-results-score-poor");
+              message = t("Not bad, but there's room for improvement!");
+            } else {
+              scoreValue.classList.add("quiz-results-score-fail");
+              message = t("Better luck next time! Keep trying!");
+            }
+
+            if (scoreMessage) scoreMessage.textContent = message;
+          }
+
+          // Trigger confetti and scroll on first completion
+          if (!wasComplete) {
+            // Scroll to results div
+            resultsDiv.scrollIntoView({ behavior: "smooth", block: "center" });
+
+            // Fire confetti if enabled and score is good
+            if (jsConfetti && progress.score >= 10) {
+              setTimeout(() => {
+                jsConfetti.addConfetti();
+              }, 500);
+            }
+          }
+        }
+      } else {
+        // Show progress, hide complete
+        if (progressSection) progressSection.classList.remove("hidden");
+        if (completeSection) completeSection.classList.add("hidden");
+      }
+    },
+
+    updateSidebar: function () {
+      // Update both desktop and mobile sidebars
+      const sidebars = [
+        document.getElementById("quiz-progress-sidebar"),
+        document.getElementById("quiz-progress-mobile"),
+      ];
+
+      sidebars.forEach((sidebar) => {
+        if (sidebar) {
+          const progress = this.getProgress();
+
+          // Update answered count
+          const answeredEl = sidebar.querySelector(".quiz-progress-answered");
+          if (answeredEl) {
+            answeredEl.textContent = progress.answered;
+          }
+
+          // Update answered percentage - desktop only
+          const answeredPercentageEl = sidebar.querySelector(".quiz-progress-answered-percentage");
+          if (answeredPercentageEl && sidebar.id == "quiz-progress-sidebar") {
+            answeredPercentageEl.textContent = progress.percentage + "%";
+          }
+
+          // Update all .quiz-progress-total elements
+          const totalElements = sidebar.querySelectorAll(".quiz-progress-total");
+          totalElements.forEach((el) => {
+            el.textContent = progress.total;
+          });
+
+          // Update correct count
+          const scoreEl = sidebar.querySelector(".quiz-progress-score");
+          if (scoreEl) {
+            scoreEl.textContent = progress.correct;
+          }
+
+          // Update correct denominator (answered count)
+          const scoreTotalEl = sidebar.querySelector(".quiz-progress-score-total");
+          if (scoreTotalEl) {
+            scoreTotalEl.textContent = progress.answered;
+          }
+
+          // Update correct percentage (based on answered quizzes, not total) - desktop only
+          const scorePercentageEl = sidebar.querySelector(".quiz-progress-score-percentage");
+          if (scorePercentageEl && sidebar.id == "quiz-progress-sidebar") {
+            const scorePercentage =
+              progress.answered > 0 ? Math.round((progress.correct / progress.answered) * 100) : 0;
+            scorePercentageEl.textContent = scorePercentage + "%";
+          }
+
+          // Update progress bars (incorrect and correct)
+          const correctBar = sidebar.querySelector(".quiz-progress-bar-correct");
+          const incorrectBar = sidebar.querySelector(".quiz-progress-bar-incorrect");
+
+          if (correctBar && incorrectBar) {
+            const incorrectCount = progress.answered - progress.correct;
+            const correctPercentage = progress.total > 0 ? (progress.correct / progress.total) * 100 : 0;
+            const incorrectPercentage = progress.total > 0 ? (incorrectCount / progress.total) * 100 : 0;
+
+            incorrectBar.style.width = incorrectPercentage + "%";
+            correctBar.style.width = correctPercentage + "%";
+          }
+        }
+      });
+    },
+
+    createSidebar: function () {
+      // Check if progress tracking is enabled
+      const showProgress = window.mkdocsQuizConfig && window.mkdocsQuizConfig.showProgress !== false;
+
+      // Only show sidebar if progress tracking is enabled and there are quizzes
+      if (!showProgress || this.totalQuizzes === 0) {
+        return;
+      }
+
+      // Show both desktop and mobile sidebars
+      const desktopSidebar = document.getElementById("quiz-progress-sidebar");
+      const mobileSidebar = document.getElementById("quiz-progress-mobile");
+
+      if (desktopSidebar) {
+        desktopSidebar.style.display = "";
+      }
+      if (mobileSidebar) {
+        mobileSidebar.style.display = "";
+      }
+
+      // Initialize reset button event listeners
+      const resetLinks = document.querySelectorAll(".quiz-reset-all-link");
+      resetLinks.forEach((resetLink) => {
+        const handler = (e) => {
+          e.preventDefault();
+          if (confirm(t("Are you sure you want to reset the quiz? This will clear your progress."))) {
+            quizTracker.resetAllQuiz();
+          }
+        };
+        addTrackedEventListener(resetLink, "click", handler);
+      });
+
+      // Update the sidebar with initial values
+      this.updateSidebar();
+    },
+
+    showStorageWarning: function (message) {
+      // Show a warning banner in the progress tracker if it exists
+      const progressSidebar = document.getElementById("quiz-progress-sidebar");
+      if (progressSidebar) {
+        // Check if warning already exists
+        let warningEl = progressSidebar.querySelector(".quiz-storage-warning");
+        if (!warningEl) {
+          warningEl = document.createElement("div");
+          warningEl.className = "quiz-storage-warning";
+          warningEl.style.cssText =
+            "background: #fff3cd; color: #856404; padding: 8px; margin: 8px 0; border-radius: 4px; font-size: 12px; border: 1px solid #ffeaa7;";
+          progressSidebar.insertBefore(warningEl, progressSidebar.firstChild);
+        }
+        warningEl.textContent = message;
+      }
+    },
+  };
+
+  // Translate template elements with data-quiz-translate attributes
+  function translateTemplateElements() {
+    document.querySelectorAll("[data-quiz-translate]").forEach((element) => {
+      const key = element.getAttribute("data-quiz-translate");
+      if (key) {
+        element.textContent = t(key);
+      }
+    });
+  }
+
+  // Initialize results div reset button
+  function initializeResultsDiv() {
+    const resultsDiv = document.getElementById("quiz-results");
+    if (!resultsDiv) return;
+
+    const resetButton = resultsDiv.querySelector(".quiz-results-reset");
+    if (resetButton) {
+      const handler = () => {
+        if (confirm(t("Are you sure you want to reset the quiz? This will clear your progress."))) {
+          quizTracker.resetAllQuiz();
+        }
+      };
+      addTrackedEventListener(resetButton, "click", handler);
+    }
+  }
+
+  // Initialize intro reset buttons
+  function initializeIntroResetButtons() {
+    const introResetButtons = document.querySelectorAll(".quiz-intro-reset");
+    introResetButtons.forEach((button) => {
+      const handler = () => {
+        if (confirm(t("Are you sure you want to reset the quiz? This will clear your progress."))) {
+          quizTracker.resetAllQuiz();
+        }
+      };
+      addTrackedEventListener(button, "click", handler);
+    });
+  }
+
+  // Shuffle an array using Fisher-Yates algorithm
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  // Shuffle the answer elements in a fieldset
+  function shuffleAnswers(fieldset) {
+    const answerDivs = Array.from(fieldset.querySelectorAll(":scope > div"));
+    if (answerDivs.length <= 1) return;
+
+    // Shuffle the array of elements
+    shuffleArray(answerDivs);
+
+    // Re-append elements in shuffled order
+    answerDivs.forEach((div) => fieldset.appendChild(div));
+  }
+
+  // Initialize all quiz elements on the page
+  function initializeQuizzes() {
+    document.querySelectorAll(".quiz").forEach((quiz) => {
+      let form = quiz.querySelector("form");
+      let fieldset = form.querySelector("fieldset");
+      let submitButton = form.querySelector('button[type="submit"]');
+      let feedbackDiv = form.querySelector(".quiz-feedback");
+
+      // Shuffle answers if enabled (before any state restoration)
+      if (quiz.hasAttribute("data-shuffle-answers")) {
+        shuffleAnswers(fieldset);
+      }
+
+      // Get quiz ID from the quiz div itself
+      const quizId = quiz.id;
+
+      // Prevent anchor link from triggering page navigation/reload
+      const headerLink = quiz.querySelector(".quiz-header-link");
+      if (headerLink) {
+        const handler = (e) => {
+          // Let the browser handle the anchor navigation normally
+          // This prevents Material for MkDocs from intercepting it as a page navigation
+          e.stopPropagation();
+        };
+        addTrackedEventListener(headerLink, "click", handler);
+      }
+
+      // Create reset button (initially hidden)
+      let resetButton = document.createElement("button");
+      resetButton.type = "button";
+      resetButton.className = "quiz-button quiz-reset-button hidden";
+      resetButton.textContent = t("Try Again");
+      if (submitButton) {
+        submitButton.parentNode.insertBefore(resetButton, submitButton.nextSibling);
+      } else {
+        form.appendChild(resetButton);
+      }
+
+      // Restore quiz state from localStorage if available
+      if (quizId && quizTracker.quizzes[quizId]) {
+        const savedState = quizTracker.quizzes[quizId];
+        const section = quiz.querySelector("section");
+        const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+        const correctAnswers = fieldset.querySelectorAll('input[name="answer"][correct]');
+
+        if (savedState.answered) {
+          // Restore selected answers based on saved values
+          if (savedState.selectedValues && savedState.selectedValues.length > 0) {
+            allAnswers.forEach((input) => {
+              if (savedState.selectedValues.includes(input.value)) {
+                input.checked = true;
+              }
+            });
+          }
+
+          if (savedState.correct) {
+            // Show the content section
+            section.classList.remove("hidden");
+
+            // Only mark the correct answers in green (don't highlight wrong answers)
+            allAnswers.forEach((input) => {
+              if (input.hasAttribute("correct")) {
+                input.parentElement.classList.add("correct");
+              }
+            });
+
+            // Show correct feedback
+            feedbackDiv.classList.remove("hidden", "incorrect");
+            feedbackDiv.classList.add("correct");
+            feedbackDiv.textContent = t("Correct answer!");
+
+            // Disable inputs if disable-after-submit is enabled
+            if (quiz.hasAttribute("data-disable-after-submit")) {
+              allAnswers.forEach((input) => {
+                input.disabled = true;
+              });
+              if (submitButton) {
+                submitButton.disabled = true;
+              }
+              resetButton.classList.add("hidden");
+            } else {
+              // Show reset button, hide submit button
+              resetButton.classList.remove("hidden");
+              if (submitButton) {
+                submitButton.classList.add("hidden");
+              }
+            }
+          } else {
+            // Restore incorrect answer state
+            const selectedInputs = Array.from(allAnswers).filter((input) =>
+              savedState.selectedValues.includes(input.value),
+            );
+
+            // Show the content section for incorrect answers too
+            section.classList.remove("hidden");
+
+            // Mark selected answers
+            selectedInputs.forEach((input) => {
+              if (input.hasAttribute("correct")) {
+                input.parentElement.classList.add("correct");
+              } else {
+                input.parentElement.classList.add("wrong");
+              }
+            });
+
+            // Show correct answers if show-correct is enabled
+            if (quiz.hasAttribute("data-show-correct")) {
+              correctAnswers.forEach((input) => {
+                input.parentElement.classList.add("correct");
+              });
+            }
+
+            // Show incorrect feedback
+            feedbackDiv.classList.remove("hidden", "correct");
+            feedbackDiv.classList.add("incorrect");
+            const canRetry = !quiz.hasAttribute("data-disable-after-submit");
+            feedbackDiv.textContent = canRetry ? t("Incorrect answer. Please try again.") : t("Incorrect answer.");
+
+            // Disable inputs if disable-after-submit is enabled
+            if (quiz.hasAttribute("data-disable-after-submit")) {
+              allAnswers.forEach((input) => {
+                input.disabled = true;
+              });
+              if (submitButton) {
+                submitButton.disabled = true;
+              }
+              resetButton.classList.add("hidden");
+            } else {
+              // Show reset button, hide submit button
+              resetButton.classList.remove("hidden");
+              if (submitButton) {
+                submitButton.classList.add("hidden");
+              }
+            }
+          }
+        }
+      }
+
+      // Auto-submit on radio button change if enabled
+      if (quiz.hasAttribute("data-auto-submit")) {
+        let radioButtons = fieldset.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach((radio) => {
+          const handler = (e) => {
+            // Prevent any default behavior that might cause page scroll
+            e.preventDefault();
+            // Trigger form submission with a properly configured event
+            // cancelable: true allows preventDefault to work
+            // bubbles: true ensures proper event propagation
+            form.dispatchEvent(new Event("submit", { cancelable: true, bubbles: true }));
+          };
+          addTrackedEventListener(radio, "change", handler);
+        });
+      }
+
+      // Reset button handler
+      const resetHandler = () => {
+        // Clear all selections
+        const allInputs = fieldset.querySelectorAll('input[name="answer"]');
+        allInputs.forEach((input) => {
+          input.checked = false;
+          input.disabled = false;
+        });
+        // Reset colors
+        resetFieldset(fieldset);
+        // Hide content section
+        let section = quiz.querySelector("section");
+        section.classList.add("hidden");
+        // Hide feedback message
+        feedbackDiv.classList.add("hidden");
+        feedbackDiv.classList.remove("correct", "incorrect");
+        feedbackDiv.textContent = "";
+        // Show submit button, hide reset button
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.classList.remove("hidden");
+        }
+        resetButton.classList.add("hidden");
+        // Update tracker
+        if (quizId) {
+          quizTracker.resetQuiz(quizId);
+        }
+      };
+      addTrackedEventListener(resetButton, "click", resetHandler);
+
+      const submitHandler = (event) => {
+        // Prevent default form submission behavior
+        event.preventDefault();
+        // Stop propagation to prevent Material for MkDocs instant navigation from intercepting
+        event.stopPropagation();
+        let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+        let correctAnswers = fieldset.querySelectorAll('input[name="answer"][correct]');
+        // Check if all correct answers are selected
+        let is_correct = selectedAnswers.length === correctAnswers.length;
+        Array.from(selectedAnswers).forEach((answer) => {
+          if (!answer.hasAttribute("correct")) {
+            is_correct = false;
+          }
+        });
+        let section = quiz.querySelector("section");
+        // Always show the content section after submission
+        section.classList.remove("hidden");
+
+        if (is_correct) {
+          resetFieldset(fieldset);
+          // Only mark the correct answers in green (don't highlight wrong answers)
+          const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+          allAnswers.forEach((answer) => {
+            if (answer.hasAttribute("correct")) {
+              answer.parentElement.classList.add("correct");
+            }
+          });
+          // Show correct feedback
+          feedbackDiv.classList.remove("hidden", "incorrect");
+          feedbackDiv.classList.add("correct");
+          feedbackDiv.textContent = t("Correct answer!");
+        } else {
+          resetFieldset(fieldset);
+          // Mark wrong fields with colors
+          Array.from(selectedAnswers).forEach((answer) => {
+            if (!answer.hasAttribute("correct")) {
+              answer.parentElement.classList.add("wrong");
+            } else {
+              answer.parentElement.classList.add("correct");
+            }
+          });
+          // If show-correct is enabled, also show all correct answers
+          if (quiz.hasAttribute("data-show-correct")) {
+            correctAnswers.forEach((answer) => {
+              answer.parentElement.classList.add("correct");
+            });
+          }
+          // Show incorrect feedback
+          feedbackDiv.classList.remove("hidden", "correct");
+          feedbackDiv.classList.add("incorrect");
+          // Only show "Please try again" if the quiz is not disabled after submission
+          const canRetry = !quiz.hasAttribute("data-disable-after-submit");
+          feedbackDiv.textContent = canRetry ? t("Incorrect answer. Please try again.") : t("Incorrect answer.");
+        }
+
+        // Update tracker
+        if (quizId) {
+          // Get selected values to save
+          const selectedValues = Array.from(selectedAnswers).map((input) => input.value);
+          quizTracker.markQuiz(quizId, is_correct, selectedValues);
+        }
+
+        // Disable quiz after submission if option is enabled
+        if (quiz.hasAttribute("data-disable-after-submit")) {
+          const allInputs = fieldset.querySelectorAll('input[name="answer"]');
+          allInputs.forEach((input) => {
+            input.disabled = true;
+          });
+          if (submitButton) {
+            submitButton.disabled = true;
+          }
+          // Hide reset button if disable-after-submit is enabled
+          resetButton.classList.add("hidden");
+        } else {
+          // Show reset button and hide submit button
+          resetButton.classList.remove("hidden");
+          if (submitButton) {
+            submitButton.classList.add("hidden");
+          }
+        }
+      };
+      addTrackedEventListener(form, "submit", submitHandler);
+    });
+  }
+
+  function resetFieldset(fieldset) {
+    Array.from(fieldset.children).forEach((child) => {
+      child.classList.remove("wrong", "correct");
+    });
+  }
+
+  // Main initialization function that sets up everything on a page
+  function initializePage() {
+    // Initialize tracker
+    quizTracker.init();
+
+    // Translate template elements
+    translateTemplateElements();
+
+    // Reposition sidebar for Material theme TOC integration
+    repositionSidebar();
+
+    // Create sidebar
+    quizTracker.createSidebar();
+
+    // Initialize results div and intro buttons
+    initializeResultsDiv();
+    initializeIntroResetButtons();
+
+    // Initialize all quiz elements
+    initializeQuizzes();
+  }
+
+  // Run initialization when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializePage);
+  } else {
+    initializePage();
+  }
+
+  // Material for MkDocs instant navigation support
+  // Cleanup and reinitialize when navigating between pages
+  if (typeof document$ !== "undefined") {
+    // Unsubscribe from any previous subscription to prevent duplicate handlers
+    // This is needed because the script re-runs on each page navigation,
+    // which would otherwise accumulate subscriptions
+    if (window._mkdocsQuizSubscription) {
+      window._mkdocsQuizSubscription.unsubscribe();
+    }
+
+    // Material theme with instant navigation is active
+    window._mkdocsQuizSubscription = document$.subscribe(() => {
+      cleanup(); // Remove old event listeners to prevent memory leaks
+      // Reinitialize everything for the new page
+      initializePage();
+    });
+  }
+})(); // End of IIFE
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://github.com/mr-bev/software-engineering-stage6-nsw/issues/new/?title=[Feedback]+Web%20Protocols%20%26%20Security%20Foundations+-+/web_development/web_protocols_security/" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../how_the_web_works/" class="md-footer__link md-footer__link--prev" aria-label="Previous: How the Web Works">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                How the Web Works
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../web_development_security_mindset/" class="md-footer__link md-footer__link--next" aria-label="Next: Web Development &amp; Security Mindset">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Web Development & Security Mindset
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024-26 <a href="https://github.com/mr-bev" target="_blank" rel="noopener">Aaron Beverley</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognise your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="analytics" checked>
+      <span class="task-list-indicator"></span>
+      Google Analytics
+    </label>
+  </li>
+
+      
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.footer", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotate", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="../../javascripts/feedback.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
