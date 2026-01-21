@@ -1,4 +1,4 @@
-# Week 7: Server-Side Programming, Authentication & Template Engines
+# Server-Side Programming, Authentication & Template Engines
 
 ## Lesson Overview
 

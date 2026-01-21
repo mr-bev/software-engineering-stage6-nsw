@@ -3341,41 +3341,265 @@ git commit -m "Complete client-side authentication UI demonstration"
 
 ---
 
+## 6. Review
+<quiz>
+**Question 1: What is the primary purpose of using `type="email"` instead of `type="text"` for an email input field?**
+
+- [ ] It makes the input field look different
+- [ ] It stores the email in localStorage automatically
+- [x] It provides built-in browser validation and shows appropriate mobile keyboards
+- [ ] It encrypts the email address for security
+
+---
+
+**Explanation**
+
+The `type="email"` attribute provides built-in HTML5 validation to check for basic email format (e.g., `user@domain.com`) and triggers mobile devices to display email-optimized keyboards with @ and .com keys, improving user experience.
+
+- Option A is incorrect - the visual appearance is controlled by CSS, not the input type
+- Option B is incorrect - storage must be explicitly handled with JavaScript
+- Option D is incorrect - input types don't provide encryption; that happens server-side with HTTPS
+</quiz>
+
+<quiz>
+**Question 2: When styling form inputs, which CSS property controls the visibility of error messages that appear below invalid fields?**
+
+- [ ] `visibility: hidden` and `visibility: visible`
+- [x] `display: none` and `display: block`
+- [ ] `opacity: 0` and `opacity: 1`
+- [ ] `position: absolute` and `position: relative`
+
+---
+
+**Explanation**
+
+The `display` property is used to completely hide elements (`display: none`) and make them visible (`display: block`). When hidden with `display: none`, the element takes up no space in the layout. A class like `.error-message.show { display: block; }` is toggled via JavaScript to show/hide error messages.
+
+- Option A is incorrect - `visibility: hidden` hides the element but it still takes up space in the layout
+- Option C is incorrect - `opacity` makes elements transparent but they still occupy space and can be interacted with
+- Option D is incorrect - `position` properties control element placement, not visibility
+</quiz>
+<quiz>
+**Question 3: A user logs in WITHOUT checking the "Remember me" checkbox. They close their browser tab and open a new tab to the same website. What happens to their session?**
+
+- [ ] The session persists because it was saved in localStorage
+- [x] The session is lost because it was stored in sessionStorage, which is tab-scoped
+- [ ] The session persists because cookies are always permanent
+- [ ] The session is lost because the browser always clears all data when tabs close
+
+---
+
+**Explanation**
+
+When "Remember me" is NOT checked, the session data is stored in `sessionStorage`, which is cleared when the browser tab is closed. Each tab has its own separate sessionStorage, and the data does not persist across tabs or after closing.
+
+- Option A is incorrect - localStorage is only used when "Remember me" IS checked
+- Option C is incorrect - cookies can be session-based (cleared on browser close) or persistent; not all are permanent
+- Option D is incorrect - the browser doesn't clear all data; localStorage persists, only sessionStorage is tab-scoped
+</quiz>
+<quiz>
+**Question 4: Examine this JavaScript code from the login form:**
+
+```javascript
+if (password.length < 8) {
+    document.getElementById('password').classList.add('error');
+    document.getElementById('passwordError').textContent = 'Password must be at least 8 characters';
+    document.getElementById('passwordError').classList.add('show');
+    hasErrors = true;
+}
+```
+
+**What is the purpose of adding the 'error' class to the password input element?**
+
+- [ ] To validate the password on the server
+- [ ] To store the error in localStorage
+- [x] To apply CSS styling that changes the input's border to red, providing visual feedback
+- [ ] To prevent the user from typing more characters
+
+---
+
+**Explanation**
+
+Adding the 'error' class applies CSS rules like `input.error { border-color: #f44336; }`, which changes the visual appearance of the input to indicate validation failure. This provides immediate visual feedback to the user.
+
+- Option A is incorrect - server validation happens separately; this is client-side only
+- Option B is incorrect - classes don't interact with localStorage; they only affect styling
+- Option D is incorrect - the class doesn't prevent input; it only changes appearance
+</quiz>
+<quiz>
+**Question 5: Why should authentication error messages be generic (e.g., "Invalid email or password") rather than specific (e.g., "Email not found" or "Incorrect password")?**
+
+- [ ] Generic messages are easier to translate into other languages
+- [ ] Specific messages require more database queries
+- [x] Generic messages prevent attackers from discovering which email addresses have accounts, improving security
+- [ ] Generic messages take up less space on the screen
+
+---
+
+**Explanation**
+
+Generic error messages are a security best practice because they prevent **user enumeration attacks**. If the system says "Email not found," an attacker can systematically test email addresses to discover which ones have accounts. Generic messages like "Invalid email or password" don't reveal whether the email exists, making it harder for attackers to gather information.
+
+- Option A is incorrect - while true, this is not the primary security reason
+- Option B is incorrect - database queries happen regardless of the message shown
+- Option D is incorrect - screen space is not a security consideration
+</quiz>
+<quiz>
+**Question 6: Analyze this code that stores session data:**
+
+```javascript
+const sessionData = {
+    userId: 'user_12345',
+    email: 'student@example.com',
+    loginTime: new Date().toISOString(),
+    rememberMe: true
+};
+
+localStorage.setItem('userSession', JSON.stringify(sessionData));
+```
+
+**What security vulnerability exists in storing authentication data this way in a production application?**
+
+- [ ] The userId is too short and easy to guess
+- [ ] Using JSON.stringify makes the data visible in DevTools
+- [x] localStorage is accessible to JavaScript, making it vulnerable to XSS attacks that could steal the session token
+- [ ] The email address should be encrypted before storage
+
+---
+
+**Explanation**
+
+Storing authentication tokens or session data in `localStorage` creates a significant XSS (Cross-Site Scripting) vulnerability. If an attacker can inject malicious JavaScript into the page, they can read `localStorage` and steal session data. Production applications should use **httpOnly cookies** (set by the server), which JavaScript cannot access, preventing XSS attacks from stealing tokens.
+
+- Option A is incorrect - userId length isn't the primary security concern here
+- Option B is partially true but not the main vulnerability; DevTools access requires physical access to the device
+- Option D is incorrect - the email isn't the sensitive data; the session token is, and client-side encryption doesn't solve the XSS problem
+</quiz>
+<quiz>
+**Question 7: A developer wants to show a session timeout warning 1 minute before the session expires (5-minute timeout). They need to track when the user last performed an action. Which approach correctly implements this?**
+
+- [ ] Use `setInterval()` to check `Date.now()` every second and compare to `loginTime`
+- [ ] Store the expiry time in a cookie and check it on every page load
+- [x] Track `lastActivityTime`, update it on user events (click, scroll, keypress), and use `setInterval()` to check if `Date.now() - lastActivityTime > 4 minutes`
+- [ ] Use `setTimeout()` with a fixed 4-minute delay that triggers on page load
+
+---
+
+**Explanation**
+
+Session timeouts are based on **inactivity**, not total session time. The correct approach tracks the last user activity by listening to events like clicks, scrolls, or keypresses, updating `lastActivityTime`. A periodic check (using `setInterval()`) compares the current time to `lastActivityTime`. If the idle time exceeds 4 minutes (in a 5-minute timeout), show the warning.
+
+- Option A is incorrect - comparing to `loginTime` measures total session duration, not inactivity
+- Option B is incorrect - cookies don't help track client-side activity timing without JavaScript
+- Option D is incorrect - a fixed 4-minute delay from page load doesn't account for user activity extending the session
+</quiz>
+<quiz>
+**Question 8: Evaluate this password strength validation logic:**
+
+```javascript
+function calculatePasswordStrength(password) {
+    let score = 0;
+    if (password.length >= 8) score += 2;
+    if (password.length >= 12) score += 1;
+    if (/[A-Z]/.test(password)) score += 1;
+    if (/[a-z]/.test(password)) score += 1;
+    if (/[0-9]/.test(password)) score += 1;
+    if (/[!@#$%^&*]/.test(password)) score += 2;
+    
+    if (score <= 3) return 'weak';
+    else if (score <= 6) return 'medium';
+    else return 'strong';
+}
+```
+
+**A user enters the password `aaaaaaaaaaaaaaaa` (16 'a' characters). What strength rating will it receive, and why is this problematic?**
+
+- [ ] 'weak' - the function correctly identifies it as weak because it has no variety
+- [x] 'medium' - the function incorrectly rates it as medium because it only checks for character types present, not password complexity or common patterns
+- [ ] 'strong' - the function incorrectly rates it as strong because of the length
+- [ ] The function will throw an error because the password is too simple
+
+---
+
+**Explanation**
+
+The password `aaaaaaaaaaaaaaaa` scores:
+- +2 for length ≥ 8
+- +1 for length ≥ 12
+- +1 for lowercase letters
+
+Total: 4 points = 'medium' rating
+
+This reveals a **critical flaw** in the validation: it doesn't check for:
+- Repeated characters
+- Common patterns (e.g., `12345678`, `qwerty`)
+- Dictionary words
+- Lack of entropy/randomness
+
+A strong password validator should check against common password lists and patterns, not just character variety. The password `aaaaaaaaaaaaaaaa` is extremely weak despite meeting length requirements.
+
+- Option A is incorrect - the function gives 4 points (medium), not weak
+- Option C is incorrect - it doesn't reach 7+ points for strong
+- Option D is incorrect - JavaScript regex tests don't throw errors for simple strings; they just return false
+</quiz>
+<quiz>
+**Question 9: A developer is implementing the "Remember me" feature. Which approach best demonstrates the 'privacy by design' principle?**
+
+- [ ] Automatically check the "Remember me" box by default to improve user convenience
+- [ ] Store all user data permanently in localStorage for faster page loads
+- [x] Leave "Remember me" unchecked by default and clearly explain that checking it stores session data persistently on the device
+- [ ] Use localStorage for all users regardless of their choice to simplify code
+
+---
+**Explanation**
+`Privacy by design` requires that privacy-protective settings are the default and users must explicitly opt-in to less private options. Leaving "Remember me" unchecked by default (using sessionStorage) is more privacy-protective, and providing clear information allows informed consent.
+
+Option A violates privacy by design - users should opt-in, not opt-out
+Option B violates user privacy and data minimization principles
+Option D removes user choice entirely, violating privacy principles
+</quiz>
+
 ## Understanding Check
 
 !!! question "Self-Assessment Checklist"
     Before moving on, make sure you can confidently answer "yes" to these questions:
     
     **1: Client-Side Storage**
+
     - [ ] Can you explain the differences between cookies, localStorage, and sessionStorage?
     - [ ] Do you understand why passwords should never be stored client-side?
     - [ ] Can you identify what types of data are safe to store in localStorage?
     - [ ] Do you know how to inspect storage in browser DevTools?
     
     **2: Session Concepts**
+    
     - [ ] Can you describe the session lifecycle (login → activity → logout/timeout)?
     - [ ] Do you understand the difference between session IDs and session tokens?
     - [ ] Can you explain what happens when a session expires?
     
     **3: Authentication UI**
+    
     - [ ] Can you build a login form with proper UX (password toggle, loading states)?
     - [ ] Do you understand why error messages should be generic?
     - [ ] Can you implement "remember me" functionality with different storage strategies?
     - [ ] Can you create a registration form with real-time validation?
     
     **4: Password Validation**
+    
     - [ ] Can you implement a password strength meter with visual feedback?
     - [ ] Do you understand what makes a password strong?
     - [ ] Can you validate passwords against common password lists?
     - [ ] Can you provide helpful feedback to users about password requirements?
     
     **5: Dashboard & Session Management**
+    
     - [ ] Can you create a dashboard that checks for active sessions?
     - [ ] Can you implement session timeout warnings?
     - [ ] Do you understand how to track session duration and idle time?
     - [ ] Can you handle logout properly (clearing all session data)?
     
     **Overall Understanding**
+    
     - [ ] Do you understand the limitations of client-only security?
     - [ ] Can you explain why server-side validation is essential?
     - [ ] Do you know which storage mechanism to use in different scenarios?

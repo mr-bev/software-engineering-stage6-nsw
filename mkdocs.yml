@@ -146,7 +146,7 @@ nav:
       - Client-Side Security & User Experience: web_development/client_side_security_user_experience.md
     - Back-End Development & Core Security:
       - Server-Side Programming, Authentication & Template Engines: web_development/server_side_programming_authentication_template_engines.md
-      - Database Integration, SQL Injection Prevention & REST Principles: web_development/database_integration_sql_prevention_rest.md
+      - Database Integration & SQL Security: web_development/database_integration_sql_security.md
       - Advanced Authentication, Authorisation & Session Management: web_development/advanced_auth_session_management.md
       - File Security, Safe APIs & Cryptography in Practice: web_development/file_security_safe_apis_cryptography.md
     - Secure Architecture & Progressive Web Apps:
